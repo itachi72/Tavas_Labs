@@ -1,0 +1,265 @@
+/* =============================================================================
+ * TAVAS LABS — GLOBAL STYLES
+ * =============================================================================
+ *
+ * Layer order:
+ *   1. Tailwind base reset
+ *   2. Google Fonts import
+ *   3. CSS custom properties (design tokens as CSS vars)
+ *   4. Custom @keyframes (referenced by tailwind.config.ts animations)
+ *   5. Utility classes not easily expressed in Tailwind
+ *   6. Component-specific overrides
+ * ============================================================================= */
+
+/* --------------------------------------------------------------------------
+ * 1. TAILWIND DIRECTIVES
+ * -------------------------------------------------------------------------- */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* --------------------------------------------------------------------------
+ * 2. GOOGLE FONTS — IBM Plex Sans + Space Grotesk
+ *    If self-hosting, replace with @font-face declarations pointing to /public/fonts
+ * -------------------------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+/* --------------------------------------------------------------------------
+ * 3. CSS CUSTOM PROPERTIES
+ *    These mirror the Tailwind config but allow runtime JS access if needed.
+ * -------------------------------------------------------------------------- */
+:root {
+  /* Brand colors */
+  --color-navy-950:    #020B18;
+  --color-navy-900:    #071428;
+  --color-navy-800:    #0D2040;
+  --color-navy-700:    #122B55;
+  --color-navy-600:    #1A3A70;
+  --color-orange:      #F26522;
+  --color-orange-light:#FF8C42;
+  --color-orange-glow: rgba(242,101,34,0.2);
+  --color-gold:        #C9A84C;
+
+  /* Typography */
+  --font-sans:    'IBM Plex Sans', system-ui, sans-serif;
+  --font-display: 'Space Grotesk', 'IBM Plex Sans', sans-serif;
+  --font-mono:    'IBM Plex Mono', monospace;
+
+  /* Pillar glow strengths — adjust these to make glows more/less intense */
+  --glow-soft:   0 0 40px 8px rgba(242,101,34,0.25);
+  --glow-strong: 0 0 60px 15px rgba(242,101,34,0.4);
+
+  /* Nav height — used to offset sticky positioning */
+  --nav-height: 72px;
+}
+
+/* --------------------------------------------------------------------------
+ * 4. BASE RESETS
+ * -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Prevent content from jumping when a scrollbar appears */
+  scrollbar-gutter: stable;
+}
+
+body {
+  background-color: var(--color-navy-900);
+  color: #E8EDF5;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* --------------------------------------------------------------------------
+ * 5. CUSTOM SCROLLBAR (Webkit only — Chrome, Edge, Safari)
+ *    Gives the page a dark themed scrollbar matching the navy palette
+ * -------------------------------------------------------------------------- */
+::-webkit-scrollbar        { width: 6px; }
+::-webkit-scrollbar-track  { background: var(--color-navy-900); }
+::-webkit-scrollbar-thumb  { background: var(--color-navy-600); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-orange); }
+
+/* --------------------------------------------------------------------------
+ * 6. SELECTION HIGHLIGHT
+ * -------------------------------------------------------------------------- */
+::selection {
+  background-color: rgba(242, 101, 34, 0.3);
+  color: #fff;
+}
+
+/* --------------------------------------------------------------------------
+ * 7. @KEYFRAMES
+ *    All animation keyframes are defined here. They are named in tailwind.config.ts
+ *    so you can use them as `animate-pillar-rise`, `animate-glow-pulse`, etc.
+ * -------------------------------------------------------------------------- */
+
+/* Pillar rises from below — used on each monolith column */
+@keyframes pillarRise {
+  from {
+    opacity: 0;
+    transform: translateY(80px) scaleY(0.7);
+    transform-origin: bottom center;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scaleY(1);
+    transform-origin: bottom center;
+  }
+}
+
+/* Orange circuit trace across a path — drawn via stroke-dashoffset */
+@keyframes circuitTrace {
+  from { stroke-dashoffset: 1000; }
+  to   { stroke-dashoffset: 0; }
+}
+
+/* Subtle breathing glow on pillar edges */
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 30px 6px rgba(242,101,34,0.2); }
+  50%       { box-shadow: 0 0 60px 15px rgba(242,101,34,0.45); }
+}
+
+/* Text / element fade up from below on scroll reveal */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Simple opacity fade in */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Shimmer / loading effect — left to right highlight sweep */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+/* Horizontal scan line that drifts down the pillar */
+@keyframes scanLine {
+  0%   { top: 0%; opacity: 0.8; }
+  100% { top: 100%; opacity: 0; }
+}
+
+/* Subtle horizontal drift for background particles */
+@keyframes drift {
+  0%, 100% { transform: translateX(0) translateY(0); }
+  33%       { transform: translateX(8px) translateY(-5px); }
+  66%       { transform: translateX(-5px) translateY(8px); }
+}
+
+/* --------------------------------------------------------------------------
+ * 8. UTILITY CLASSES (not easily expressed via Tailwind alone)
+ * -------------------------------------------------------------------------- */
+
+/* Orange gradient text — for "Intelligence by Design" etc. */
+.text-gradient-orange {
+  background: linear-gradient(135deg, var(--color-orange) 0%, var(--color-orange-light) 50%, var(--color-gold) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Navy gradient text — for secondary headings */
+.text-gradient-navy {
+  background: linear-gradient(135deg, #E8EDF5 0%, #A8BDD5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* --------------------------------------------------------------------------
+ * Circuit line texture: the "stone etched with circuits" effect.
+ * Applied as ::after pseudo on pillar columns.
+ * The SVG is an inline data-URI of a circuit-trace pattern.
+ * -------------------------------------------------------------------------- */
+.circuit-texture {
+  position: relative;
+  overflow: hidden;
+}
+
+.circuit-texture::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  /* Circuit board trace SVG pattern */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cg fill='none' stroke='%23F26522' stroke-width='0.6' stroke-opacity='0.3'%3E%3Cpath d='M10 20 h20 v10 h30 v-10 h20'/%3E%3Cpath d='M10 50 h10 v-15 h15'/%3E%3Cpath d='M50 50 h15 v15 h15'/%3E%3Cpath d='M20 70 h20 v10 h40'/%3E%3Ccircle cx='35' cy='20' r='2' fill='%23F26522' fill-opacity='0.5'/%3E%3Ccircle cx='65' cy='50' r='2' fill='%23F26522' fill-opacity='0.5'/%3E%3Ccircle cx='25' cy='70' r='1.5' fill='%23F26522' fill-opacity='0.4'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 100px 100px;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.circuit-texture:hover::before {
+  opacity: 1;
+}
+
+/* --------------------------------------------------------------------------
+ * Stone texture overlay: layered gradient giving depth / carved look
+ * -------------------------------------------------------------------------- */
+.stone-texture {
+  background-image:
+    /* Vertical light streak — like a carved groove */
+    linear-gradient(180deg,
+      rgba(255,255,255,0.06) 0%,
+      rgba(255,255,255,0.02) 40%,
+      rgba(0,0,0,0.1) 80%,
+      rgba(0,0,0,0.2) 100%
+    ),
+    /* Side edge darkening — gives 3D depth */
+    linear-gradient(90deg,
+      rgba(0,0,0,0.25) 0%,
+      transparent 20%,
+      transparent 80%,
+      rgba(0,0,0,0.25) 100%
+    );
+}
+
+/* --------------------------------------------------------------------------
+ * Scan line animation on pillar hover
+ * -------------------------------------------------------------------------- */
+.pillar-scan::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-orange), transparent);
+  animation: scanLine 2s linear infinite;
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+ * Navigation glassmorphism
+ * -------------------------------------------------------------------------- */
+.nav-glass {
+  background: rgba(7, 20, 40, 0.85);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* --------------------------------------------------------------------------
+ * Section divider — animated gradient rule
+ * -------------------------------------------------------------------------- */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, var(--color-orange) 50%, transparent 100%);
+  opacity: 0.3;
+}
