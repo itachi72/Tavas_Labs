@@ -54,16 +54,12 @@ export default function EngageSection() {
 
   return (
     <section
-      id="engage"
+      id="contact"
       className="relative py-24 sm:py-32 overflow-hidden"
       style={{
-        /*
-         * Dark navy with a strong central orange glow bloom.
-         * Adjust the rgba alpha (0.12) to make the glow more/less intense.
-         */
         background: `
-          radial-gradient(ellipse 70% 50% at 50% 50%, rgba(242,101,34,0.12) 0%, transparent 60%),
-          var(--color-navy-900)
+          radial-gradient(ellipse 70% 50% at 50% 50%, rgba(242,101,34,0.10) 0%, transparent 60%),
+          var(--color-navy-800)
         `,
       }}
     >

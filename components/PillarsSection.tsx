@@ -267,13 +267,28 @@ export default function PillarsSection() {
     <section
       id="pillars"
       className="relative py-24 sm:py-32"
-      style={{ background: "var(--color-navy-950)" }}
+      style={{ background: "var(--color-navy-800)" }}
     >
       {/* Subtle background texture */}
       <div
-        className="absolute inset-0 bg-grid-overlay opacity-20 pointer-events-none"
+        className="absolute inset-0 bg-grid-overlay opacity-15 pointer-events-none"
         aria-hidden="true"
       />
+      {/* Vedic mandala background accent — faint concentric circles */}
+      <div
+        className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.04]"
+        aria-hidden="true"
+      >
+        <svg width="700" height="700" viewBox="0 0 700 700" fill="none">
+          {[80,150,220,290,340].map((r, i) => (
+            <circle key={i} cx="350" cy="350" r={r} stroke="#C9A84C" strokeWidth="1"/>
+          ))}
+          {Array.from({length: 12}).map((_, i) => {
+            const a = (i * 30 * Math.PI) / 180;
+            return <line key={i} x1={350} y1={350} x2={350 + 340 * Math.cos(a)} y2={350 + 340 * Math.sin(a)} stroke="#C9A84C" strokeWidth="0.5"/>;
+          })}
+        </svg>
+      </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
 
@@ -285,9 +300,15 @@ export default function PillarsSection() {
           transition={{ duration: 0.7 }}
           className="text-center mb-16"
         >
-          {/* Eyebrow */}
+          {/* Vedic eyebrow — Sanskrit name + meaning */}
+          <p
+            className="text-base mb-1 tracking-wider"
+            style={{ fontFamily: "'Cinzel', Georgia, serif", color: "#C9A84C", opacity: 0.9 }}
+          >
+            तवस् · Tavas
+          </p>
           <p className="text-xs font-mono tracking-[0.25em] uppercase text-brand-orange mb-4">
-            Our Approach
+            Strength · Power · Capability — Our Approach
           </p>
 
           {/* Section title */}
@@ -300,7 +321,7 @@ export default function PillarsSection() {
           </h2>
 
           {/* Section sub-description */}
-          <p className="text-base sm:text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed">
             Every engagement follows the same rigorous arc — from first principles design
             through living, self-sustaining intelligent systems.
           </p>

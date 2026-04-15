@@ -97,7 +97,7 @@ export default function Footer() {
       className="relative"
       style={{
         background:   "var(--color-navy-950)",
-        borderTop:    "1px solid var(--color-surface-border)",
+        borderTop:    "1px solid rgba(255,255,255,0.12)",
       }}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-16 pb-8">

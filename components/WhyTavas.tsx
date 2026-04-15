@@ -72,9 +72,9 @@ const DIFFERENTIATORS = [
 export default function WhyTavas() {
   return (
     <section
-      id="why-tavas"
+      id="why-us"
       className="relative py-24 sm:py-32 overflow-hidden"
-      style={{ background: "var(--color-navy-950)" }}
+      style={{ background: "var(--color-navy-900)" }}
     >
       {/* Decorative corner glow */}
       <div

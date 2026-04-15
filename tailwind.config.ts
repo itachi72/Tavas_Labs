@@ -25,13 +25,13 @@ const config: Config = {
        * ----------------------------------------------------------------------- */
       colors: {
         navy: {
-          950: "#020B18",  // Almost black — deepest bg, hero backdrop
-          900: "#071428",  // Primary dark background
-          800: "#0D2040",  // Slightly lighter panels / cards
-          700: "#122B55",  // Elevated surfaces (nav, footer)
-          600: "#1A3A70",  // Hover states / borders
-          500: "#2A5298",  // Muted blue mid-tone
-          400: "#3B6CB5",  // Lighter accents
+          950: "#031A28",
+          900: "#043B5D",
+          800: "#054E7A",
+          700: "#076098",  // PRIMARY — main page background
+          600: "#0A7BBB",
+          500: "#0990D4",
+          400: "#3BB5E8",
         },
         brand: {
           orange:  "#F26522",   // Main TAVAS orange — CTAs, highlights
@@ -40,10 +40,10 @@ const config: Config = {
           gold:    "#C9A84C",   // Optional premium accent (use sparingly)
         },
         surface: {
-          dark:    "#0A1929",   // Card/panel backgrounds on dark sections
-          mid:     "#112240",   // Mid-tone surface
-          border:  "#1E3A5F",   // Subtle borders / dividers
-          "border-light": "#2A5298", // Visible borders
+          dark:    "#031A28",
+          mid:     "#043B5D",
+          border:  "#1A6090",   // Blue-tinted border visible on blue bg
+          "border-light": "#2880B0",
         },
       },
 

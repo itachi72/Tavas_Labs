@@ -84,7 +84,7 @@ export default function TaglineSection() {
       id="tagline"
       ref={ref}
       className="relative py-24 sm:py-32 overflow-hidden"
-      style={{ background: "var(--color-navy-900)" }}
+      style={{ background: "var(--color-navy-700)" }}
     >
       {/* Background glow — centered orange bloom */}
       <div
