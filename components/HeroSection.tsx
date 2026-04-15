@@ -39,7 +39,7 @@ export default function HeroSection() {
       />
 
       {/* ── CONTENT ── */}
-      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center pt-[72px]">
+      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center pt-[108px]">
 
         {/* Eyebrow */}
         <motion.p
