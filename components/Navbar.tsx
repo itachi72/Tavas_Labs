@@ -55,7 +55,7 @@ export default function Navbar() {
               </div>
             ) : (
               <img
-                src="/tavas-logo.png"
+                src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/tavas-logo.png`}
                 alt="TAVAS Labs"
                 className="h-14 w-auto"
                 onError={() => setLogoError(true)}
