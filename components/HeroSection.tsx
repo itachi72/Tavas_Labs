@@ -31,6 +31,12 @@ export default function HeroSection() {
       {/* ── OVERLAYS ── */}
       {/* Dark tint so text is always legible over bright video */}
       <div className="absolute inset-0 bg-black/55" aria-hidden="true" />
+      {/* Gradient fade at top — blends blend-strip smoothly into video */}
+      <div
+        className="absolute top-0 left-0 right-0 h-[184px] pointer-events-none"
+        style={{ background: "linear-gradient(180deg, rgba(7,96,152,0.85) 0%, transparent 100%)" }}
+        aria-hidden="true"
+      />
       {/* Gradient fade at bottom — blends video into the #076098 page */}
       <div
         className="absolute bottom-0 left-0 right-0 h-40 pointer-events-none"
@@ -39,17 +45,7 @@ export default function HeroSection() {
       />
 
       {/* ── CONTENT ── */}
-      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center pt-[108px]">
-
-        {/* Eyebrow */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-xs sm:text-sm font-mono tracking-[0.28em] uppercase text-brand-orange mb-6"
-        >
-          Intelligence by Design
-        </motion.p>
+      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center pt-[200px]">
 
         {/* Headline */}
         <motion.h1

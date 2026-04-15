@@ -355,7 +355,7 @@ export default function PillarsSection() {
         </motion.div>
 
         {/* ── MONOLITH COLUMNS ── */}
-        <div ref={columnsRef} className="relative flex items-end justify-center gap-1 sm:gap-2 mb-20">
+        <div ref={columnsRef} className="relative flex items-end justify-center gap-6 sm:gap-10 md:gap-16 mb-20">
           {PILLARS_DATA.map((pillar) => (
             <MonolithPillar key={pillar.label} pillar={pillar} inView={inView} />
           ))}

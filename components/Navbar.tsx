@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const HEADER_BG = "#2C3A4A";   // grey-silver header colour
+const HEADER_BG = "#C8D4DC";   // light silver-grey header colour
 const PAGE_BG   = "#076098";   // main page blue
 
 const NAV_LINKS = [
@@ -39,42 +39,39 @@ export default function Navbar() {
           boxShadow: scrolled ? "0 2px 24px rgba(0,0,0,0.4)" : "none",
         }}
       >
-        <nav className="max-w-7xl mx-auto px-6 lg:px-8 h-[72px] flex items-center justify-between">
+        <nav className="max-w-7xl mx-auto px-6 lg:px-8 h-[88px] flex items-center justify-between">
 
-          {/* ── LOGO + "Intelligence by Design" tagline ── */}
-          <a href="#" aria-label="TAVAS Labs Home" className="flex-shrink-0 flex flex-col gap-0.5">
-            {/* Tagline sits ABOVE the logo */}
-            <span className="text-[9px] sm:text-[10px] tracking-[0.22em] uppercase font-mono text-brand-orange leading-none">
+          {/* ── LOGO ── */}
+          <a href="#" aria-label="TAVAS Labs Home" className="flex-shrink-0 flex flex-col items-start gap-0.5">
+            <span className="italic text-[11px] font-medium tracking-wider text-[#1C3A5E] pl-1 leading-none">
               Intelligence by Design
             </span>
-
-            {/* Logo image — falls back to wordmark if file is missing */}
             {logoError ? (
+              /* Text fallback if image is missing */
               <div className="flex items-baseline gap-1">
-                <span className="font-display font-bold text-lg tracking-widest text-white">TAVAS</span>
+                <span className="font-display font-bold text-lg tracking-widest text-[#1C2E3E]">TAVAS</span>
                 <span className="text-brand-orange font-bold text-lg">·</span>
-                <span className="font-display font-light text-lg tracking-widest text-gray-300">LABS</span>
+                <span className="font-display font-light text-lg tracking-widest text-[#3A5068]">LABS</span>
               </div>
             ) : (
               <img
                 src="/tavas-logo.png"
                 alt="TAVAS Labs"
-                className="h-9 w-auto"
+                className="h-14 w-auto"
                 onError={() => setLogoError(true)}
-                style={{ filter: "drop-shadow(0 1px 3px rgba(0,0,0,0.35))" }}
               />
             )}
           </a>
 
-          {/* ── DESKTOP LINKS ── */}
-          <ul className="hidden md:flex items-center gap-8" role="list">
+          {/* ── DESKTOP LINKS — blue pill buttons ── */}
+          <ul className="hidden md:flex items-center gap-3" role="list">
             {NAV_LINKS.map((link) => (
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className="relative text-sm font-medium text-gray-200 hover:text-white transition-colors duration-200
-                    after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[1px]
-                    after:bg-brand-orange after:transition-all after:duration-300 hover:after:w-full"
+                  className="px-6 py-3 rounded-lg text-sm font-semibold text-white transition-all duration-200
+                    hover:brightness-125 hover:-translate-y-0.5 hover:shadow-lg"
+                  style={{ background: "#076098" }}
                 >
                   {link.label}
                 </a>
@@ -98,7 +95,7 @@ export default function Navbar() {
 
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="md:hidden p-2 text-gray-300 hover:text-white transition-colors"
+              className="md:hidden p-2 text-[#1C2E3E] hover:text-brand-orange transition-colors"
               aria-label={mobileOpen ? "Close menu" : "Open menu"}
               aria-expanded={mobileOpen}
             >
@@ -119,7 +116,7 @@ export default function Navbar() {
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
-              style={{ background: HEADER_BG, borderTop: "1px solid rgba(255,255,255,0.08)" }}
+              style={{ background: HEADER_BG, borderTop: "1px solid rgba(0,0,0,0.08)" }}
             >
               <ul className="px-6 py-4 flex flex-col gap-1" role="list">
                 {NAV_LINKS.map((link) => (
@@ -127,8 +124,8 @@ export default function Navbar() {
                     <a
                       href={link.href}
                       onClick={() => setMobileOpen(false)}
-                      className="block py-3 text-base font-medium text-gray-200 hover:text-brand-orange
-                        border-b border-white/10 transition-colors"
+                      className="block py-3 text-base font-medium text-[#1C2E3E] hover:text-brand-orange
+                        border-b border-black/10 transition-colors"
                     >
                       {link.label}
                     </a>
@@ -151,16 +148,19 @@ export default function Navbar() {
       </header>
 
       {/* ── BLEND STRIP ─────────────────────────────────────────────────────
-       * Fixed strip just below the header that fades grey-silver → page blue.
-       * This creates a seamless visual transition between the header and the
-       * rest of the page regardless of which section is visible.
+       * Fixed strip just below the header that fades light-silver → page blue.
+       * Multi-stop gradient makes the colour shift feel gradual, not abrupt.
        * ──────────────────────────────────────────────────────────────────── */}
       <div
         className="fixed left-0 right-0 pointer-events-none z-40"
         style={{
-          top: "72px",
-          height: "36px",
-          background: `linear-gradient(180deg, ${HEADER_BG} 0%, ${PAGE_BG} 100%)`,
+          top: "88px",
+          height: "96px",
+          background: `linear-gradient(180deg,
+            ${HEADER_BG}  0%,
+            #9EB8C8      28%,
+            #5594B2      58%,
+            ${PAGE_BG}  100%)`,
         }}
         aria-hidden="true"
       />
