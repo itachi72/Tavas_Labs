@@ -33,28 +33,36 @@ export default function Navbar() {
     <>
       {/* ── MAIN HEADER BAR ── */}
       <header
-        className="fixed top-0 left-0 right-0 z-50 transition-shadow duration-500"
+        className="fixed top-0 left-0 right-0 z-50 transition-shadow duration-500 overflow-hidden"
         style={{
-          backgroundImage: `url(${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/navbar-bg.jpg)`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundColor: HEADER_BG_COLOR,   // shown while image loads
-          boxShadow: scrolled ? "0 2px 24px rgba(0,0,0,0.35)" : "none",
+          backgroundColor: "#1A2E3E",
+          boxShadow: scrolled ? "0 2px 24px rgba(0,0,0,0.5)" : "none",
         }}
       >
+        {/* Circuit board texture — dimmed so the dark header stays readable */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            backgroundImage: `url(${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/navbar-bg.jpg)`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            opacity: 0.18,
+          }}
+          aria-hidden="true"
+        />
         <nav className="relative max-w-7xl mx-auto px-6 lg:px-8 h-[88px] flex items-center justify-between">
 
           {/* ── LOGO ── */}
           <a href="#" aria-label="TAVAS Labs Home" className="flex-shrink-0 flex flex-col items-start gap-0.5">
-            <span className="italic text-[11px] font-medium tracking-wider text-[#1C3A5E] pl-1 leading-none">
+            <span className="italic text-[11px] font-medium tracking-wider text-gray-300 pl-1 leading-none">
               Intelligence by Design
             </span>
             {logoError ? (
               /* Text fallback if image is missing */
               <div className="flex items-baseline gap-1">
-                <span className="font-display font-bold text-lg tracking-widest text-[#1C2E3E]">TAVAS</span>
+                <span className="font-display font-bold text-lg tracking-widest text-white">TAVAS</span>
                 <span className="text-brand-orange font-bold text-lg">·</span>
-                <span className="font-display font-light text-lg tracking-widest text-[#3A5068]">LABS</span>
+                <span className="font-display font-light text-lg tracking-widest text-gray-300">LABS</span>
               </div>
             ) : (
               <img
@@ -98,7 +106,7 @@ export default function Navbar() {
 
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="md:hidden p-2 text-[#1C2E3E] hover:text-brand-orange transition-colors"
+              className="md:hidden p-2 text-gray-300 hover:text-brand-orange transition-colors"
               aria-label={mobileOpen ? "Close menu" : "Open menu"}
               aria-expanded={mobileOpen}
             >
@@ -119,7 +127,7 @@ export default function Navbar() {
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
-              style={{ background: HEADER_BG_COLOR, borderTop: "1px solid rgba(0,0,0,0.08)" }}
+              style={{ background: "#1A2E3E", borderTop: "1px solid rgba(255,255,255,0.08)" }}
             >
               <ul className="px-6 py-4 flex flex-col gap-1" role="list">
                 {NAV_LINKS.map((link) => (
@@ -127,8 +135,8 @@ export default function Navbar() {
                     <a
                       href={link.href}
                       onClick={() => setMobileOpen(false)}
-                      className="block py-3 text-base font-medium text-[#1C2E3E] hover:text-brand-orange
-                        border-b border-black/10 transition-colors"
+                      className="block py-3 text-base font-medium text-gray-200 hover:text-brand-orange
+                        border-b border-white/10 transition-colors"
                     >
                       {link.label}
                     </a>
