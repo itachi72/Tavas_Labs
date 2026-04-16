@@ -46,7 +46,7 @@ export default function Navbar() {
             backgroundImage: `url(${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/navbar-bg.jpg)`,
             backgroundSize: "cover",
             backgroundPosition: "center",
-            opacity: 0.18,
+            opacity: 0.45,
           }}
           aria-hidden="true"
         />
