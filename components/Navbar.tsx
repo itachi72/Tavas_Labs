@@ -3,8 +3,8 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const HEADER_BG = "#C8D4DC";   // light silver-grey header colour
-const PAGE_BG   = "#076098";   // main page blue
+const HEADER_BG_COLOR = "#C8D8E8";  // fallback / blend-strip start colour (matches tap.jpg tones)
+const PAGE_BG         = "#076098";  // main page blue
 
 const NAV_LINKS = [
   { label: "Why Us",       href: "#why-us"  },
@@ -31,15 +31,20 @@ export default function Navbar() {
 
   return (
     <>
-      {/* ── MAIN HEADER BAR (72 px tall, grey-silver) ── */}
+      {/* ── MAIN HEADER BAR ── */}
       <header
         className="fixed top-0 left-0 right-0 z-50 transition-shadow duration-500"
         style={{
-          background: HEADER_BG,
-          boxShadow: scrolled ? "0 2px 24px rgba(0,0,0,0.4)" : "none",
+          backgroundImage: `url(${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/navbar-bg.jpg)`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundColor: HEADER_BG_COLOR,   // shown while image loads
+          boxShadow: scrolled ? "0 2px 24px rgba(0,0,0,0.35)" : "none",
         }}
       >
-        <nav className="max-w-7xl mx-auto px-6 lg:px-8 h-[88px] flex items-center justify-between">
+        {/* Slight white-wash so nav buttons stay readable over the circuit texture */}
+        <div className="absolute inset-0 bg-white/30 pointer-events-none" aria-hidden="true" />
+        <nav className="relative max-w-7xl mx-auto px-6 lg:px-8 h-[88px] flex items-center justify-between">
 
           {/* ── LOGO ── */}
           <a href="#" aria-label="TAVAS Labs Home" className="flex-shrink-0 flex flex-col items-start gap-0.5">
@@ -116,7 +121,7 @@ export default function Navbar() {
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
-              style={{ background: HEADER_BG, borderTop: "1px solid rgba(0,0,0,0.08)" }}
+              style={{ background: HEADER_BG_COLOR, borderTop: "1px solid rgba(0,0,0,0.08)" }}
             >
               <ul className="px-6 py-4 flex flex-col gap-1" role="list">
                 {NAV_LINKS.map((link) => (
@@ -157,10 +162,10 @@ export default function Navbar() {
           top: "88px",
           height: "96px",
           background: `linear-gradient(180deg,
-            ${HEADER_BG}  0%,
-            #9EB8C8      28%,
-            #5594B2      58%,
-            ${PAGE_BG}  100%)`,
+            ${HEADER_BG_COLOR}  0%,
+            #9EB8C8            28%,
+            #5594B2            58%,
+            ${PAGE_BG}        100%)`,
         }}
         aria-hidden="true"
       />
