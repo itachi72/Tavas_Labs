@@ -52,7 +52,7 @@ export default function HeroSection() {
           AI and Digital Companion
           <br />
           <span className="text-gradient-orange">
-            to Governments and Industries
+            to Governments, Industries, and Academia
           </span>
         </motion.h1>
 
