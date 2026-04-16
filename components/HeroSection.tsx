@@ -31,6 +31,12 @@ export default function HeroSection() {
       {/* ── OVERLAYS ── */}
       {/* Dark tint so text is always legible over bright video */}
       <div className="absolute inset-0 bg-black/55" aria-hidden="true" />
+      {/* Gradient fade at top — blends navbar (#1A2E3E) into the video */}
+      <div
+        className="absolute top-0 left-0 right-0 h-48 pointer-events-none"
+        style={{ background: "linear-gradient(180deg, #1A2E3E 0%, transparent 100%)" }}
+        aria-hidden="true"
+      />
       {/* Gradient fade at bottom — blends video into the #076098 page */}
       <div
         className="absolute bottom-0 left-0 right-0 h-40 pointer-events-none"
