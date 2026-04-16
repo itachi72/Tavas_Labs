@@ -42,8 +42,6 @@ export default function Navbar() {
           boxShadow: scrolled ? "0 2px 24px rgba(0,0,0,0.35)" : "none",
         }}
       >
-        {/* Slight white-wash so nav buttons stay readable over the circuit texture */}
-        <div className="absolute inset-0 bg-white/30 pointer-events-none" aria-hidden="true" />
         <nav className="relative max-w-7xl mx-auto px-6 lg:px-8 h-[88px] flex items-center justify-between">
 
           {/* ── LOGO ── */}
@@ -152,23 +150,6 @@ export default function Navbar() {
         </AnimatePresence>
       </header>
 
-      {/* ── BLEND STRIP ─────────────────────────────────────────────────────
-       * Fixed strip just below the header that fades light-silver → page blue.
-       * Multi-stop gradient makes the colour shift feel gradual, not abrupt.
-       * ──────────────────────────────────────────────────────────────────── */}
-      <div
-        className="fixed left-0 right-0 pointer-events-none z-40"
-        style={{
-          top: "88px",
-          height: "96px",
-          background: `linear-gradient(180deg,
-            ${HEADER_BG_COLOR}  0%,
-            #9EB8C8            28%,
-            #5594B2            58%,
-            ${PAGE_BG}        100%)`,
-        }}
-        aria-hidden="true"
-      />
     </>
   );
 }
