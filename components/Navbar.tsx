@@ -69,6 +69,7 @@ export default function Navbar() {
                 src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/tavas-logo.png`}
                 alt="TAVAS Labs"
                 className="h-14 w-auto"
+                style={{ filter: "brightness(1.8) contrast(1.1)" }}
                 onError={() => setLogoError(true)}
               />
             )}
