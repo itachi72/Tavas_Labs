@@ -126,6 +126,19 @@ export default function PillarsSection() {
         aria-hidden="true"
       />
 
+      {/* Top gradient — navy → silver */}
+      <div
+        className="absolute top-0 left-0 right-0 h-32 pointer-events-none"
+        style={{ background: "linear-gradient(180deg, #0F2035 0%, #E8EDF3 100%)", zIndex: 1 }}
+        aria-hidden="true"
+      />
+      {/* Bottom gradient — silver → navy */}
+      <div
+        className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
+        style={{ background: "linear-gradient(0deg, #0A1628 0%, #E8EDF3 100%)", zIndex: 1 }}
+        aria-hidden="true"
+      />
+
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
 
         {/* Section header */}
