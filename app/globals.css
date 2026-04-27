@@ -29,13 +29,13 @@
  *    These mirror the Tailwind config but allow runtime JS access if needed.
  * -------------------------------------------------------------------------- */
 :root {
-  /* Brand colors — primary palette is #076098 blue */
-  --color-navy-950:    #031A28;
-  --color-navy-900:    #043B5D;
-  --color-navy-800:    #054E7A;
-  --color-navy-700:    #076098;
-  --color-navy-600:    #0A7BBB;
-  --color-header:      #1C2B3A;
+  /* Brand colors — primary palette: dark muted navy */
+  --color-navy-950:    #060D1A;
+  --color-navy-900:    #0A1628;
+  --color-navy-800:    #0F2035;
+  --color-navy-700:    #152840;
+  --color-navy-600:    #1C3B5C;
+  --color-header:      #1A2E3E;
   --color-orange:      #F26522;
   --color-orange-light:#FF8C42;
   --color-orange-glow: rgba(242,101,34,0.2);
@@ -68,7 +68,7 @@ html {
 }
 
 body {
-  background-color: var(--color-navy-700); /* #076098 */
+  background-color: var(--color-navy-700); /* #152840 */
   color: #E8EDF5;
   font-family: var(--font-sans);
   font-size: 1rem;

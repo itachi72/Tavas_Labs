@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const HEADER_BG_COLOR = "#C8D8E8";  // fallback / blend-strip start colour (matches tap.jpg tones)
-const PAGE_BG         = "#076098";  // main page blue
+const PAGE_BG         = "#152840";  // main page dark navy
 
 const NAV_LINKS = [
   { label: "Why Us",       href: "#why-us"  },
@@ -83,7 +83,7 @@ export default function Navbar() {
                   href={link.href}
                   className="px-6 py-3 rounded-lg text-sm font-semibold text-white transition-all duration-200
                     hover:brightness-125 hover:-translate-y-0.5 hover:shadow-lg"
-                  style={{ background: "#076098" }}
+                  style={{ background: "#1D4B7A" }}
                 >
                   {link.label}
                 </a>

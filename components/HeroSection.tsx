@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import HeroParticles from "./HeroParticles";
 
 export default function HeroSection() {
   const ref    = useRef<HTMLElement>(null);
@@ -13,10 +14,7 @@ export default function HeroSection() {
       ref={ref}
       className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
     >
-      {/* ── VIDEO BACKGROUND ──────────────────────────────────────────────
-       * Place a semiconductor manufacturing video at /public/hero-video.mp4
-       * Free sources: Pexels, Pixabay (search "semiconductor", "microchip")
-       * ──────────────────────────────────────────────────────────────────── */}
+      {/* ── VIDEO BACKGROUND ── */}
       <video
         autoPlay
         muted
@@ -29,23 +27,52 @@ export default function HeroSection() {
       </video>
 
       {/* ── OVERLAYS ── */}
-      {/* Dark tint so text is always legible over bright video */}
-      <div className="absolute inset-0 bg-black/55" aria-hidden="true" />
-      {/* Gradient fade at top — blends navbar (#1A2E3E) into the video */}
+      {/* Dark tint */}
+      <div className="absolute inset-0 bg-black/60" aria-hidden="true" />
+      {/* Top gradient — blends navbar into video */}
       <div
         className="absolute top-0 left-0 right-0 h-48 pointer-events-none"
         style={{ background: "linear-gradient(180deg, #1A2E3E 0%, transparent 100%)" }}
         aria-hidden="true"
       />
-      {/* Gradient fade at bottom — blends video into the #076098 page */}
+      {/* Bottom gradient — blends video into page */}
       <div
         className="absolute bottom-0 left-0 right-0 h-40 pointer-events-none"
-        style={{ background: "linear-gradient(0deg, #076098 0%, transparent 100%)" }}
+        style={{ background: "linear-gradient(0deg, #152840 0%, transparent 100%)" }}
         aria-hidden="true"
       />
 
+      {/* ── PARTICLE NETWORK ── */}
+      <HeroParticles />
+
+      {/* ── SCAN LINE ── */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden" style={{ zIndex: 3 }} aria-hidden="true">
+        <motion.div
+          className="absolute left-0 right-0 h-px"
+          style={{
+            background: "linear-gradient(90deg, transparent 0%, rgba(100,160,255,0.0) 15%, rgba(242,101,34,0.5) 40%, rgba(100,160,255,0.7) 50%, rgba(242,101,34,0.5) 60%, rgba(100,160,255,0.0) 85%, transparent 100%)",
+            boxShadow: "0 0 10px 2px rgba(100,160,255,0.25)",
+          }}
+          animate={{ y: ["-2%", "102%"] }}
+          transition={{ duration: 5, repeat: Infinity, ease: "linear", repeatDelay: 3 }}
+        />
+      </div>
+
+      {/* ── DATA STREAM LINES ── */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden" style={{ zIndex: 3 }} aria-hidden="true">
+        {[15, 38, 62, 85].map((leftPct, i) => (
+          <motion.div
+            key={i}
+            className="absolute top-0 bottom-0 w-px"
+            style={{ left: `${leftPct}%`, background: "linear-gradient(180deg, transparent 0%, rgba(100,160,255,0.15) 50%, transparent 100%)" }}
+            animate={{ opacity: [0, 0.6, 0] }}
+            transition={{ duration: 3 + i * 0.7, repeat: Infinity, ease: "easeInOut", delay: i * 1.1 }}
+          />
+        ))}
+      </div>
+
       {/* ── CONTENT ── */}
-      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center pt-[120px]">
+      <div className="relative max-w-4xl mx-auto px-6 text-center pt-[120px]" style={{ zIndex: 10 }}>
 
         {/* Headline */}
         <motion.h1
@@ -106,6 +133,7 @@ export default function HeroSection() {
       {/* ── SCROLL INDICATOR ── */}
       <motion.div
         className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 pointer-events-none"
+        style={{ zIndex: 10 }}
         initial={{ opacity: 0 }}
         animate={inView ? { opacity: 1 } : {}}
         transition={{ delay: 1.4 }}
