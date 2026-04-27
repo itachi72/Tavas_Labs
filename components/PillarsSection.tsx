@@ -158,12 +158,13 @@ export default function PillarsSection() {
             Strength · Power · Capability — Our Approach
           </p>
           <h2 className="font-display font-bold text-white mb-5 leading-tight" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
-            Four pillars.{" "}
+            Four pillars.
+            <br />
             <span className="text-gradient-orange">One seamless lifecycle.</span>
           </h2>
           <p className="text-base sm:text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed">
-            Every engagement follows the same rigorous arc — from first principles design
-            through living, self-sustaining intelligent systems.
+            Every engagement follows the same rigorous arc —
+            <br />from first principles design through living, self-sustaining intelligent systems.
           </p>
         </motion.div>
 

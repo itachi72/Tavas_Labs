@@ -24,7 +24,7 @@ import { motion } from "framer-motion";
  * -------------------------------------------------------------------------- */
 const FEATURED = {
   label:   "The TAVAS Difference",
-  title:   "Built at the intersection of engineering depth and AI breadth.",
+  title:   "Built at the intersection\nof engineering depth and AI breadth.",
   body:
     "Most AI firms start from software. We start from physics. Our models are grounded in first-principles engineering, validated through simulation before deployment — giving our clients confidence that the AI does what the equations say it should.",
   stat:    { value: "10×", label: "faster design iteration vs. traditional simulation" },
@@ -105,7 +105,7 @@ export default function WhyTavas() {
 
             {/* Title */}
             <h2
-              className="font-display font-bold text-white mb-6 leading-tight"
+              className="font-display font-bold text-white mb-6 leading-tight whitespace-pre-line"
               style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.6rem)" }}
             >
               {FEATURED.title}

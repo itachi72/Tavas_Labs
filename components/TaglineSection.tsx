@@ -78,7 +78,8 @@ export default function TaglineSection() {
           className="font-display font-bold text-white leading-tight mb-8"
           style={{ fontSize: "clamp(2rem, 5vw, 3.6rem)" }}
         >
-          Civilizational intelligence.{" "}
+          Civilizational intelligence.
+          <br />
           <span className="text-gradient-orange">Ancient wisdom,</span>{" "}
           frontier technology.
         </motion.h2>

@@ -96,8 +96,8 @@ export default function HeroSection() {
           transition={{ duration: 0.6, delay: 0.48 }}
           className="text-base sm:text-lg text-gray-300 leading-relaxed mb-10 max-w-2xl mx-auto"
         >
-          Navigating the frontier of digital transformation with AI-powered
-          digital twins — built for electronics, semiconductors, and deep tech.
+          Navigating the frontier of digital transformation
+          <br />with AI-powered digital twins — built for electronics, semiconductors, and deep tech.
         </motion.p>
 
         {/* CTAs */}

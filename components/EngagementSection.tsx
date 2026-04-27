@@ -95,7 +95,8 @@ export default function EngagementSection() {
             <span className="text-gradient-orange">Outcome-Focused.</span>
           </h2>
           <p className="text-gray-300 text-base max-w-xl mx-auto leading-relaxed">
-            Choose the engagement model that fits your organisation's needs and timeline.
+            Choose the engagement model that fits
+            <br />your organisation's needs and timeline.
           </p>
         </motion.div>
 

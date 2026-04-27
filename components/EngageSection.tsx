@@ -28,7 +28,7 @@ const ENGAGE_CONTENT = {
   eyebrow:  "Engage Us",
   headline: "Ready to begin\nthe conversation?",
   body:
-    "Whether you're a government body, industrial enterprise, or academic institution — we start every engagement with a no-obligation discovery session to map your problem to our methodology.",
+    "Whether you're a government body, industrial enterprise, or academic institution —\nwe start every engagement with a no-obligation discovery session to map your problem to our methodology.",
   cta_1: { label: "Schedule a Discovery Call", href: "mailto:hello@tavaslabs.com" },
   cta_2: { label: "Download Capability Brief", href: "#" },
   form_placeholder: "your@email.com",
@@ -120,7 +120,7 @@ export default function EngageSection() {
             </h2>
 
             {/* Body copy */}
-            <p className="text-base text-gray-400 leading-relaxed mb-10 max-w-md">
+            <p className="text-base text-gray-400 leading-relaxed mb-10 max-w-md whitespace-pre-line">
               {ENGAGE_CONTENT.body}
             </p>
 
