@@ -78,12 +78,12 @@ export default function Navbar() {
           </a>
 
           {/* ── DESKTOP LINKS — plain text, no box ── */}
-          <ul className="hidden md:flex items-center gap-9" role="list">
+          <ul className="hidden md:flex items-center gap-14" role="list">
             {NAV_LINKS.map((link) => (
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className="relative text-[15px] font-semibold text-[#0B1F3A] tracking-wide
+                  className="relative text-[22px] font-semibold text-[#0B1F3A] tracking-widest
                     transition-colors duration-200 hover:text-brand-orange
                     after:absolute after:bottom-[-3px] after:left-0 after:right-0 after:h-[2px]
                     after:rounded-full after:bg-brand-orange after:scale-x-0 after:transition-transform
