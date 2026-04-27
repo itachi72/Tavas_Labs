@@ -114,7 +114,7 @@ export default function EngageSection() {
             {/* Headline — newlines preserved via whitespace-pre-line */}
             <h2
               className="font-display font-bold text-white mb-6 leading-tight whitespace-pre-line"
-              style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}
+              style={{ fontSize: "clamp(1.5rem, 2.8vw, 2.2rem)" }}
             >
               {ENGAGE_CONTENT.headline}
             </h2>

@@ -72,7 +72,7 @@ export default function HeroSection() {
       </div>
 
       {/* ── CONTENT ── */}
-      <div className="relative max-w-4xl mx-auto px-6 text-center pt-[120px]" style={{ zIndex: 10 }}>
+      <div className="relative w-full max-w-6xl mx-auto px-6 text-center pt-[120px]" style={{ zIndex: 10 }}>
 
         {/* Headline */}
         <motion.h1
@@ -80,7 +80,7 @@ export default function HeroSection() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.85, delay: 0.3 }}
           className="font-display font-bold text-white leading-tight mb-6"
-          style={{ fontSize: "clamp(2.4rem, 6vw, 4.5rem)" }}
+          style={{ fontSize: "clamp(1.6rem, 3.5vw, 2.8rem)" }}
         >
           AI and Digital Companion
           <br />

@@ -57,7 +57,7 @@ export default function WhyTavas() {
 
             <h2
               className="font-display font-bold mb-6 leading-tight whitespace-pre-line"
-              style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.6rem)", color: "#0B1F3A" }}
+              style={{ fontSize: "clamp(1.5rem, 2.8vw, 2.2rem)", color: "#0B1F3A" }}
             >
               {FEATURED.title}
             </h2>

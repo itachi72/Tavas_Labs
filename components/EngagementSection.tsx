@@ -89,7 +89,7 @@ export default function EngagementSection() {
           </p>
           <h2
             className="font-display font-bold text-white mb-4"
-            style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}
+            style={{ fontSize: "clamp(1.5rem, 2.8vw, 2.2rem)" }}
           >
             Flexible.{" "}
             <span className="text-gradient-orange">Outcome-Focused.</span>

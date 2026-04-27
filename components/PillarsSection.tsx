@@ -142,7 +142,7 @@ export default function PillarsSection() {
           <p className="text-xs font-mono tracking-[0.25em] uppercase text-brand-orange mb-4">
             Strength · Power · Capability — Our Approach
           </p>
-          <h2 className="font-display font-bold mb-5 leading-tight" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", color: "#0B1F3A" }}>
+          <h2 className="font-display font-bold mb-5 leading-tight" style={{ fontSize: "clamp(1.5rem, 2.8vw, 2.2rem)", color: "#0B1F3A" }}>
             Four pillars.
             <br />
             <span className="text-gradient-orange">One seamless lifecycle.</span>

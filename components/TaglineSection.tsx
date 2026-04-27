@@ -57,7 +57,7 @@ export default function TaglineSection() {
       />
 
       {/* ── CONTENT ── */}
-      <div className="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 text-center">
+      <div className="relative z-10 max-w-5xl mx-auto px-6 lg:px-8 text-center">
 
         {/* Sanskrit eyebrow */}
         <motion.p
@@ -76,7 +76,7 @@ export default function TaglineSection() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.9, delay: 0.2 }}
           className="font-display font-bold text-white leading-tight mb-8"
-          style={{ fontSize: "clamp(2rem, 5vw, 3.6rem)" }}
+          style={{ fontSize: "clamp(1.6rem, 3.5vw, 2.8rem)" }}
         >
           Civilizational intelligence.
           <br />
