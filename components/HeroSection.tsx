@@ -32,7 +32,7 @@ export default function HeroSection() {
       {/* Top gradient — blends navbar into video */}
       <div
         className="absolute top-0 left-0 right-0 h-48 pointer-events-none"
-        style={{ background: "linear-gradient(180deg, #1A2E3E 0%, transparent 100%)" }}
+        style={{ background: "linear-gradient(180deg, rgba(0,0,0,0.55) 0%, transparent 100%)" }}
         aria-hidden="true"
       />
       {/* Bottom gradient — blends video into page */}

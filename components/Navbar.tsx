@@ -35,26 +35,28 @@ export default function Navbar() {
       <header
         className="fixed top-0 left-0 right-0 z-50 transition-shadow duration-500 overflow-hidden"
         style={{
-          backgroundColor: "#1A2E3E",
-          boxShadow: scrolled ? "0 2px 24px rgba(0,0,0,0.5)" : "none",
+          backgroundColor: "#D4E2EE",   // light silver-blue fallback
+          boxShadow: scrolled ? "0 2px 20px rgba(0,0,0,0.25)" : "none",
         }}
       >
-        {/* Circuit board texture — dimmed so the dark header stays readable */}
+        {/* Circuit board — full opacity so silver texture is the primary background */}
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
             backgroundImage: `url(${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/navbar-bg.jpg)`,
             backgroundSize: "cover",
             backgroundPosition: "center",
-            opacity: 0.45,
+            opacity: 0.85,
           }}
           aria-hidden="true"
         />
+        {/* Subtle white wash to brighten and unify the circuit texture */}
+        <div className="absolute inset-0 bg-white/25 pointer-events-none" aria-hidden="true" />
         <nav className="relative max-w-7xl mx-auto px-6 lg:px-8 h-[88px] flex items-center justify-between">
 
           {/* ── LOGO ── */}
           <a href="#" aria-label="TAVAS Labs Home" className="flex-shrink-0 flex flex-col items-start gap-0.5">
-            <span className="italic text-[11px] font-medium tracking-wider text-gray-300 pl-1 leading-none">
+            <span className="italic text-[11px] font-medium tracking-wider text-[#1A3050] pl-1 leading-none">
               Intelligence by Design
             </span>
             {logoError ? (
@@ -75,15 +77,17 @@ export default function Navbar() {
             )}
           </a>
 
-          {/* ── DESKTOP LINKS — blue pill buttons ── */}
-          <ul className="hidden md:flex items-center gap-3" role="list">
+          {/* ── DESKTOP LINKS — plain text, no box ── */}
+          <ul className="hidden md:flex items-center gap-9" role="list">
             {NAV_LINKS.map((link) => (
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className="px-6 py-3 rounded-lg text-sm font-semibold text-white transition-all duration-200
-                    hover:brightness-125 hover:-translate-y-0.5 hover:shadow-lg"
-                  style={{ background: "#1D4B7A" }}
+                  className="relative text-[15px] font-semibold text-[#0B1F3A] tracking-wide
+                    transition-colors duration-200 hover:text-brand-orange
+                    after:absolute after:bottom-[-3px] after:left-0 after:right-0 after:h-[2px]
+                    after:rounded-full after:bg-brand-orange after:scale-x-0 after:transition-transform
+                    after:duration-200 after:origin-left hover:after:scale-x-100"
                 >
                   {link.label}
                 </a>
@@ -107,7 +111,7 @@ export default function Navbar() {
 
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="md:hidden p-2 text-gray-300 hover:text-brand-orange transition-colors"
+              className="md:hidden p-2 text-[#0B1F3A] hover:text-brand-orange transition-colors"
               aria-label={mobileOpen ? "Close menu" : "Open menu"}
               aria-expanded={mobileOpen}
             >
