@@ -39,14 +39,14 @@ export default function Navbar() {
           boxShadow: scrolled ? "0 2px 20px rgba(0,0,0,0.25)" : "none",
         }}
       >
-        {/* Circuit board — full opacity so silver texture is the primary background */}
+        {/* Overlay image behind the header */}
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
-            backgroundImage: `url(${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/navbar-bg.jpg)`,
+            backgroundImage: `url(${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/video/overlay.jpeg)`,
             backgroundSize: "cover",
             backgroundPosition: "center",
-            opacity: 0.85,
+            opacity: 0.7,
           }}
           aria-hidden="true"
         />

@@ -80,7 +80,7 @@ export default function HeroSection() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.85, delay: 0.3 }}
           className="font-display font-bold text-white leading-tight mb-6"
-          style={{ fontSize: "clamp(1.6rem, 3.5vw, 2.8rem)" }}
+          style={{ fontSize: "clamp(2.4rem, 5.25vw, 4.2rem)" }}
         >
           AI and Digital Companion
           <br />
@@ -94,10 +94,10 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.48 }}
-          className="text-base sm:text-lg text-gray-300 leading-relaxed mb-10 max-w-2xl mx-auto"
+          className="text-2xl sm:text-3xl text-gray-300 leading-relaxed mb-10 max-w-2xl mx-auto"
         >
-          Navigating the frontier of digital transformation
-          <br />with AI-powered digital twins — built for electronics, semiconductors, and deep tech.
+          Navigating the frontier of digital transformation with
+          <br /> AI-powered digital twins — built for electronics, semiconductors, and deep tech.
         </motion.p>
 
         {/* CTAs */}
@@ -109,8 +109,8 @@ export default function HeroSection() {
         >
           <a
             href="#contact"
-            className="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-lg
-              bg-brand-orange text-white font-semibold text-sm sm:text-base
+            className="inline-flex items-center justify-center gap-2.5 px-12 py-5 rounded-lg
+              bg-brand-orange text-white font-semibold text-base sm:text-xl
               hover:bg-brand-orange-light transition-all duration-300
               hover:shadow-[0_0_30px_rgba(242,101,34,0.5)] hover:-translate-y-0.5"
           >
@@ -121,8 +121,8 @@ export default function HeroSection() {
           </a>
           <a
             href="#pillars"
-            className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-lg
-              border border-white/30 text-gray-200 font-semibold text-sm sm:text-base
+            className="inline-flex items-center justify-center gap-2 px-12 py-5 rounded-lg
+              border border-white/30 text-gray-200 font-semibold text-base sm:text-xl
               hover:border-white/60 hover:text-white transition-all duration-300 hover:-translate-y-0.5"
           >
             Explore Capabilities
