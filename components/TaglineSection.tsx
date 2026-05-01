@@ -106,9 +106,9 @@ export default function TaglineSection() {
           className="text-xl sm:text-3xl text-gray-300 leading-relaxed max-w-2xl mx-auto"
           style={{ textShadow: "0 0 40px rgba(100,120,200,0.3)" }}
         >
-          <span className="text-white font-semibold">TAVAS (तवस्)</span> — from the
-          Rigvedic expression of strength, power, and capability. We help global organizations {" "}
-          <span className="text-gradient-orange font-medium"> design, simulate, and optimize solutions that endure. </span>
+          <span className="text-white font-semibold">TAVAS (तवस्)</span> — from the Rigvedic expression of strength, power, and capability.
+          <br />
+          We help global organizations <span className="text-gradient-orange font-medium">design, simulate, and optimize solutions that endure.</span>
         </motion.p>
       </div>
 

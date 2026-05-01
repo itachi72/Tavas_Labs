@@ -26,19 +26,19 @@ const PILLARS = [
     accentColor: "#F26522", bgAccent: "rgba(242,101,34,0.12)", borderColor: "rgba(242,101,34,0.35)",
   },
   {
-    number: "02", icon: <SimulateIcon />, title: "Simulate", tagline: "Digital Twin Intelligence",
+    number: "02", icon: <SimulateIcon />, title: "Simulation", tagline: "Digital Twin Intelligence",
     description: "High-fidelity digital twins that mirror the physical world in real time — enabling engineers and operators to test, predict, and understand system behaviour without risk.",
     capabilities: ["Multi-physics simulation engines", "Real-time digital twin synchronisation", "Scenario stress-testing & failure modes", "Hardware-in-the-loop (HIL) integration"],
     accentColor: "#60A5FA", bgAccent: "rgba(96,165,250,0.10)", borderColor: "rgba(96,165,250,0.30)",
   },
   {
-    number: "03", icon: <OptimiseIcon />, title: "Optimise", tagline: "Intelligent Efficiency",
+    number: "03", icon: <OptimiseIcon />, title: "Optimisation", tagline: "Intelligent Efficiency",
     description: "Continuous ML-powered optimisation loops that read system telemetry and autonomously tune parameters to maximise performance, reduce cost, and minimise waste.",
     capabilities: ["Reinforcement learning control loops", "Multi-objective Pareto optimisation", "Predictive maintenance scheduling", "Energy and resource efficiency tuning"],
     accentColor: "#F26522", bgAccent: "rgba(242,101,34,0.12)", borderColor: "rgba(242,101,34,0.35)",
   },
   {
-    number: "04", icon: <SustainIcon />, title: "Sustain", tagline: "Operational Longevity",
+    number: "04", icon: <SustainIcon />, title: "Sustainability", tagline: "Operational Longevity",
     description: "Long-horizon operational intelligence that ensures systems evolve with changing demands, regulatory environments, and technology landscapes — without starting over.",
     capabilities: ["Adaptive model retraining pipelines", "Regulatory & compliance monitoring", "Knowledge capture & institutional memory", "Lifecycle management dashboards"],
     accentColor: "#60A5FA", bgAccent: "rgba(96,165,250,0.10)", borderColor: "rgba(96,165,250,0.30)",
@@ -70,27 +70,28 @@ function PillarCard({ pillar, index }: { pillar: typeof PILLARS[number]; index: 
         {pillar.number}
       </span>
 
-      {/* Icon */}
-      <div
-        className="w-14 h-14 rounded-xl flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110"
-        style={{ background: pillar.bgAccent, border: `1px solid ${pillar.borderColor}`, color: pillar.accentColor }}
-      >
-        {pillar.icon}
+      <div className="flex items-center gap-4 mb-5">
+        <div
+          className="w-16 h-16 rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110"
+          style={{ background: pillar.bgAccent, border: `1px solid ${pillar.borderColor}`, color: pillar.accentColor }}
+        >
+          {pillar.icon}
+        </div>
+        <div className="min-w-0">
+          <h3 className="font-display font-bold text-4xl text-white leading-tight">{pillar.title}</h3>
+          <p className="text-sm sm:text-base font-mono tracking-widest uppercase mt-1" style={{ color: pillar.accentColor }}>
+            {pillar.tagline}
+          </p>
+        </div>
       </div>
 
-      {/* Title + tagline */}
-      <h3 className="font-display font-bold text-xl mb-1 text-white">{pillar.title}</h3>
-      <p className="text-xs font-mono tracking-widest uppercase mb-4" style={{ color: pillar.accentColor }}>
-        {pillar.tagline}
-      </p>
-
       {/* Description */}
-      <p className="text-sm leading-relaxed mb-6 text-gray-300">{pillar.description}</p>
+      <p className="text-base leading-relaxed mb-6 text-gray-300">{pillar.description}</p>
 
       {/* Capabilities */}
-      <ul className="space-y-2 mt-auto" role="list">
+      <ul className="space-y-3 mt-auto" role="list">
         {pillar.capabilities.map((cap) => (
-          <li key={cap} className="flex items-start gap-2.5 text-sm text-gray-300">
+          <li key={cap} className="flex items-start gap-2.5 text-base text-gray-300">
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="mt-0.5 flex-shrink-0" aria-hidden="true">
               <path d="M4 3l4 4-4 4" stroke={pillar.accentColor} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
@@ -151,18 +152,18 @@ export default function PillarsSection() {
           transition={{ duration: 0.7 }}
           className="text-center mb-16"
         >
-          <p className="text-base mb-1 tracking-wider" style={{ fontFamily: "'Cinzel', Georgia, serif", color: GOLD }}>
+          <p className="text-xl mb-1 tracking-wider" style={{ fontFamily: "'Cinzel', Georgia, serif", color: GOLD }}>
             तवस् · Tavas
           </p>
-          <p className="text-xs font-mono tracking-[0.25em] uppercase text-brand-orange mb-4">
+          <p className="text-sm font-mono tracking-[0.25em] uppercase text-brand-orange mb-4">
             Strength · Power · Capability — Our Approach
           </p>
-          <h2 className="font-display font-bold text-white mb-5 leading-tight" style={{ fontSize: "clamp(1.5rem, 2.8vw, 2.2rem)" }}>
+          <h2 className="font-display font-bold text-white mb-5 leading-tight" style={{ fontSize: "clamp(2.25rem, 4.2vw, 3.3rem)" }}>
             Four pillars.
             <br />
             <span className="text-gradient-orange">One seamless lifecycle.</span>
           </h2>
-          <p className="text-base sm:text-lg max-w-2xl mx-auto leading-relaxed text-gray-300">
+          <p className="text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed text-gray-300">
             Every engagement follows the same rigorous arc —
             <br />from first principles design through living, self-sustaining intelligent systems.
           </p>
