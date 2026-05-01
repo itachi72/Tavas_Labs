@@ -43,15 +43,15 @@ export default function Navbar() {
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
-            backgroundImage: `url(${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/video/overlay.jpeg)`,
+            backgroundImage: `url(${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/overlay.jpeg)`,
             backgroundSize: "cover",
             backgroundPosition: "center",
-            opacity: 0.7,
+            opacity: 0.9,
           }}
           aria-hidden="true"
         />
-        {/* Subtle white wash to brighten and unify the circuit texture */}
-        <div className="absolute inset-0 bg-white/25 pointer-events-none" aria-hidden="true" />
+        {/* Subtle white wash to brighten and unify the overlay */}
+        <div className="absolute inset-0 bg-white/10 pointer-events-none" aria-hidden="true" />
         <nav className="relative max-w-7xl mx-auto px-6 lg:px-8 h-[88px] flex items-center justify-between">
 
           {/* ── LOGO ── */}

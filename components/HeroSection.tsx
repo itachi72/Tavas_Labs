@@ -23,7 +23,7 @@ export default function HeroSection() {
         className="absolute inset-0 w-full h-full object-cover"
         aria-hidden="true"
       >
-        <source src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/hero-video.mp4`} type="video/mp4" />
+        <source src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/video/circuit.mp4`} type="video/mp4" />
       </video>
 
       {/* ── OVERLAYS ── */}
@@ -79,13 +79,13 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.85, delay: 0.3 }}
-          className="font-display font-bold text-white leading-tight mb-6"
-          style={{ fontSize: "clamp(2.4rem, 5.25vw, 4.2rem)" }}
+          className="font-display font-bold text-white leading-tight mb-12"
+          style={{ fontSize: "clamp(2.16rem, 4.725vw, 3.78rem)" }}
         >
-          AI and Digital Companion
+          AI and Digital Companion to
           <br />
           <span className="text-gradient-orange">
-            to Governments, Industries, and Academia
+            Governments, Industries, and Academia
           </span>
         </motion.h1>
 
@@ -96,8 +96,7 @@ export default function HeroSection() {
           transition={{ duration: 0.6, delay: 0.48 }}
           className="text-2xl sm:text-3xl text-gray-300 leading-relaxed mb-10 max-w-2xl mx-auto"
         >
-          Navigating the frontier of digital transformation with
-          <br /> AI-powered digital twins — built for electronics, semiconductors, and deep tech.
+          Navigating the frontier of digital transformation with AI-powered digital twins — built for electronics, semiconductors, and deep tech.
         </motion.p>
 
         {/* CTAs */}
