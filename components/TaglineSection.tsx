@@ -64,7 +64,7 @@ export default function TaglineSection() {
           initial={{ opacity: 0, y: 16 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="text-3xl font-mono tracking-[0.35em] uppercase mb-6"
+          className="text-5xl font-mono tracking-[0.35em] uppercase mb-6"
           style={{ color: "rgba(180,160,100,0.85)" }}
         >
           तवस्
@@ -76,7 +76,7 @@ export default function TaglineSection() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.9, delay: 0.2 }}
           className="font-display font-bold text-white leading-tight mb-8"
-          style={{ fontSize: "clamp(1.6rem, 3.5vw, 2.8rem)" }}
+          style={{ fontSize: "clamp(2.9rem, 6.3vw, 5rem)" }}
         >
           Global Thinking.
           <br />
@@ -103,7 +103,7 @@ export default function TaglineSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="text-xl sm:text-3xl text-gray-300 leading-relaxed max-w-2xl mx-auto"
+          className="text-2xl sm:text-5xl text-gray-300 leading-relaxed max-w-2xl mx-auto"
           style={{ textShadow: "0 0 40px rgba(100,120,200,0.3)" }}
         >
           <span className="text-white font-semibold">TAVAS (तवस्)</span> — from the Rigvedic expression of strength, power, and capability.

@@ -184,9 +184,9 @@ export default function PillarsSection() {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="text-center mt-14"
         >
-          <a href="#contact" className="inline-flex items-center gap-2 text-sm font-semibold text-brand-orange hover:text-brand-orange-light transition-colors group">
+          <a href="#contact" className="inline-flex items-center gap-3 text-4xl font-semibold text-brand-orange hover:text-brand-orange-light transition-colors group">
             See our engagement models
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="transition-transform group-hover:translate-x-1" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 16 16" fill="none" className="transition-transform group-hover:translate-x-1" aria-hidden="true">
               <path d="M1 8h14M8 1l7 7-7 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </a>

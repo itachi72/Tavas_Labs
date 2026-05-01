@@ -46,12 +46,12 @@ export default function Navbar() {
             backgroundImage: `url(${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/overlay.jpeg)`,
             backgroundSize: "cover",
             backgroundPosition: "center",
-            opacity: 0.9,
+            opacity: 1,
           }}
           aria-hidden="true"
         />
-        {/* Subtle white wash to brighten and unify the overlay */}
-        <div className="absolute inset-0 bg-white/10 pointer-events-none" aria-hidden="true" />
+        {/* Very light softening layer so the menu text remains readable */}
+        <div className="absolute inset-0 bg-white/5 pointer-events-none" aria-hidden="true" />
         <nav className="relative max-w-7xl mx-auto px-6 lg:px-8 h-[88px] flex items-center justify-between">
 
           {/* ── LOGO ── */}
