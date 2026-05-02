@@ -20,27 +20,27 @@ function SustainIcon() {
 
 const PILLARS = [
   {
-    number: "01", icon: <DesignIcon />, title: "Design", tagline: "Concept to Blueprint",
-    description: "AI-assisted system architecture and conceptual design that transforms requirements into precise engineering blueprints — before a single prototype is built.",
-    capabilities: ["Requirements engineering & gap analysis", "AI-assisted architecture generation", "Cross-domain constraint resolution", "Rapid design-space exploration"],
+    number: "01", icon: <DesignIcon />, title: "Design", tagline: "Blueprints for certainty",
+    description: "We capture complexity early with systems-first design, converting strategy, constraints, and regulation into resilient digital architectures.",
+    capabilities: ["Systems engineering for electronics and mobility", "Requirement traceability and risk mapping", "Architecture decomposition and interface definition", "Cross-disciplinary design validation"],
     accentColor: "#F26522", bgAccent: "rgba(242,101,34,0.12)", borderColor: "rgba(242,101,34,0.35)",
   },
   {
-    number: "02", icon: <SimulateIcon />, title: "Simulation", tagline: "Digital Twin Intelligence",
-    description: "High-fidelity digital twins that mirror the physical world in real time — enabling engineers and operators to test, predict, and understand system behaviour without risk.",
-    capabilities: ["Multi-physics simulation engines", "Real-time digital twin synchronisation", "Scenario stress-testing & failure modes", "Hardware-in-the-loop (HIL) integration"],
+    number: "02", icon: <SimulateIcon />, title: "Simulate", tagline: "Evidence before execution",
+    description: "Our DSOS simulations turn ideas into operating realities, validating behavior through digital twins, hybrid models, and scenario-driven testing.",
+    capabilities: ["Multi-domain digital twin models", "Performance prediction and anomaly detection", "What-if scenario exploration", "Hardware-in-the-loop and physics-aware simulation"],
     accentColor: "#60A5FA", bgAccent: "rgba(96,165,250,0.10)", borderColor: "rgba(96,165,250,0.30)",
   },
   {
-    number: "03", icon: <OptimiseIcon />, title: "Optimisation", tagline: "Intelligent Efficiency",
-    description: "Continuous ML-powered optimisation loops that read system telemetry and autonomously tune parameters to maximise performance, reduce cost, and minimise waste.",
-    capabilities: ["Reinforcement learning control loops", "Multi-objective Pareto optimisation", "Predictive maintenance scheduling", "Energy and resource efficiency tuning"],
+    number: "03", icon: <OptimiseIcon />, title: "Optimise", tagline: "Smarter, faster, leaner",
+    description: "We apply AI and optimization science to tune systems for cost, performance, reliability and sustainability across changing conditions.",
+    capabilities: ["Multi-objective decision optimisation", "Predictive control and tuning", "Operational efficiency improvement", "Adaptive resource and cost management"],
     accentColor: "#F26522", bgAccent: "rgba(242,101,34,0.12)", borderColor: "rgba(242,101,34,0.35)",
   },
   {
-    number: "04", icon: <SustainIcon />, title: "Sustainability", tagline: "Operational Longevity",
-    description: "Long-horizon operational intelligence that ensures systems evolve with changing demands, regulatory environments, and technology landscapes — without starting over.",
-    capabilities: ["Adaptive model retraining pipelines", "Regulatory & compliance monitoring", "Knowledge capture & institutional memory", "Lifecycle management dashboards"],
+    number: "04", icon: <SustainIcon />, title: "Sustain", tagline: "Built to endure",
+    description: "Our DSOS approach embeds resilience, knowledge continuity and governance so systems stay effective long after launch.",
+    capabilities: ["Continuous performance monitoring", "Governance and compliance readiness", "Model refresh and lifecycle adaptation", "Institutional knowledge capture"],
     accentColor: "#60A5FA", bgAccent: "rgba(96,165,250,0.10)", borderColor: "rgba(96,165,250,0.30)",
   },
 ];
@@ -153,19 +153,18 @@ export default function PillarsSection() {
           className="text-center mb-16"
         >
           <p className="text-xl mb-1 tracking-wider" style={{ fontFamily: "'Cinzel', Georgia, serif", color: GOLD }}>
-            तवस् · Tavas
+            DSOS · Design · Simulate · Optimise · Sustain
           </p>
           <p className="text-sm font-mono tracking-[0.25em] uppercase text-brand-orange mb-4">
-            Strength · Power · Capability — Our Approach
+            A structured framework for systems, products and operations
           </p>
           <h2 className="font-display font-bold text-white mb-5 leading-tight" style={{ fontSize: "clamp(2.25rem, 4.2vw, 3.3rem)" }}>
-            Four pillars.
+            Four pillars of digital systems success.
             <br />
-            <span className="text-gradient-orange">One seamless lifecycle.</span>
+            <span className="text-gradient-orange">From architecture to enduring operation.</span>
           </h2>
           <p className="text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed text-gray-300">
-            Every engagement follows the same rigorous arc —
-            <br />from first principles design through living, self-sustaining intelligent systems.
+            The DSOS framework guides every phase of engagement, turning ambiguity into validated choices and delivering systems that can adapt and thrive.
           </p>
         </motion.div>
 
