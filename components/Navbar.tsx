@@ -55,25 +55,42 @@ export default function Navbar() {
         <nav className="relative max-w-7xl mx-auto px-6 lg:px-8 h-[88px] flex items-center justify-between">
 
           {/* ── LOGO ── */}
-          <a href="#" aria-label="TAVAS Labs Home" className="flex-shrink-0 flex flex-col items-start gap-0.5">
-            <span className="italic text-[11px] font-medium tracking-wider text-[#1A3050] pl-1 leading-none">
-              Intelligence by Design
-            </span>
+          <a href="#" aria-label="TAVAS Labs Home" className="flex-shrink-0 flex flex-col items-start">
             {logoError ? (
-              /* Text fallback if image is missing */
-              <div className="flex items-baseline gap-1">
+              <div className="flex items-baseline gap-1 h-[65px] justify-center">
                 <span className="font-display font-bold text-lg tracking-widest text-white">TAVAS</span>
                 <span className="text-brand-orange font-bold text-lg">·</span>
                 <span className="font-display font-light text-lg tracking-widest text-gray-300">LABS</span>
               </div>
             ) : (
-              <img
-                src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/tavas-logo.png`}
-                alt="TAVAS Labs"
-                className="h-14 w-auto"
-                style={{ filter: "brightness(1.25)" }}
-                onError={() => setLogoError(true)}
-              />
+              <>
+                {/* Logo scaled 1.5× (84 px tall), bottom strip clipped to hide "ELECTRONICS…" */}
+                <div style={{ height: '65px', overflow: 'hidden', flexShrink: 0 }}>
+                  <img
+                    src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/tavas-logo.png`}
+                    alt="TAVAS Labs"
+                    style={{ height: '84px', width: 'auto', display: 'block', filter: 'brightness(1.25)' }}
+                    onError={() => setLogoError(true)}
+                  />
+                </div>
+                {/* "Intelligence by Design" — starts at T, ends at S, aligned below the globe */}
+                <div
+                  className="flex justify-between"
+                  style={{
+                    width: '62%',
+                    marginTop: '3px',
+                    fontSize: '8px',
+                    fontStyle: 'italic',
+                    fontWeight: 600,
+                    color: '#1A3050',
+                    letterSpacing: '0.01em',
+                  }}
+                >
+                  <span>Intelligence</span>
+                  <span>by</span>
+                  <span>Design</span>
+                </div>
+              </>
             )}
           </a>
 

@@ -102,7 +102,7 @@ export default function TaglineSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="text-2xl sm:text-5xl text-gray-300 leading-relaxed max-w-2xl mx-auto"
+          className="text-base sm:text-xl text-gray-300 leading-relaxed max-w-4xl mx-auto"
           style={{ textShadow: "0 0 40px rgba(100,120,200,0.3)" }}
         >
           <span className="text-white font-semibold">TAVAS (तवस्)</span> — from the Rigvedic expression of strength, power, and capability.
