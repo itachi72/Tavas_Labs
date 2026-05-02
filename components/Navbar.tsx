@@ -43,7 +43,7 @@ export default function Navbar() {
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
-            backgroundImage: `url(${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/overlay.jpeg)`,
+            backgroundImage: `url(${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/video/overlay.jpg)`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             opacity: 1,

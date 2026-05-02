@@ -31,7 +31,7 @@ export default function WhyTavas() {
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          backgroundImage: `url(${BASE}/navbar-bg.jpg)`,
+          backgroundImage: `url(${BASE}/video/overlay.jpg)`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           opacity: 0.22,

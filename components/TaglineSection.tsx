@@ -1,17 +1,12 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import StarField from "./StarField";
 
 export default function TaglineSection() {
-  const ref    = useRef<HTMLElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-80px" });
-
   return (
     <section
       id="tagline"
-      ref={ref}
       className="relative py-32 sm:py-40 overflow-hidden"
       style={{ background: "#03060F" }}   // deep space black
     >
@@ -62,7 +57,8 @@ export default function TaglineSection() {
         {/* Sanskrit eyebrow */}
         <motion.p
           initial={{ opacity: 0, y: 16 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.1 }}
           className="text-5xl font-mono tracking-[0.35em] uppercase mb-6"
           style={{ color: "rgba(180,160,100,0.85)" }}
@@ -73,7 +69,8 @@ export default function TaglineSection() {
         {/* Main headline */}
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.9, delay: 0.2 }}
           className="font-display font-bold text-white leading-tight mb-8"
           style={{ fontSize: "clamp(2.9rem, 6.3vw, 5rem)" }}
@@ -86,7 +83,8 @@ export default function TaglineSection() {
         {/* Divider star */}
         <motion.div
           initial={{ opacity: 0, scaleX: 0 }}
-          animate={inView ? { opacity: 1, scaleX: 1 } : {}}
+          whileInView={{ opacity: 1, scaleX: 1 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.4 }}
           className="flex items-center justify-center gap-4 mb-8"
           aria-hidden="true"
@@ -101,7 +99,8 @@ export default function TaglineSection() {
         {/* Body */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.5 }}
           className="text-2xl sm:text-5xl text-gray-300 leading-relaxed max-w-2xl mx-auto"
           style={{ textShadow: "0 0 40px rgba(100,120,200,0.3)" }}
