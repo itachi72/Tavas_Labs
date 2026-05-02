@@ -5,19 +5,19 @@ import { motion } from "framer-motion";
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 const FEATURED = {
-  label:   "The TAVAS Difference",
-  title:   "Built at the intersection\nof engineering depth and AI breadth.",
-  body:    "Most AI firms start from software. We start from physics. Our models are grounded in first-principles engineering, validated through simulation before deployment — giving our clients confidence that the AI does what the equations say it should.",
-  stat:    { value: "10×", label: "faster design iteration vs. traditional simulation" },
+  label:   "Our Approach",
+  title:   "DSOS: Design. Simulate. Optimise. Sustain.",
+  body:    "We apply a structured DSOS framework to translate complex systems requirements into validated solutions. Every decision is grounded in engineering physics, tested with digital twins, optimised for performance, and designed to be sustained over the long term.",
+  stat:    { value: "4", label: "pillars in a single resilient systems lifecycle" },
 };
 
 const DIFFERENTIATORS = [
-  { icon: "⊛", title: "Domain-first AI",          desc: "Our AI is trained on engineering physics, not just generic text data — making it actually useful for technical problems." },
-  { icon: "⊕", title: "Full-lifecycle coverage",  desc: "We don't parachute in for a pilot and leave. We stay through Design, Simulate, Optimise, and Sustain." },
-  { icon: "⊗", title: "Government-grade rigour",  desc: "Methodologies built to satisfy regulatory scrutiny — DRDO, ISRO, and national lab standards." },
-  { icon: "⊘", title: "India-first perspective",  desc: "Understanding of the unique constraints, talent pool, and policy landscape that global firms miss." },
-  { icon: "⊙", title: "Sovereign data",           desc: "On-premise deployment options ensure your sensitive data never leaves your infrastructure." },
-  { icon: "⊚", title: "Academic bridge",          desc: "Active research partnerships with leading IITs and international universities, keeping our models at the frontier." },
+  { icon: "⊛", title: "DSOS-first delivery",             desc: "Our work is shaped by the full DSOS lifecycle: design, simulation, optimisation and sustainment — not isolated pilots." },
+  { icon: "⊕", title: "Physics-led intelligence",        desc: "We build models from first principles and validate them with digital twins before they influence mission-critical decisions." },
+  { icon: "⊗", title: "Simulation-grade certainty",      desc: "Digital twin scenarios reveal risk early, so decisions are faster, safer and more predictable." },
+  { icon: "⊘", title: "Purpose-built for India",         desc: "We blend global engineering standards with local sovereignty, policy, and infrastructure realities." },
+  { icon: "⊙", title: "Operational continuity",         desc: "Sustainment is a core design goal: models, data, and governance are built to evolve alongside changing systems." },
+  { icon: "⊚", title: "Research-backed delivery",       desc: "Partnerships with premier research institutions keep our techniques practical, frontier-class, and evidence-based." },
 ];
 
 export default function WhyTavas() {
