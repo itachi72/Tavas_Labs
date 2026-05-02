@@ -114,7 +114,7 @@ export default function EngagementSection() {
               }`}
               style={{
                 background: model.featured
-                  ? "linear-gradient(145deg, #0F2035 0%, #0A1628 100%)"
+                  ? "linear-gradient(145deg, #1B2E48 0%, #14243A 100%)"
                   : "rgba(255,255,255,0.05)",
                 border: model.featured ? "1px solid rgba(201,168,76,0.4)" : "1px solid rgba(255,255,255,0.12)",
                 boxShadow: model.featured ? "0 0 40px rgba(201,168,76,0.12)" : "none",

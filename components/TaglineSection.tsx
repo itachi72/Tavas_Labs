@@ -8,7 +8,7 @@ export default function TaglineSection() {
     <section
       id="tagline"
       className="relative py-32 sm:py-40 overflow-hidden"
-      style={{ background: "#03060F" }}   // deep space black
+      style={{ background: "#080F1E" }}   // deep space black
     >
       {/* ── STARFIELD ── */}
       <StarField />

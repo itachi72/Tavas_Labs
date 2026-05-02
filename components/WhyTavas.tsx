@@ -43,13 +43,13 @@ export default function WhyTavas() {
       {/* Top gradient — navy → silver */}
       <div
         className="absolute top-0 left-0 right-0 h-32 pointer-events-none"
-        style={{ background: "linear-gradient(180deg, #0A1628 0%, #E8EDF3 100%)", zIndex: 1 }}
+        style={{ background: "linear-gradient(180deg, #14243A 0%, #E8EDF3 100%)", zIndex: 1 }}
         aria-hidden="true"
       />
       {/* Bottom gradient — silver → navy */}
       <div
         className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
-        style={{ background: "linear-gradient(0deg, #0F2035 0%, #E8EDF3 100%)", zIndex: 1 }}
+        style={{ background: "linear-gradient(0deg, #1B2E48 0%, #E8EDF3 100%)", zIndex: 1 }}
         aria-hidden="true"
       />
 
