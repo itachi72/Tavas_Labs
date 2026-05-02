@@ -7,6 +7,7 @@ const HEADER_BG_COLOR = "#C8D8E8";  // fallback / blend-strip start colour (matc
 const PAGE_BG         = "#213855";  // main page dark navy
 
 const NAV_LINKS = [
+  { label: "Content",      href: "/content" },
   { label: "Why Us",       href: "#why-us"  },
   { label: "Our Services", href: "#pillars" },
   { label: "Our Clients",  href: "#clients" },
@@ -43,7 +44,7 @@ export default function Navbar() {
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
-            backgroundImage: `url(${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/video/overlay.jpg)`,
+            backgroundImage: `url(${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/overlay.jpg)`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             opacity: 1,
@@ -55,17 +56,17 @@ export default function Navbar() {
         <nav className="relative max-w-7xl mx-auto px-6 lg:px-8 h-[88px] flex items-center justify-between">
 
           {/* ── LOGO ── */}
-          <a href="#" aria-label="TAVAS Labs Home" className="flex-shrink-0 flex flex-col items-start">
+          <a href="#" aria-label="TAVAS Labs Home" className="flex-shrink-0 relative inline-block">
             {logoError ? (
-              <div className="flex items-baseline gap-1 h-[65px] justify-center">
+              <div className="flex items-center gap-1 h-[65px]">
                 <span className="font-display font-bold text-lg tracking-widest text-white">TAVAS</span>
                 <span className="text-brand-orange font-bold text-lg">·</span>
                 <span className="font-display font-light text-lg tracking-widest text-gray-300">LABS</span>
               </div>
             ) : (
               <>
-                {/* Logo scaled 1.5× (84 px tall), bottom strip clipped to hide "ELECTRONICS…" */}
-                <div style={{ height: '65px', overflow: 'hidden', flexShrink: 0 }}>
+                {/* Logo scaled 1.5× (84 px tall); bottom ~23% clipped to hide "ELECTRONICS…" */}
+                <div style={{ height: '65px', overflow: 'hidden' }}>
                   <img
                     src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/tavas-logo.png`}
                     alt="TAVAS Labs"
@@ -73,17 +74,22 @@ export default function Navbar() {
                     onError={() => setLogoError(true)}
                   />
                 </div>
-                {/* "Intelligence by Design" — starts at T, ends at S, aligned below the globe */}
+                {/* "Intelligence by Design" overlaid on TAVAS letters,
+                    horizontally T → S (left 0 → ~63% of image width),
+                    vertically centred with the globe (~53% of the 65 px clip height) */}
                 <div
-                  className="flex justify-between"
+                  className="absolute flex justify-between pointer-events-none select-none"
                   style={{
-                    width: '62%',
-                    marginTop: '3px',
+                    top: '53%',
+                    transform: 'translateY(-50%)',
+                    left: '2px',
+                    right: '37%',
                     fontSize: '8px',
                     fontStyle: 'italic',
-                    fontWeight: 600,
-                    color: '#1A3050',
-                    letterSpacing: '0.01em',
+                    fontWeight: 700,
+                    color: 'rgba(255,255,255,0.92)',
+                    textShadow: '0 1px 4px rgba(0,0,0,0.85)',
+                    letterSpacing: '0.02em',
                   }}
                 >
                   <span>Intelligence</span>
