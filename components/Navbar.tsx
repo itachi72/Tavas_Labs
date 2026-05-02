@@ -7,11 +7,11 @@ const HEADER_BG_COLOR = "#C8D8E8";  // fallback / blend-strip start colour (matc
 const PAGE_BG         = "#2C4A6A";  // main page dark navy
 
 const NAV_LINKS = [
-  { label: "Content",      href: "/content" },
-  { label: "Why Us",       href: "#why-us"  },
-  { label: "Our Services", href: "#pillars" },
-  { label: "Our Clients",  href: "#clients" },
-  { label: "Contact Us",   href: "#contact" },
+  { label: "About Us",    href: "#about"   },
+  { label: "Why Us",      href: "#why-us"  },
+  { label: "NEXUS",       href: "/nexus"   },
+  { label: "Our Clients", href: "#clients" },
+  { label: "Contact Us",  href: "#contact" },
 ];
 
 export default function Navbar() {
