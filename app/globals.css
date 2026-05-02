@@ -30,12 +30,12 @@
  * -------------------------------------------------------------------------- */
 :root {
   /* Brand colors — primary palette: dark muted navy */
-  --color-navy-950:    #0E1A2E;
-  --color-navy-900:    #14243A;
-  --color-navy-800:    #1B2E48;
-  --color-navy-700:    #213855;
-  --color-navy-600:    #28506E;
-  --color-header:      #243D52;
+  --color-navy-950:    #192840;
+  --color-navy-900:    #1F3452;
+  --color-navy-800:    #263F5F;
+  --color-navy-700:    #2C4A6A;
+  --color-navy-600:    #336480;
+  --color-header:      #2F5068;
   --color-orange:      #F26522;
   --color-orange-light:#FF8C42;
   --color-orange-glow: rgba(242,101,34,0.2);

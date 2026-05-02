@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const HEADER_BG_COLOR = "#C8D8E8";  // fallback / blend-strip start colour (matches tap.jpg tones)
-const PAGE_BG         = "#213855";  // main page dark navy
+const PAGE_BG         = "#2C4A6A";  // main page dark navy
 
 const NAV_LINKS = [
   { label: "Content",      href: "/content" },
@@ -54,7 +54,7 @@ export default function Navbar() {
         />
         {/* Very light softening layer so the menu text remains readable */}
         <div className="absolute inset-0 bg-white/5 pointer-events-none" aria-hidden="true" />
-        <nav className="relative max-w-7xl mx-auto px-6 lg:px-8 h-[88px] flex items-center justify-between">
+        <nav className="relative max-w-7xl mx-auto pl-2 pr-6 lg:pl-3 lg:pr-8 h-[88px] flex items-center justify-between">
 
           {/* ── LOGO ── */}
           <a href="#" aria-label="TAVAS Labs Home" className="flex-shrink-0 flex flex-col items-start gap-0.5">
@@ -66,22 +66,21 @@ export default function Navbar() {
               </div>
             ) : (
               <>
-                {/* "Intelligence by Design" — above TAVAS, spanning T → S (~62% of logo width) */}
-                <div
-                  className="flex justify-between"
+                {/* "Intelligence by Design" — above TAVAS, from T to just before the globe */}
+                <span
                   style={{
-                    width: '62%',
-                    fontSize: '9px',
+                    width: '78%',
+                    display: 'block',
+                    fontSize: '9.5px',
                     fontStyle: 'italic',
-                    fontWeight: 700,
+                    fontWeight: 600,
                     color: '#1A3050',
-                    letterSpacing: '0.02em',
+                    letterSpacing: '0.01em',
+                    whiteSpace: 'nowrap',
                   }}
                 >
-                  <span>Intelligence</span>
-                  <span>by</span>
-                  <span>Design</span>
-                </div>
+                  Intelligence by Design
+                </span>
 
                 {/* Logo scaled 1.5× (84px tall); bottom strip clipped to hide "ELECTRONICS…" */}
                 <div style={{ height: '65px', overflow: 'hidden' }}>
@@ -151,7 +150,7 @@ export default function Navbar() {
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
-              style={{ background: "#243D52", borderTop: "1px solid rgba(255,255,255,0.08)" }}
+              style={{ background: "#2F5068", borderTop: "1px solid rgba(255,255,255,0.08)" }}
             >
               <ul className="px-6 py-4 flex flex-col gap-1" role="list">
                 {NAV_LINKS.map((link) => (

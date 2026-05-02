@@ -38,7 +38,7 @@ export default function HeroSection() {
       {/* Bottom gradient — blends video into page */}
       <div
         className="absolute bottom-0 left-0 right-0 h-40 pointer-events-none"
-        style={{ background: "linear-gradient(0deg, #213855 0%, transparent 100%)" }}
+        style={{ background: "linear-gradient(0deg, #2C4A6A 0%, transparent 100%)" }}
         aria-hidden="true"
       />
 

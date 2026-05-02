@@ -112,7 +112,7 @@ function PillarCard({ pillar, index }: { pillar: typeof PILLARS[number]; index: 
 
 export default function PillarsSection() {
   return (
-    <section id="pillars" className="relative py-24 sm:py-32 overflow-hidden" style={{ background: "#080F1E" }}>
+    <section id="pillars" className="relative py-24 sm:py-32 overflow-hidden" style={{ background: "#0E1A2E" }}>
 
       {/* Neural space canvas */}
       <NeuralSpace />
@@ -132,13 +132,13 @@ export default function PillarsSection() {
       {/* Top fade — blend into section above */}
       <div
         className="absolute top-0 left-0 right-0 h-32 pointer-events-none"
-        style={{ background: "linear-gradient(180deg, #1B2E48 0%, transparent 100%)", zIndex: 2 }}
+        style={{ background: "linear-gradient(180deg, #263F5F 0%, transparent 100%)", zIndex: 2 }}
         aria-hidden="true"
       />
       {/* Bottom fade — blend into section below */}
       <div
         className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
-        style={{ background: "linear-gradient(0deg, #14243A 0%, transparent 100%)", zIndex: 2 }}
+        style={{ background: "linear-gradient(0deg, #1F3452 0%, transparent 100%)", zIndex: 2 }}
         aria-hidden="true"
       />
 

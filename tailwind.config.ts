@@ -25,13 +25,13 @@ const config: Config = {
        * ----------------------------------------------------------------------- */
       colors: {
         navy: {
-          950: "#0E1A2E",
-          900: "#14243A",
-          800: "#1B2E48",
-          700: "#213855",  // PRIMARY — main page background
-          600: "#28506E",
-          500: "#2E6288",
-          400: "#3A78A4",
+          950: "#192840",
+          900: "#1F3452",
+          800: "#263F5F",
+          700: "#2C4A6A",  // PRIMARY — main page background
+          600: "#336480",
+          500: "#3A7898",
+          400: "#4690B2",
         },
         brand: {
           orange:  "#F26522",   // Main TAVAS orange — CTAs, highlights
@@ -40,9 +40,9 @@ const config: Config = {
           gold:    "#C9A84C",   // Optional premium accent (use sparingly)
         },
         surface: {
-          dark:    "#0E1A2E",
-          mid:     "#14243A",
-          border:  "#265578",
+          dark:    "#192840",
+          mid:     "#1F3452",
+          border:  "#336480",
           "border-light": "#285880",
         },
       },
