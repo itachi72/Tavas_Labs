@@ -108,7 +108,7 @@ export default function TaglineSection() {
         >
           <span className="text-white font-semibold">TAVAS (तवस्)</span> — from the Rigvedic expression of strength, power, and capability.
           <br />
-          We help global organizations <span className="text-gradient-orange font-medium">design, simulate, and optimize solutions that endure.</span>
+          We help global organizations <br /> <span className="text-gradient-orange font-medium">design, simulate, and optimize solutions that endure.</span>
         </motion.p>
       </div>
 
