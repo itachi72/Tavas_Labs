@@ -63,7 +63,7 @@ export default function TaglineSection() {
           className="text-5xl font-mono tracking-[0.35em] uppercase mb-6"
           style={{ color: "rgba(180,160,100,0.85)" }}
         >
-          तवस्
+          तवस् · Rigveda · Since the Beginning
         </motion.p>
 
         {/* Main headline */}
@@ -75,9 +75,9 @@ export default function TaglineSection() {
           className="font-display font-bold text-white leading-tight mb-8"
           style={{ fontSize: "clamp(2.9rem, 6.3vw, 5rem)" }}
         >
-          Global Thinking.
-          <br />
-          <span className="text-gradient-orange">Stronger Outcomes.</span>
+          Civilizational intelligence.{" "}
+          <span className="text-gradient-orange">Ancient wisdom,</span>{" "}
+          frontier technology.
         </motion.h2>
 
         {/* Divider star */}
@@ -105,9 +105,10 @@ export default function TaglineSection() {
           className="text-base sm:text-xl text-gray-300 leading-relaxed max-w-4xl mx-auto"
           style={{ textShadow: "0 0 40px rgba(100,120,200,0.3)" }}
         >
-          <span className="text-white font-semibold">TAVAS (तवस्)</span> — from the Rigvedic expression of strength, power, and capability.
-          <br />
-          We help global organizations <br /> <span className="text-gradient-orange font-medium">design, simulate, and optimize solutions that endure.</span>
+          <span className="text-white font-semibold">TAVAS (तवस्)</span> — from the
+          Rigveda, meaning strength, power, and capability. We build AI systems
+          that carry the weight of that promise:{" "}
+          <span className="text-gradient-orange font-medium">enduring, adaptive, and precise.</span>
         </motion.p>
       </div>
 

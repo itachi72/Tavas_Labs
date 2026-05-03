@@ -4,43 +4,35 @@ import { motion } from "framer-motion";
 import NeuralSpace from "./NeuralSpace";
 
 const GOLD = "#C9A84C";
-
-function DesignIcon() {
-  return <svg width="32" height="32" viewBox="0 0 28 28" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="14" cy="14" r="11"/><path d="M14 3L14 6"/><path d="M14 22L14 25"/><path d="M3 14L6 14"/><path d="M22 14L25 14"/><circle cx="14" cy="14" r="3"/><path d="M14 11L17 6"/></svg>;
-}
-function SimulateIcon() {
-  return <svg width="32" height="32" viewBox="0 0 28 28" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="8" width="10" height="12" rx="2"/><rect x="15" y="8" width="10" height="12" rx="2" opacity="0.5"/><path d="M13 14L15 14" strokeDasharray="1 1"/></svg>;
-}
-function OptimiseIcon() {
-  return <svg width="32" height="32" viewBox="0 0 28 28" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 22L10 16L15 18L24 8"/><path d="M20 8L24 8L24 12"/><line x1="4" y1="22" x2="24" y2="22"/><line x1="4" y1="6" x2="4" y2="22"/></svg>;
-}
-function SustainIcon() {
-  return <svg width="32" height="32" viewBox="0 0 28 28" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M6 14A8 8 0 0 1 22 14"/><path d="M22 14A8 8 0 0 1 6 14"/><path d="M22 14L19 11M22 14L25 11"/><path d="M6 14L3 17M6 14L9 17"/></svg>;
-}
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 const PILLARS = [
   {
-    number: "01", icon: <DesignIcon />, title: "Design", tagline: "Blueprints for certainty",
-    description: "We capture complexity early with systems-first design, converting strategy, constraints, and regulation into resilient digital architectures.",
-    capabilities: ["Systems engineering for electronics and mobility", "Requirement traceability and risk mapping", "Architecture decomposition and interface definition", "Cross-disciplinary design validation"],
+    number: "01", icon: <img src={`${BASE}/design.png`} alt="" style={{ width: 36, height: 36, objectFit: "contain" }} />, title: "Design",
+    tagline: "Generative Design, Intelligent CAD workflows, and AI co-creation that compress design cycles",
+    description: "Generative Design, Intelligent CAD workflows, and AI co-creation that compress design cycles",
+    capabilities: ["GENERATIVE DESIGN", "CAD/CAM", "AI COCREATION", "DESIGN AUTOMATION"],
     accentColor: "#F26522", bgAccent: "rgba(242,101,34,0.12)", borderColor: "rgba(242,101,34,0.35)",
   },
   {
-    number: "02", icon: <SimulateIcon />, title: "Simulate", tagline: "Evidence before execution",
-    description: "Our DSOS simulations turn ideas into operating realities, validating behavior through digital twins, hybrid models, and scenario-driven testing.",
-    capabilities: ["Multi-domain digital twin models", "Performance prediction and anomaly detection", "What-if scenario exploration", "Hardware-in-the-loop and physics-aware simulation"],
+    number: "02", icon: <img src={`${BASE}/simulation.png`} alt="" style={{ width: 36, height: 36, objectFit: "contain" }} />, title: "Simulate",
+    tagline: "Virtual Replicas enabling risk-free experimentation, predictive maintenance, and confident decision-making at scale",
+    description: "Virtual Replicas enabling risk-free experimentation, predictive maintenance, and confident decision-making at scale",
+    capabilities: ["DIGITALTWIN", "CFD/FEA", "REAL TIME MONITORING", "SCENARIO PLANNING", "AI Powered Design", "Simulations & Digital Twins", "Intelligent Optimisation"],
     accentColor: "#60A5FA", bgAccent: "rgba(96,165,250,0.10)", borderColor: "rgba(96,165,250,0.30)",
   },
   {
-    number: "03", icon: <OptimiseIcon />, title: "Optimise", tagline: "Smarter, faster, leaner",
-    description: "We apply AI and optimization science to tune systems for cost, performance, reliability and sustainability across changing conditions.",
-    capabilities: ["Multi-objective decision optimisation", "Predictive control and tuning", "Operational efficiency improvement", "Adaptive resource and cost management"],
+    number: "03", icon: <img src={`${BASE}/optimisation.png`} alt="" style={{ width: 36, height: 36, objectFit: "contain" }} />, title: "Optimise",
+    tagline: "AI algorithms continuously improve operations – from supply chains and energy usages to resource allocation",
+    description: "AI algorithms continuously improve operations – from supply chains and energy usages to resource allocation",
+    capabilities: ["OPERATION RESEARCH", "ML OPTIMISATION", "PROCESS AUTOMATION", "RESOURCE PLANNING", "Sustainability Intelligence"],
     accentColor: "#F26522", bgAccent: "rgba(242,101,34,0.12)", borderColor: "rgba(242,101,34,0.35)",
   },
   {
-    number: "04", icon: <SustainIcon />, title: "Sustain", tagline: "Built to endure",
-    description: "Our DSOS approach embeds resilience, knowledge continuity and governance so systems stay effective long after launch.",
-    capabilities: ["Continuous performance monitoring", "Governance and compliance readiness", "Model refresh and lifecycle adaptation", "Institutional knowledge capture"],
+    number: "04", icon: <img src={`${BASE}/sustainability.png`} alt="" style={{ width: 36, height: 36, objectFit: "contain" }} />, title: "Sustain",
+    tagline: "ESG measurement, carbon modellin, and lifecycle analysis turning gnet-zero from burdens to advantage",
+    description: "ESG measurement, carbon modellin, and lifecycle analysis turning gnet-zero from burdens to advantage",
+    capabilities: ["CARBON MODELLING", "ESG REPORTING", "LIFECYCLE ANALYSIS", "NETZERO ROADMAP"],
     accentColor: "#60A5FA", bgAccent: "rgba(96,165,250,0.10)", borderColor: "rgba(96,165,250,0.30)",
   },
 ];

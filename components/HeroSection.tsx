@@ -23,7 +23,7 @@ export default function HeroSection() {
         className="absolute inset-0 w-full h-full object-cover"
         aria-hidden="true"
       >
-        <source src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/video/circuit.mp4`} type="video/mp4" />
+        <source src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/circuit.mp4`} type="video/mp4" />
       </video>
 
       {/* ── OVERLAYS ── */}
@@ -83,8 +83,7 @@ export default function HeroSection() {
           style={{ fontSize: "clamp(2.16rem, 4.725vw, 3.78rem)" }}
         >
           AI and Digital Companion to
-          <br />
-          <span className="text-gradient-orange">
+          <span className="text-gradient-orange" style={{ fontSize: '80%' }}>
             Governments, Industries, and Academia
           </span>
         </motion.h1>

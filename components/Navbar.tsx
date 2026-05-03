@@ -57,31 +57,15 @@ export default function Navbar() {
         <nav className="relative max-w-7xl mx-auto pl-2 pr-6 lg:pl-3 lg:pr-8 h-[88px] flex items-center justify-between">
 
           {/* ── LOGO ── */}
-          <a href="#" aria-label="TAVAS Labs Home" className="flex-shrink-0 flex flex-col items-start gap-0.5">
+          <a href="#" aria-label="TAVAS Labs Home" className="flex-shrink-0">
             {logoError ? (
-              <div className="flex items-center gap-1 h-[77px]">
+              <div className="flex items-center gap-1 h-[65px]">
                 <span className="font-display font-bold text-lg tracking-widest text-white">TAVAS</span>
                 <span className="text-brand-orange font-bold text-lg">·</span>
                 <span className="font-display font-light text-lg tracking-widest text-gray-300">LABS</span>
               </div>
             ) : (
-              <>
-                {/* "Intelligence by Design" — above TAVAS, from T to just before the globe */}
-                <span
-                  style={{
-                    width: '78%',
-                    display: 'block',
-                    fontSize: '9.5px',
-                    fontStyle: 'italic',
-                    fontWeight: 600,
-                    color: '#1A3050',
-                    letterSpacing: '0.01em',
-                    whiteSpace: 'nowrap',
-                  }}
-                >
-                  Intelligence by Design
-                </span>
-
+              <div style={{ position: 'relative', display: 'inline-block', height: '65px' }}>
                 {/* Logo scaled 1.5× (84px tall); bottom strip clipped to hide "ELECTRONICS…" */}
                 <div style={{ height: '65px', overflow: 'hidden' }}>
                   <img
@@ -91,7 +75,26 @@ export default function Navbar() {
                     onError={() => setLogoError(true)}
                   />
                 </div>
-              </>
+                {/* "Intelligence by Design" — overlaid at globe height, spanning T to S */}
+                <span
+                  style={{
+                    position: 'absolute',
+                    top: '5px',
+                    left: '2px',
+                    width: '60%',
+                    fontSize: '9px',
+                    fontStyle: 'italic',
+                    fontWeight: 700,
+                    color: '#1A3050',
+                    letterSpacing: '0.01em',
+                    whiteSpace: 'nowrap',
+                    lineHeight: 1,
+                    pointerEvents: 'none',
+                  }}
+                >
+                  Intelligence by Design
+                </span>
+              </div>
             )}
           </a>
 
