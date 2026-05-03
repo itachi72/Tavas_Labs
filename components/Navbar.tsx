@@ -65,35 +65,14 @@ export default function Navbar() {
                 <span className="font-display font-light text-lg tracking-widest text-gray-300">LABS</span>
               </div>
             ) : (
-              <div style={{ position: 'relative', display: 'inline-block', height: '65px' }}>
-                {/* Logo scaled 1.5× (84px tall); bottom strip clipped to hide "ELECTRONICS…" */}
-                <div style={{ height: '65px', overflow: 'hidden' }}>
-                  <img
-                    src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/tavas-logo.png`}
-                    alt="TAVAS Labs"
-                    style={{ height: '84px', width: 'auto', display: 'block', filter: 'brightness(1.25)' }}
-                    onError={() => setLogoError(true)}
-                  />
-                </div>
-                {/* "Intelligence by Design" — overlaid at globe height, spanning T to S */}
-                <span
-                  style={{
-                    position: 'absolute',
-                    top: '5px',
-                    left: '2px',
-                    width: '60%',
-                    fontSize: '9px',
-                    fontStyle: 'italic',
-                    fontWeight: 700,
-                    color: '#1A3050',
-                    letterSpacing: '0.01em',
-                    whiteSpace: 'nowrap',
-                    lineHeight: 1,
-                    pointerEvents: 'none',
-                  }}
-                >
-                  Intelligence by Design
-                </span>
+              /* Clip bottom "ELECTRONICS…" row; "Intelligence by Design" is baked into the image */
+              <div style={{ height: '65px', overflow: 'hidden' }}>
+                <img
+                  src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/logo_final.png`}
+                  alt="TAVAS Labs"
+                  style={{ height: '93px', width: 'auto', display: 'block' }}
+                  onError={() => setLogoError(true)}
+                />
               </div>
             )}
           </a>
