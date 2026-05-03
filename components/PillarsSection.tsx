@@ -89,6 +89,18 @@ function PillarCard({ pillar, index }: { pillar: typeof PILLARS[number]; index: 
         ))}
       </ul>
 
+      {/* Know more */}
+      <a
+        href="#contact"
+        className="mt-6 inline-flex items-center gap-2 text-sm font-semibold transition-all duration-200 group/btn"
+        style={{ color: pillar.accentColor }}
+      >
+        Know more
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="transition-transform duration-200 group-hover/btn:translate-x-1" aria-hidden="true">
+          <path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      </a>
+
       {/* Hover accent line */}
       <div
         className="absolute bottom-0 left-6 right-6 h-px rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"
@@ -141,19 +153,23 @@ export default function PillarsSection() {
           transition={{ duration: 0.7 }}
           className="text-center mb-16"
         >
-          <p className="text-xl mb-1 tracking-wider" style={{ fontFamily: "'Cinzel', Georgia, serif", color: GOLD }}>
-            DSOS · Design · Simulate · Optimise · Sustain
+          <p className="text-xs font-mono tracking-[0.3em] uppercase mb-3" style={{ color: GOLD }}>
+            Core Capabilities
           </p>
-          <p className="text-sm font-mono tracking-[0.25em] uppercase text-brand-orange mb-4">
-            A structured framework for systems, products and operations
-          </p>
-          <h2 className="font-display font-bold text-white mb-5 leading-tight" style={{ fontSize: "clamp(2.25rem, 4.2vw, 3.3rem)" }}>
-            Four pillars of digital systems success.
-            <br />
-            <span className="text-gradient-orange">From architecture to enduring operation.</span>
+          <h2 className="font-display font-bold text-white mb-5 leading-tight" style={{ fontSize: "clamp(2rem, 4vw, 3.2rem)" }}>
+            Four Pillars of{" "}
+            <span className="text-gradient-orange">Transformation</span>
           </h2>
-          <p className="text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed text-gray-300">
-            The DSOS framework guides every phase of engagement, turning ambiguity into validated choices and delivering systems that can adapt and thrive.
+          <div className="flex items-center justify-center gap-4 mb-6" aria-hidden="true">
+            <div className="h-px w-16 bg-gradient-to-r from-transparent to-brand-orange/50" />
+            <svg width="10" height="10" viewBox="0 0 12 12" fill="none">
+              <path d="M6 0L7.2 4.8L12 6L7.2 7.2L6 12L4.8 7.2L0 6L4.8 4.8Z" fill="#F26522" fillOpacity="0.8"/>
+            </svg>
+            <div className="h-px w-16 bg-gradient-to-l from-transparent to-brand-orange/50" />
+          </div>
+          <p className="text-base sm:text-lg max-w-2xl mx-auto leading-relaxed text-gray-300">
+            Every engagement draws from our four interconnected disciplines —{" "}
+            <span className="text-white font-medium">individually powerful, unstoppable together</span>
           </p>
         </motion.div>
 
