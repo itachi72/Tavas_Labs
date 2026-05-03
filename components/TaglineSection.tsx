@@ -59,11 +59,16 @@ export default function TaglineSection() {
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.1 }}
-          className="text-5xl font-mono tracking-[0.35em] uppercase mb-6"
+          animate={{ x: ["0%", "-100%"] }}
+          transition={{
+            opacity: { duration: 0.7, delay: 0.1 },
+            y: { duration: 0.7, delay: 0.1 },
+            x: { duration: 20, repeat: Infinity, ease: "linear", delay: 0.8 }
+          }}
+          className="text-5xl font-mono tracking-[0.35em] uppercase mb-6 overflow-hidden whitespace-nowrap"
           style={{ color: "rgba(180,160,100,0.85)" }}
         >
-          तवस् · Rigveda · Since the Beginning
+          Telecom · Government & Public Sector · Aerospace & Defence · Trasnportation & Mobility · HiTech
         </motion.p>
 
         {/* Main headline */}
