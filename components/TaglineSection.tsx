@@ -65,7 +65,7 @@ export default function TaglineSection() {
             y: { duration: 0.7, delay: 0.1 },
             x: { duration: 20, repeat: Infinity, ease: "linear", delay: 0.8 }
           }}
-          className="text-5xl font-mono tracking-[0.35em] uppercase mb-6 overflow-hidden whitespace-nowrap"
+          className="text-2xl font-mono tracking-[0.35em] uppercase mb-6 overflow-hidden whitespace-nowrap"
           style={{ color: "rgba(180,160,100,0.85)" }}
         >
           Telecom · Government & Public Sector · Aerospace & Defence · Trasnportation & Mobility · HiTech
@@ -80,9 +80,9 @@ export default function TaglineSection() {
           className="font-display font-bold text-white leading-tight mb-8"
           style={{ fontSize: "clamp(2.9rem, 6.3vw, 5rem)" }}
         >
-          Civilizational intelligence.{" "}
-          <span className="text-gradient-orange">Ancient wisdom,</span>{" "}
-          frontier technology.
+          Civilizational intelligence.
+          <br />
+          <span className="text-gradient-orange">Ancient wisdom,</span> frontier technology.
         </motion.h2>
 
         {/* Divider star */}
@@ -108,9 +108,9 @@ export default function TaglineSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.5 }}
           className="text-base sm:text-xl text-gray-300 leading-relaxed max-w-4xl mx-auto"
-          style={{ textShadow: "0 0 40px rgba(100,120,200,0.3)" }}
+          style={{ textShadow: "0 0 40px rgba(100,120,200,0.3)", fontSize: '125%' }}
         >
-          <span className="text-white font-semibold">TAVAS (तवस_)</span> from the Rigveda signifies collective strength. We turn complex challenges into{" "}
+          <span className="text-white font-semibold">TAVAS (तवस्)</span> from the Rigveda signifies collective strength. We turn complex challenges into{" "}
           <span className="text-gradient-orange font-medium">engineered, intelligent, and sustainable outcomes</span>
         </motion.p>
       </div>

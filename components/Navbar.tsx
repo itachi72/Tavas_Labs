@@ -48,13 +48,13 @@ export default function Navbar() {
             backgroundSize: "320px auto",
             backgroundRepeat: "repeat",
             backgroundPosition: "center top",
-            opacity: 0.9,
+            opacity: 0.45,
           }}
           aria-hidden="true"
         />
         {/* Very light softening layer so the menu text remains readable */}
         <div className="absolute inset-0 bg-white/5 pointer-events-none" aria-hidden="true" />
-        <nav className="relative max-w-7xl mx-auto pl-0 pr-6 lg:pl-1 lg:pr-8 h-[88px] flex items-center justify-between">
+        <nav className="relative max-w-7xl mx-auto pl-0 pr-6 lg:pl-0 lg:pr-8 h-[88px] flex items-center justify-between">
 
           {/* ── LOGO ── */}
           <a href="#" aria-label="TAVAS Labs Home" className="flex-shrink-0">
