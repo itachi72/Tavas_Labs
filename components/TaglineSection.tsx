@@ -55,21 +55,22 @@ export default function TaglineSection() {
       <div className="relative z-10 max-w-5xl mx-auto px-6 lg:px-8 text-center">
 
         {/* Sanskrit eyebrow */}
-        <motion.p
+        <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          animate={{ x: ["0%", "-100%"] }}
-          transition={{
-            opacity: { duration: 0.7, delay: 0.1 },
-            y: { duration: 0.7, delay: 0.1 },
-            x: { duration: 20, repeat: Infinity, ease: "linear", delay: 0.8 }
-          }}
-          className="text-2xl font-mono tracking-[0.35em] uppercase mb-6 overflow-hidden whitespace-nowrap"
-          style={{ color: "rgba(180,160,100,0.85)" }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+          className="mb-6 overflow-hidden"
         >
-          Telecom · Government & Public Sector · Aerospace & Defence · Trasnportation & Mobility · HiTech
-        </motion.p>
+          <motion.p
+            animate={{ x: ["0%", "-100%"] }}
+            transition={{ duration: 20, repeat: Infinity, ease: "linear", delay: 0.8 }}
+            className="text-2xl font-mono tracking-[0.35em] uppercase whitespace-nowrap"
+            style={{ color: "rgba(180,160,100,0.85)" }}
+          >
+            Ideation to Monetisation • Industrial AI Adoption • Government Transformation • Digital Twin & Simulation • Intelligent Optimisation • Sustainability Intelligence • Capability Mentors
+          </motion.p>
+        </motion.div>
 
         {/* Main headline */}
         <motion.h2
@@ -78,11 +79,13 @@ export default function TaglineSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.9, delay: 0.2 }}
           className="font-display font-bold text-white leading-tight mb-8"
-          style={{ fontSize: "clamp(2.9rem, 6.3vw, 5rem)" }}
         >
-          Civilizational intelligence.
-          <br />
-          <span className="text-gradient-orange">Ancient wisdom,</span> frontier technology.
+          <span style={{ display: "block", fontSize: "clamp(2.32rem, 5.04vw, 4rem)" }}>
+            Civilizational intelligence.
+          </span>
+          <span style={{ display: "block", fontSize: "clamp(1.89rem, 4.1vw, 3.25rem)" }}>
+            <span className="text-gradient-orange">Ancient wisdom,</span> frontier technology.
+          </span>
         </motion.h2>
 
         {/* Divider star */}
