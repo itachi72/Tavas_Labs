@@ -57,7 +57,7 @@ export default function Navbar() {
         <nav className="relative max-w-7xl mx-auto pl-0 pr-6 lg:pl-0 lg:pr-8 h-[88px] flex items-center justify-between">
 
           {/* ── LOGO ── */}
-          <a href="#" aria-label="TAVAS Labs Home" className="flex-shrink-0" style={{ transform: "translateX(-10%)" }}>
+          <a href="#" aria-label="TAVAS Labs Home" className="flex-shrink-0" style={{ marginLeft: '-72px' }}>
             {logoError ? (
               <div className="flex items-center gap-1 h-[65px]">
                 <span className="font-display font-bold text-lg tracking-widest text-white">TAVAS</span>
@@ -65,12 +65,12 @@ export default function Navbar() {
                 <span className="font-display font-light text-lg tracking-widest text-gray-300">LABS</span>
               </div>
             ) : (
-              /* Clip bottom "ELECTRONICS…" row; "Intelligence by Design" is baked into the image */
-              <div style={{ height: '80px', overflow: 'hidden' }}>
+              /* Clip bottom "ELECTRONICS…" row; mix-blend-mode on container removes white bg */
+              <div style={{ height: '80px', overflow: 'hidden', mixBlendMode: 'multiply' }}>
                 <img
                   src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/logo_final.png`}
                   alt="TAVAS Labs"
-                  style={{ height: '102px', width: 'auto', display: 'block', mixBlendMode: 'multiply' }}
+                  style={{ height: '102px', width: 'auto', display: 'block' }}
                   onError={() => setLogoError(true)}
                 />
               </div>
