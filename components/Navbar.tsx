@@ -54,7 +54,7 @@ export default function Navbar() {
         />
         {/* Very light softening layer so the menu text remains readable */}
         <div className="absolute inset-0 bg-white/5 pointer-events-none" aria-hidden="true" />
-        <nav className="relative max-w-7xl mx-auto pl-2 pr-6 lg:pl-3 lg:pr-8 h-[88px] flex items-center justify-between">
+        <nav className="relative max-w-7xl mx-auto pl-0 pr-6 lg:pl-1 lg:pr-8 h-[88px] flex items-center justify-between">
 
           {/* ── LOGO ── */}
           <a href="#" aria-label="TAVAS Labs Home" className="flex-shrink-0">
@@ -66,11 +66,11 @@ export default function Navbar() {
               </div>
             ) : (
               /* Clip bottom "ELECTRONICS…" row; "Intelligence by Design" is baked into the image */
-              <div style={{ height: '65px', overflow: 'hidden' }}>
+              <div style={{ height: '80px', overflow: 'hidden' }}>
                 <img
                   src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/logo_final.png`}
                   alt="TAVAS Labs"
-                  style={{ height: '93px', width: 'auto', display: 'block' }}
+                  style={{ height: '102px', width: 'auto', display: 'block', mixBlendMode: 'multiply' }}
                   onError={() => setLogoError(true)}
                 />
               </div>

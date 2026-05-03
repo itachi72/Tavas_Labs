@@ -105,10 +105,8 @@ export default function TaglineSection() {
           className="text-base sm:text-xl text-gray-300 leading-relaxed max-w-4xl mx-auto"
           style={{ textShadow: "0 0 40px rgba(100,120,200,0.3)" }}
         >
-          <span className="text-white font-semibold">TAVAS (तवस्)</span> — from the
-          Rigveda, meaning strength, power, and capability. We build AI systems
-          that carry the weight of that promise:{" "}
-          <span className="text-gradient-orange font-medium">enduring, adaptive, and precise.</span>
+          <span className="text-white font-semibold">TAVAS (तवस_)</span> from the Rigveda signifies collective strength. We turn complex challenges into{" "}
+          <span className="text-gradient-orange font-medium">engineered, intelligent, and sustainable outcomes</span>
         </motion.p>
       </div>
 

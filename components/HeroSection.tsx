@@ -83,6 +83,7 @@ export default function HeroSection() {
           style={{ fontSize: "clamp(2.16rem, 4.725vw, 3.78rem)" }}
         >
           <span style={{ fontSize: '90%' }}>AI and Digital Companion to</span>
+          <br />
           <span className="text-gradient-orange" style={{ fontSize: '80%' }}>
             Governments, Industries, and Academia
           </span>
