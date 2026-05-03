@@ -57,7 +57,7 @@ export default function Navbar() {
         <nav className="relative max-w-7xl mx-auto pl-0 pr-6 lg:pl-0 lg:pr-8 h-[88px] flex items-center justify-between">
 
           {/* ── LOGO ── */}
-          <a href="#" aria-label="TAVAS Labs Home" className="flex-shrink-0 -ml-4">
+          <a href="#" aria-label="TAVAS Labs Home" className="flex-shrink-0" style={{ transform: "translateX(-10%)" }}>
             {logoError ? (
               <div className="flex items-center gap-1 h-[65px]">
                 <span className="font-display font-bold text-lg tracking-widest text-white">TAVAS</span>
