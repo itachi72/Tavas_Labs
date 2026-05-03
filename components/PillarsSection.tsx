@@ -8,31 +8,31 @@ const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 const PILLARS = [
   {
-    number: "01", icon: <img src={`${BASE}/design.png`} alt="" style={{ width: 36, height: 36, objectFit: "contain" }} />, title: "Design",
-    tagline: "Generative Design, Intelligent CAD workflows, and AI co-creation that compress design cycles",
-    description: "Generative Design, Intelligent CAD workflows, and AI co-creation that compress design cycles",
+    number: "01", icon: <img src={`${BASE}/design.png`} alt="" style={{ width: 72, height: 72, objectFit: "contain" }} />, title: "Design",
+    tagline: "AI Powered Design",
+    description: "Design-on-Demand Services (DoD) from Ideation to Prototype and nurturing Digital, Electronics & GenAI Design Eco-system, Engineering Software & Solution Alliances",
     capabilities: ["GENERATIVE DESIGN", "CAD/CAM", "AI COCREATION", "DESIGN AUTOMATION"],
     accentColor: "#F26522", bgAccent: "rgba(242,101,34,0.12)", borderColor: "rgba(242,101,34,0.35)",
   },
   {
-    number: "02", icon: <img src={`${BASE}/simulation.png`} alt="" style={{ width: 36, height: 36, objectFit: "contain" }} />, title: "Simulate",
-    tagline: "Virtual Replicas enabling risk-free experimentation, predictive maintenance, and confident decision-making at scale",
+    number: "02", icon: <img src={`${BASE}/simulation.png`} alt="" style={{ width: 72, height: 72, objectFit: "contain" }} />, title: "Simulation",
+    tagline: "Simulation and Digital Twins",
     description: "Virtual Replicas enabling risk-free experimentation, predictive maintenance, and confident decision-making at scale",
-    capabilities: ["DIGITALTWIN", "CFD/FEA", "REAL TIME MONITORING", "SCENARIO PLANNING", "AI Powered Design", "Simulations & Digital Twins", "Intelligent Optimisation"],
+    capabilities: ["DIGITAL TWIN", "CFD/FEA", "REAL TIME MONITORING", "SCENARIO PLANNING"],
     accentColor: "#60A5FA", bgAccent: "rgba(96,165,250,0.10)", borderColor: "rgba(96,165,250,0.30)",
   },
   {
-    number: "03", icon: <img src={`${BASE}/optimisation.png`} alt="" style={{ width: 36, height: 36, objectFit: "contain" }} />, title: "Optimise",
-    tagline: "AI algorithms continuously improve operations – from supply chains and energy usages to resource allocation",
-    description: "AI algorithms continuously improve operations – from supply chains and energy usages to resource allocation",
-    capabilities: ["OPERATION RESEARCH", "ML OPTIMISATION", "PROCESS AUTOMATION", "RESOURCE PLANNING", "Sustainability Intelligence"],
+    number: "03", icon: <img src={`${BASE}/optimisation.png`} alt="" style={{ width: 72, height: 72, objectFit: "contain" }} />, title: "Optimisation",
+    tagline: "Intelligent Optimisation",
+    description: "AI algorithms continuously improve operations – from supply chains and energy usages to assets management and cost optimisation",
+    capabilities: ["OPERATION RESEARCH", "ML OPTIMISATION", "PROCESS AUTOMATION", "RESOURCE PLANNING"],
     accentColor: "#F26522", bgAccent: "rgba(242,101,34,0.12)", borderColor: "rgba(242,101,34,0.35)",
   },
   {
-    number: "04", icon: <img src={`${BASE}/sustainability.png`} alt="" style={{ width: 36, height: 36, objectFit: "contain" }} />, title: "Sustain",
-    tagline: "ESG measurement, carbon modellin, and lifecycle analysis turning gnet-zero from burdens to advantage",
+    number: "04", icon: <img src={`${BASE}/sustainability.png`} alt="" style={{ width: 72, height: 72, objectFit: "contain" }} />, title: "Sustainability",
+    tagline: "Sustainability Intelligence",
     description: "ESG measurement, carbon modellin, and lifecycle analysis turning gnet-zero from burdens to advantage",
-    capabilities: ["CARBON MODELLING", "ESG REPORTING", "LIFECYCLE ANALYSIS", "NETZERO ROADMAP"],
+    capabilities: ["CARBON MODELLING", "ESG REPORTING", "LIFECYCLE ANALYSIS", "NET ZERO ROADMAP"],
     accentColor: "#60A5FA", bgAccent: "rgba(96,165,250,0.10)", borderColor: "rgba(96,165,250,0.30)",
   },
 ];
@@ -63,10 +63,7 @@ function PillarCard({ pillar, index }: { pillar: typeof PILLARS[number]; index: 
       </span>
 
       <div className="flex items-center gap-4 mb-5">
-        <div
-          className="w-16 h-16 rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110"
-          style={{ background: pillar.bgAccent, border: `1px solid ${pillar.borderColor}`, color: pillar.accentColor }}
-        >
+        <div className="transition-transform duration-300 group-hover:scale-110 flex-shrink-0">
           {pillar.icon}
         </div>
         <div className="min-w-0">
