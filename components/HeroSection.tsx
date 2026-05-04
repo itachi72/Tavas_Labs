@@ -45,7 +45,7 @@ export default function HeroSection() {
       {/* ── PARTICLE NETWORK ── */}
       <HeroParticles />
 
-      {/* ── SCAN LINE ── */}
+      {/* ── SCAN LINE + DATA STREAM LINES ── */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden" style={{ zIndex: 3 }} aria-hidden="true">
         <motion.div
           className="absolute left-0 right-0 h-px"
@@ -56,10 +56,6 @@ export default function HeroSection() {
           animate={{ y: ["-2%", "102%"] }}
           transition={{ duration: 5, repeat: Infinity, ease: "linear", repeatDelay: 3 }}
         />
-      </div>
-
-      {/* ── DATA STREAM LINES ── */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden" style={{ zIndex: 3 }} aria-hidden="true">
         {[15, 38, 62, 85].map((leftPct, i) => (
           <motion.div
             key={i}
@@ -82,9 +78,9 @@ export default function HeroSection() {
           className="font-display font-bold text-white leading-tight mb-12"
           style={{ fontSize: "clamp(2.16rem, 4.725vw, 3.78rem)" }}
         >
-          <span style={{ fontSize: '90%' }}>AI and Digital Companion to</span>
+          <span style={{ fontSize: '90%' }}>AI and Digital Companion:</span>
           <br />
-          <span className="text-gradient-orange" style={{ fontSize: '80%' }}>
+          <span className="text-gradient-white" style={{ fontSize: '80%' }}>
             Governments, Industries, and Academia
           </span>
         </motion.h1>
@@ -94,9 +90,11 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.48 }}
-          className="text-2xl sm:text-3xl text-gray-300 leading-relaxed mb-10 max-w-2xl mx-auto"
+          className="text-lg sm:text-xl text-gray-300 leading-relaxed mb-10 max-w-2xl mx-auto"
         >
-          Navigating the frontier of digital transformation with AI-powered digital twins — built for electronics, semiconductors, and deep tech.
+          Navigating the frontier of digital transformation with AI-powered digital twins —
+          <br />
+          built for electronics, semiconductors, and deep tech.
         </motion.p>
 
         {/* CTAs */}
