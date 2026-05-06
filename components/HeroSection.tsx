@@ -90,7 +90,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.48 }}
-          className="text-lg sm:text-xl text-gray-300 leading-relaxed mb-10 max-w-2xl mx-auto"
+          className="text-lg sm:text-xl text-gray-300 leading-relaxed mb-10"
         >
           Navigating the frontier of digital transformation with AI-powered digital twins —
           <br />
