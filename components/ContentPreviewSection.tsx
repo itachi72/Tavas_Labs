@@ -159,11 +159,11 @@ export default function ContentPreviewSection() {
 
                     {/* "C" letter */}
                     <text
-                      x={tx} y={ty - 9}
+                      x={tx} y={ty - 16}
                       textAnchor="middle"
                       dominantBaseline="middle"
                       fill={isActive ? "#ffffff" : c.color}
-                      fontSize="19"
+                      fontSize="38"
                       fontWeight="900"
                       fontFamily="sans-serif"
                       style={{ transition: "fill 0.3s" }}
@@ -173,11 +173,11 @@ export default function ContentPreviewSection() {
 
                     {/* Word label */}
                     <text
-                      x={tx} y={ty + 10}
+                      x={tx} y={ty + 18}
                       textAnchor="middle"
                       dominantBaseline="middle"
                       fill={isActive ? "rgba(255,255,255,0.92)" : "rgba(255,255,255,0.42)"}
-                      fontSize="7.5"
+                      fontSize="15"
                       fontFamily="monospace"
                       letterSpacing="1.3"
                       style={{ transition: "fill 0.3s" }}
@@ -192,16 +192,16 @@ export default function ContentPreviewSection() {
               <circle cx={CX} cy={CX} r={INNER_R - 3} fill="rgba(8,18,38,0.96)" />
               <circle cx={CX} cy={CX} r={INNER_R - 3} fill="none" stroke="rgba(242,101,34,0.35)" strokeWidth="1" />
               <text
-                x={CX} y={CX - 9}
+                x={CX} y={CX - 18}
                 textAnchor="middle" dominantBaseline="middle"
-                fill="#F26522" fontSize="24" fontWeight="900" fontFamily="sans-serif"
+                fill="#F26522" fontSize="48" fontWeight="900" fontFamily="sans-serif"
               >
                 5C
               </text>
               <text
-                x={CX} y={CX + 13}
+                x={CX} y={CX + 22}
                 textAnchor="middle" dominantBaseline="middle"
-                fill="rgba(255,255,255,0.32)" fontSize="7" letterSpacing="2.5" fontFamily="monospace"
+                fill="rgba(255,255,255,0.32)" fontSize="14" letterSpacing="2.5" fontFamily="monospace"
               >
                 STRATEGY
               </text>
