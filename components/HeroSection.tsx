@@ -75,7 +75,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.85, delay: 0.3 }}
-          className="font-display font-bold text-white leading-tight mb-12"
+          className="font-display font-bold text-white leading-tight mb-8 sm:mb-12"
           style={{ fontSize: "clamp(1.7rem, 4.725vw, 3.78rem)" }}
         >
           <span style={{ fontSize: '90%' }}>AI and Digital Companion:</span>
@@ -92,7 +92,7 @@ export default function HeroSection() {
           transition={{ duration: 0.6, delay: 0.48 }}
           className="text-base sm:text-xl text-gray-300 leading-relaxed mb-10"
         >
-          Navigating the frontier of digital transformation with AI-powered digital twins —
+          Navigating the frontier of digital transformation with AI-powered digital twins -
           <br />
           built for electronics, semiconductors, and deep tech.
         </motion.p>

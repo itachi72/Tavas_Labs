@@ -159,7 +159,7 @@ export default function SectorsSection() {
   return (
     <section
       id="sectors"
-      className="relative py-24 sm:py-32"
+      className="relative py-14 sm:py-24 lg:py-32"
       style={{ background: "var(--color-navy-900)" }}
     >
       {/* Decorative background glow */}

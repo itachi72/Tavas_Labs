@@ -67,7 +67,7 @@ function PillarCard({ pillar, index }: { pillar: typeof PILLARS[number]; index: 
           {pillar.icon}
         </div>
         <div className="min-w-0">
-          <h3 className="font-display font-bold text-4xl text-white leading-tight">{pillar.title}</h3>
+          <h3 className="font-display font-bold text-2xl sm:text-4xl text-white leading-tight">{pillar.title}</h3>
           <p className="text-sm sm:text-base font-mono tracking-widest uppercase mt-1" style={{ color: pillar.accentColor }}>
             {pillar.tagline}
           </p>
@@ -113,7 +113,7 @@ function PillarCard({ pillar, index }: { pillar: typeof PILLARS[number]; index: 
 
 export default function PillarsSection() {
   return (
-    <section id="pillars" className="relative py-24 sm:py-32 overflow-hidden" style={{ background: "#0E1A2E" }}>
+    <section id="pillars" className="relative py-14 sm:py-24 lg:py-32 overflow-hidden" style={{ background: "#0E1A2E" }}>
 
       {/* Neural space canvas */}
       <NeuralSpace />
@@ -151,7 +151,7 @@ export default function PillarsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16"
         >
           <p className="text-xs font-mono tracking-[0.3em] uppercase mb-3" style={{ color: GOLD }}>
             Core Capabilities

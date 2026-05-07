@@ -24,7 +24,7 @@ export default function WhyTavas() {
   return (
     <section
       id="why-us"
-      className="relative py-24 sm:py-32 overflow-hidden"
+      className="relative py-14 sm:py-24 lg:py-32 overflow-hidden"
       style={{ backgroundColor: "#E8EDF3" }}
     >
       {/* Circuit board overlay */}
@@ -54,7 +54,7 @@ export default function WhyTavas() {
       />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-12 lg:gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-8 sm:gap-12 lg:gap-16 items-start">
 
           {/* ── LEFT: FEATURED ── */}
           <motion.div

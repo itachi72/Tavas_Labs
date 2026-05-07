@@ -61,7 +61,7 @@ export default function EngagementSection() {
   return (
     <section
       id="services"
-      className="relative py-24 sm:py-32 overflow-hidden"
+      className="relative py-14 sm:py-24 lg:py-32 overflow-hidden"
       style={{ background: "var(--color-navy-900)" }}
     >
       {/* Subtle PCB grid texture */}
@@ -109,7 +109,7 @@ export default function EngagementSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.12 }}
-              className={`relative rounded-xl p-8 flex flex-col ${
+              className={`relative rounded-xl p-5 sm:p-8 flex flex-col ${
                 model.featured ? "ring-2 ring-brand-gold md:scale-[1.04] md:-translate-y-2" : ""
               }`}
               style={{

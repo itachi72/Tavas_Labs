@@ -55,7 +55,7 @@ export default function EngageSection() {
   return (
     <section
       id="contact"
-      className="relative py-24 sm:py-32 overflow-hidden"
+      className="relative py-14 sm:py-24 lg:py-32 overflow-hidden"
       style={{
         background: `
           radial-gradient(ellipse 70% 50% at 50% 50%, rgba(242,101,34,0.10) 0%, transparent 60%),
@@ -97,7 +97,7 @@ export default function EngageSection() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
         {/* ---- TWO-COLUMN LAYOUT ---- */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-14 lg:gap-20 items-center">
 
           {/* ---- LEFT: HEADING + PATHS ---- */}
           <motion.div

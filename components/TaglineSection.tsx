@@ -7,7 +7,7 @@ export default function TaglineSection() {
   return (
     <section
       id="tagline"
-      className="relative py-32 sm:py-40 overflow-hidden"
+      className="relative py-16 sm:py-28 lg:py-40 overflow-hidden"
       style={{ background: "#0E1A2E" }}   // deep space black
     >
       {/* ── STARFIELD ── */}
@@ -92,10 +92,12 @@ export default function TaglineSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="text-base sm:text-xl text-gray-300 leading-relaxed max-w-4xl mx-auto"
-          style={{ textShadow: "0 0 40px rgba(100,120,200,0.3)", fontSize: '125%' }}
+          className="text-gray-300 leading-relaxed"
+          style={{ textShadow: "0 0 40px rgba(100,120,200,0.3)", fontSize: 'clamp(1.5rem, 2.5vw, 2.1rem)' }}
         >
-          <span className="text-white font-semibold">TAVAS (तवस्)</span> from the Rigveda signifies collective strength. We turn complex challenges into{" "}
+          <span className="text-white font-semibold">TAVAS (तवस्)</span> from the Rigveda signifies collective strength.
+          <br />
+          We turn complex challenges into{" "}
           <span className="text-gradient-orange font-medium">engineered, intelligent, and sustainable outcomes</span>
         </motion.p>
       </div>

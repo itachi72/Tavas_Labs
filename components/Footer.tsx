@@ -100,10 +100,10 @@ export default function Footer() {
         borderTop:    "1px solid rgba(255,255,255,0.12)",
       }}
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-16 pb-8">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-10 pb-6 sm:pt-16 sm:pb-8">
 
         {/* ---- MAIN GRID: Logo + 3 columns ---- */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr] gap-10 mb-14">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr] gap-8 sm:gap-10 mb-10 sm:mb-14">
 
           {/* ---- COLUMN 1: Brand ---- */}
           <div>

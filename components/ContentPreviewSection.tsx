@@ -66,7 +66,7 @@ export default function ContentPreviewSection() {
   const [active, setActive] = useState(0);
 
   return (
-    <section className="relative py-24 sm:py-32 bg-[#0E1B2F] overflow-hidden">
+    <section className="relative py-14 sm:py-24 lg:py-32 bg-[#0E1B2F] overflow-hidden">
       <div
         className="absolute inset-0 pointer-events-none"
         style={{ background: "radial-gradient(ellipse 70% 50% at 50% 0%, rgba(242,101,34,0.06) 0%, transparent 70%)" }}
@@ -81,7 +81,7 @@ export default function ContentPreviewSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="text-center mb-14"
+          className="text-center mb-10 sm:mb-14"
         >
           <p className="text-2xl font-mono tracking-[0.28em] uppercase text-brand-orange mb-4">
             Our 5C Strategy

@@ -197,10 +197,10 @@ const TRAINING = [
 // ── COMPONENT ──────────────────────────────────────────────────────────────────
 export default function NexusPage() {
   return (
-    <main className="bg-[#0E1A2E] text-white min-h-screen pt-[88px]">
+    <main className="bg-[#0E1A2E] text-white min-h-screen pt-[72px] sm:pt-[80px] lg:pt-[88px]">
 
       {/* ═══════════════════════════════════════════════════════ HERO */}
-      <section className="relative overflow-hidden py-28 sm:py-36">
+      <section className="relative overflow-hidden py-16 sm:py-24 lg:py-36">
         <NeuralSpace />
 
         {/* Nebula blooms */}
@@ -228,7 +228,7 @@ export default function NexusPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
             className="font-display font-bold leading-tight mb-6"
-            style={{ fontSize: "clamp(2.6rem, 5.5vw, 4.2rem)" }}
+            style={{ fontSize: "clamp(1.9rem, 5.5vw, 4.2rem)" }}
           >
             TAVAS{" "}
             <span className="text-gradient-orange">NEXUS</span>
@@ -275,7 +275,7 @@ export default function NexusPage() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════ SERVICES */}
-      <section id="nexus-services" className="relative py-24 sm:py-32" style={{ background: "#0E1A2E" }}>
+      <section id="nexus-services" className="relative py-14 sm:py-24 lg:py-32" style={{ background: "#0E1A2E" }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -351,7 +351,7 @@ export default function NexusPage() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════ 5-PHASE PROCESS */}
-      <section id="process" className="relative py-24 sm:py-32 overflow-hidden" style={{ background: "#0B1628" }}>
+      <section id="process" className="relative py-14 sm:py-24 lg:py-32 overflow-hidden" style={{ background: "#0B1628" }}>
         {/* Top fade */}
         <div className="absolute top-0 left-0 right-0 h-20 pointer-events-none" style={{ background: "linear-gradient(180deg, #0E1A2E 0%, transparent 100%)" }} aria-hidden="true" />
 
@@ -422,7 +422,7 @@ export default function NexusPage() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════ WHY NEXUS */}
-      <section id="why-nexus" className="relative py-24 sm:py-32" style={{ backgroundColor: "#E8EDF3" }}>
+      <section id="why-nexus" className="relative py-14 sm:py-24 lg:py-32" style={{ backgroundColor: "#E8EDF3" }}>
         {/* Circuit overlay */}
         <div
           className="absolute inset-0 pointer-events-none"
@@ -488,7 +488,7 @@ export default function NexusPage() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════ ENGAGEMENT MODELS */}
-      <section id="nexus-engage" className="relative py-24 sm:py-32 overflow-hidden" style={{ background: "#0E1A2E" }}>
+      <section id="nexus-engage" className="relative py-14 sm:py-24 lg:py-32 overflow-hidden" style={{ background: "#0E1A2E" }}>
         {/* Orange glow accent */}
         <div
           className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] pointer-events-none"
@@ -523,7 +523,7 @@ export default function NexusPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.12 }}
-                className={`relative rounded-xl p-8 flex flex-col ${
+                className={`relative rounded-xl p-5 sm:p-8 flex flex-col ${
                   model.featured ? "ring-2 ring-brand-gold md:scale-[1.04] md:-translate-y-2" : ""
                 }`}
                 style={{
@@ -578,7 +578,7 @@ export default function NexusPage() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════ TRAINING */}
-      <section id="nexus-training" className="relative py-24 sm:py-32" style={{ background: "#0B1628" }}>
+      <section id="nexus-training" className="relative py-14 sm:py-24 lg:py-32" style={{ background: "#0B1628" }}>
         {/* Top fade */}
         <div className="absolute top-0 left-0 right-0 h-20 pointer-events-none" style={{ background: "linear-gradient(180deg, #0E1A2E 0%, transparent 100%)" }} aria-hidden="true" />
 
