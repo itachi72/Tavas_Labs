@@ -93,7 +93,7 @@ export default function ContentPreviewSection() {
         </motion.div>
 
         {/* Wheel + Detail panel */}
-        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-14">
+        <div className="flex flex-col lg:flex-row items-center gap-6 sm:gap-10 lg:gap-14">
 
           {/* ── WHEEL ── */}
           <motion.div
@@ -102,7 +102,7 @@ export default function ContentPreviewSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
             className="flex-shrink-0 mx-auto"
-            style={{ width: W, maxWidth: "min(90vw, 480px)" }}
+            style={{ width: W, maxWidth: "min(85vw, 480px)" }}
           >
             <svg
               viewBox={`0 0 ${W} ${W}`}

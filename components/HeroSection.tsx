@@ -68,7 +68,7 @@ export default function HeroSection() {
       </div>
 
       {/* ── CONTENT ── */}
-      <div className="relative w-full max-w-6xl mx-auto px-6 text-center pt-[120px]" style={{ zIndex: 10 }}>
+      <div className="relative w-full max-w-6xl mx-auto px-6 text-center pt-[96px] sm:pt-[120px]" style={{ zIndex: 10 }}>
 
         {/* Headline */}
         <motion.h1
@@ -76,7 +76,7 @@ export default function HeroSection() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.85, delay: 0.3 }}
           className="font-display font-bold text-white leading-tight mb-12"
-          style={{ fontSize: "clamp(2.16rem, 4.725vw, 3.78rem)" }}
+          style={{ fontSize: "clamp(1.7rem, 4.725vw, 3.78rem)" }}
         >
           <span style={{ fontSize: '90%' }}>AI and Digital Companion:</span>
           <br />
@@ -90,7 +90,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.48 }}
-          className="text-lg sm:text-xl text-gray-300 leading-relaxed mb-10"
+          className="text-base sm:text-xl text-gray-300 leading-relaxed mb-10 max-w-2xl mx-auto"
         >
           Navigating the frontier of digital transformation with AI-powered digital twins —
           <br />
@@ -106,7 +106,7 @@ export default function HeroSection() {
         >
           <a
             href="#contact"
-            className="inline-flex items-center justify-center gap-2.5 px-12 py-5 rounded-lg
+            className="inline-flex items-center justify-center gap-2.5 px-8 sm:px-12 py-4 sm:py-5 rounded-lg
               bg-brand-orange text-white font-semibold text-base sm:text-xl
               hover:bg-brand-orange-light transition-all duration-300
               hover:shadow-[0_0_30px_rgba(242,101,34,0.5)] hover:-translate-y-0.5"
@@ -118,7 +118,7 @@ export default function HeroSection() {
           </a>
           <a
             href="#pillars"
-            className="inline-flex items-center justify-center gap-2 px-12 py-5 rounded-lg
+            className="inline-flex items-center justify-center gap-2 px-8 sm:px-12 py-4 sm:py-5 rounded-lg
               border border-white/30 text-gray-200 font-semibold text-base sm:text-xl
               hover:border-white/60 hover:text-white transition-all duration-300 hover:-translate-y-0.5"
           >

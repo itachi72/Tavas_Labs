@@ -80,10 +80,10 @@ export default function TaglineSection() {
           transition={{ duration: 0.9, delay: 0.2 }}
           className="font-display font-bold text-white leading-tight mb-8"
         >
-          <span style={{ display: "block", fontSize: "clamp(2.32rem, 5.04vw, 4rem)" }}>
+          <span style={{ display: "block", fontSize: "clamp(1.7rem, 5.04vw, 4rem)" }}>
             Civilizational intelligence.
           </span>
-          <span style={{ display: "block", fontSize: "clamp(1.89rem, 4.1vw, 3.25rem)" }}>
+          <span style={{ display: "block", fontSize: "clamp(1.35rem, 4.1vw, 3.25rem)" }}>
             <span className="text-gradient-orange">Ancient wisdom,</span> frontier technology.
           </span>
         </motion.h2>
