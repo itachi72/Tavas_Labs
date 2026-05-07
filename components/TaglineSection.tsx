@@ -51,24 +51,6 @@ export default function TaglineSection() {
         aria-hidden="true"
       />
 
-      {/* Scrolling ticker — full width, above content container */}
-      <motion.div
-        initial={{ opacity: 0, y: 16 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.7, delay: 0.1 }}
-        className="relative z-10 mb-6 overflow-hidden"
-      >
-        <motion.p
-          animate={{ x: ["0%", "-100%"] }}
-          transition={{ duration: 20, repeat: Infinity, ease: "linear", delay: 0.8 }}
-          className="text-2xl font-mono tracking-[0.35em] uppercase whitespace-nowrap"
-          style={{ color: "rgba(180,160,100,0.85)" }}
-        >
-          Ideation to Monetisation • Industrial AI Adoption • Government Transformation • Digital Twin & Simulation • Intelligent Optimisation • Sustainability Intelligence • Capability Mentors
-        </motion.p>
-      </motion.div>
-
       {/* ── CONTENT ── */}
       <div className="relative z-10 max-w-5xl mx-auto px-6 lg:px-8 text-center">
 
