@@ -90,7 +90,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.48 }}
-          className="text-base sm:text-xl text-gray-300 leading-relaxed mb-10 max-w-2xl mx-auto"
+          className="text-base sm:text-xl text-gray-300 leading-relaxed mb-10"
         >
           Navigating the frontier of digital transformation with AI-powered digital twins —
           <br />
@@ -124,6 +124,23 @@ export default function HeroSection() {
           >
             Explore Capabilities
           </a>
+        </motion.div>
+
+        {/* Scrolling ticker */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={inView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.6, delay: 0.9 }}
+          className="overflow-hidden mt-8"
+        >
+          <motion.p
+            animate={{ x: ["0%", "-100%"] }}
+            transition={{ duration: 22, repeat: Infinity, ease: "linear" }}
+            className="text-xs sm:text-sm font-mono tracking-[0.3em] uppercase whitespace-nowrap"
+            style={{ color: "rgba(200,180,120,0.7)" }}
+          >
+            Ideation to Monetisation&nbsp;•&nbsp;Industrial AI Adoption&nbsp;•&nbsp;Government Transformation&nbsp;•&nbsp;Digital Twin &amp; Simulation&nbsp;•&nbsp;Intelligent Optimisation&nbsp;•&nbsp;Sustainability Intelligence&nbsp;•&nbsp;Capability Mentors&nbsp;&nbsp;&nbsp;&nbsp;Ideation to Monetisation&nbsp;•&nbsp;Industrial AI Adoption&nbsp;•&nbsp;Government Transformation&nbsp;•&nbsp;Digital Twin &amp; Simulation&nbsp;•&nbsp;Intelligent Optimisation&nbsp;•&nbsp;Sustainability Intelligence&nbsp;•&nbsp;Capability Mentors
+          </motion.p>
         </motion.div>
       </div>
 
