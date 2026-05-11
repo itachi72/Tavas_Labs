@@ -78,7 +78,7 @@ export default function HeroSection() {
           className="font-display font-bold text-white leading-tight mb-8 sm:mb-12"
           style={{ fontSize: "clamp(1.7rem, 4.725vw, 3.78rem)" }}
         >
-          <span style={{ fontSize: '90%' }}>AI and Digital Companion:</span>
+          <span style={{ fontSize: '90%' }}>AI and Digital Companion</span>
           <br />
           <span className="text-gradient-white" style={{ fontSize: '80%' }}>
             Governments, Industries, and Academia
@@ -94,7 +94,7 @@ export default function HeroSection() {
         >
           Navigating the frontier of digital transformation with AI-powered digital twins -
           <br />
-          built for electronics, semiconductors, and deep tech.
+          turning complex challenges into engineered, intelligent, and sustainable outcomes.
         </motion.p>
 
         {/* CTAs */}
@@ -136,7 +136,7 @@ export default function HeroSection() {
           <motion.p
             animate={{ x: ["0%", "-100%"] }}
             transition={{ duration: 22, repeat: Infinity, ease: "linear" }}
-            className="text-[30px] sm:text-[35px] font-mono tracking-[0.3em] uppercase whitespace-nowrap"
+            className="text-[24px] sm:text-[28px] font-mono tracking-[0.3em] uppercase whitespace-nowrap"
             style={{ color: "rgba(200,180,120,0.7)" }}
           >
             Ideation to Monetisation&nbsp;•&nbsp;Industrial AI Adoption&nbsp;•&nbsp;Government Transformation&nbsp;•&nbsp;Digital Twin &amp; Simulation&nbsp;•&nbsp;Intelligent Optimisation&nbsp;•&nbsp;Sustainability Intelligence&nbsp;•&nbsp;Capability Mentors&nbsp;&nbsp;&nbsp;&nbsp;Ideation to Monetisation&nbsp;•&nbsp;Industrial AI Adoption&nbsp;•&nbsp;Government Transformation&nbsp;•&nbsp;Digital Twin &amp; Simulation&nbsp;•&nbsp;Intelligent Optimisation&nbsp;•&nbsp;Sustainability Intelligence&nbsp;•&nbsp;Capability Mentors

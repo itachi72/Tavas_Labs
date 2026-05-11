@@ -197,7 +197,7 @@ const TRAINING = [
 // ── COMPONENT ──────────────────────────────────────────────────────────────────
 export default function NexusPage() {
   return (
-    <main className="bg-[#0E1A2E] text-white min-h-screen pt-[72px] sm:pt-[80px] lg:pt-[88px]">
+    <main className="bg-[#0E1A2E] text-white min-h-screen pt-[86px] sm:pt-[96px] lg:pt-[106px]">
 
       {/* ═══════════════════════════════════════════════════════ HERO */}
       <section className="relative overflow-hidden py-16 sm:py-24 lg:py-36">

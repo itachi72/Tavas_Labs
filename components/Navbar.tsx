@@ -54,23 +54,23 @@ export default function Navbar() {
         />
         {/* Very light softening layer so the menu text remains readable */}
         <div className="absolute inset-0 bg-white/5 pointer-events-none" aria-hidden="true" />
-        <nav className="relative max-w-7xl mx-auto pl-3 pr-4 sm:pr-6 lg:pl-0 lg:pr-8 h-[72px] sm:h-[80px] lg:h-[88px] flex items-center justify-between">
+        <nav className="relative max-w-7xl mx-auto pl-3 pr-4 sm:pr-6 lg:pl-0 lg:pr-8 h-[86px] sm:h-[96px] lg:h-[106px] flex items-center justify-between">
 
           {/* ── LOGO ── */}
           <a href="#" aria-label="TAVAS Labs Home" className="flex-shrink-0 lg:-ml-[72px]">
             {logoError ? (
-              <div className="flex items-center gap-1 h-[65px]">
+              <div className="flex items-center gap-1 h-[62px] sm:h-[69px] lg:h-[77px]">
                 <span className="font-display font-bold text-lg tracking-widest text-white">TAVAS</span>
                 <span className="text-brand-orange font-bold text-lg">·</span>
                 <span className="font-display font-light text-lg tracking-widest text-gray-300">LABS</span>
               </div>
             ) : (
               /* Clip bottom "ELECTRONICS…" row; mix-blend-mode on container removes white bg */
-              <div className="overflow-hidden h-[58px] sm:h-[70px] lg:h-[80px]" style={{ mixBlendMode: 'multiply' }}>
+              <div className="overflow-hidden h-[62px] sm:h-[69px] lg:h-[77px]" style={{ mixBlendMode: 'multiply' }}>
                 <img
                   src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/logo_final.png`}
                   alt="TAVAS Labs"
-                  className="h-[74px] sm:h-[90px] lg:h-[102px] w-auto block"
+                  className="h-[79px] sm:h-[89px] lg:h-[98px] w-auto block"
                   onError={() => setLogoError(true)}
                 />
               </div>
