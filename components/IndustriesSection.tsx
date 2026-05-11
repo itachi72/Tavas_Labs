@@ -38,6 +38,11 @@ const INDUSTRIES = [
     title: "HiTech",
     descriptor: "R&D acceleration, IP commercialisation & product intelligence",
   },
+  {
+    icon: "⊕",
+    title: "Research Institutions",
+    descriptor: "Applied research translation, lab-to-market pathways & academic AI integration",
+  },
 ];
 
 export default function IndustriesSection() {
@@ -93,13 +98,13 @@ export default function IndustriesSection() {
             className="font-display font-bold text-white leading-tight"
             style={{ fontSize: "clamp(1.9rem, 4vw, 3.2rem)" }}
           >
-            7 Industries.
+            8 Industries.
             <span className="text-gradient-orange"> Deep Expertise.</span>
           </h2>
         </motion.div>
 
         {/* Tiles grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-5">
           {INDUSTRIES.map((industry, i) => (
             <motion.div
               key={industry.title}
@@ -116,15 +121,15 @@ export default function IndustriesSection() {
               }}
             >
               <span
-                className="text-2xl text-brand-orange mb-3 leading-none"
+                className="text-4xl sm:text-5xl text-brand-orange mb-3 leading-none"
                 aria-hidden="true"
               >
                 {industry.icon}
               </span>
-              <h3 className="font-semibold text-sm text-white mb-1 leading-snug">
+              <h3 className="font-semibold text-base sm:text-xl text-white mb-1 leading-snug">
                 {industry.title}
               </h3>
-              <p className="text-xs text-gray-500 leading-relaxed">{industry.descriptor}</p>
+              <p className="text-sm sm:text-base text-gray-500 leading-relaxed">{industry.descriptor}</p>
             </motion.div>
           ))}
         </div>

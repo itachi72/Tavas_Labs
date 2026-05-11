@@ -4,7 +4,8 @@ import { motion } from "framer-motion";
 
 const STATS = [
   { value: "4", label: "Core Pillars" },
-  { value: "3", label: "Sectors Served" },
+  { value: "3", label: "Services" },
+  { value: "3", label: "Sectors" },
   { value: "∞", label: "Possibilities" },
 ];
 
@@ -37,7 +38,7 @@ export default function StatsSection() {
       />
 
       <div className="relative max-w-5xl mx-auto px-6 lg:px-8">
-        <div className="grid grid-cols-3">
+        <div className="grid grid-cols-4">
           {STATS.map((stat, i) => (
             <motion.div
               key={stat.label}

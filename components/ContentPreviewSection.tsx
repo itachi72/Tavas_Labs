@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const Cs = [
   {
     word: "Curiosity",
+    lines: ["CURIO", "SITY"],
     color: "#F26522",
     side: "right" as const,
     points: [
@@ -15,6 +16,7 @@ const Cs = [
   },
   {
     word: "Courage",
+    lines: ["COURAGE"],
     color: "#60A5FA",
     side: "right" as const,
     points: [
@@ -24,6 +26,7 @@ const Cs = [
   },
   {
     word: "Creativity",
+    lines: ["CREATI", "VITY"],
     color: "#F26522",
     side: "right" as const,
     points: [
@@ -33,6 +36,7 @@ const Cs = [
   },
   {
     word: "Communication",
+    lines: ["COMMUNI", "CATION"],
     color: "#60A5FA",
     side: "left" as const,
     points: [
@@ -41,6 +45,7 @@ const Cs = [
   },
   {
     word: "Compassion",
+    lines: ["COMPAS", "SION"],
     color: "#F26522",
     side: "left" as const,
     points: [
@@ -129,19 +134,39 @@ function WheelSVG({
               filter={isActive ? `url(#${filterId})` : undefined}
               style={{ transition: "fill 0.3s" }}
             />
-            {/* Word label — centered in segment, no C letter */}
-            <text
-              x={tx} y={ty}
-              textAnchor="middle"
-              dominantBaseline="middle"
-              fill={isActive ? "rgba(255,255,255,0.95)" : "rgba(255,255,255,0.45)"}
-              fontSize="13"
-              fontFamily="monospace"
-              letterSpacing="0.8"
-              style={{ transition: "fill 0.3s", userSelect: "none" } as React.CSSProperties}
-            >
-              {c.word.toUpperCase()}
-            </text>
+            {/* Word label — single or two-line, doubled font size */}
+            {c.lines.length === 1 ? (
+              <text
+                x={tx} y={ty}
+                textAnchor="middle" dominantBaseline="middle"
+                fill={isActive ? "rgba(255,255,255,0.95)" : "rgba(255,255,255,0.45)"}
+                fontSize="26" fontFamily="monospace" letterSpacing="0"
+                style={{ transition: "fill 0.3s", userSelect: "none" } as React.CSSProperties}
+              >
+                {c.lines[0]}
+              </text>
+            ) : (
+              <>
+                <text
+                  x={tx} y={ty - 14}
+                  textAnchor="middle" dominantBaseline="middle"
+                  fill={isActive ? "rgba(255,255,255,0.95)" : "rgba(255,255,255,0.45)"}
+                  fontSize="24" fontFamily="monospace" letterSpacing="0"
+                  style={{ transition: "fill 0.3s", userSelect: "none" } as React.CSSProperties}
+                >
+                  {c.lines[0]}
+                </text>
+                <text
+                  x={tx} y={ty + 14}
+                  textAnchor="middle" dominantBaseline="middle"
+                  fill={isActive ? "rgba(255,255,255,0.95)" : "rgba(255,255,255,0.45)"}
+                  fontSize="24" fontFamily="monospace" letterSpacing="0"
+                  style={{ transition: "fill 0.3s", userSelect: "none" } as React.CSSProperties}
+                >
+                  {c.lines[1]}
+                </text>
+              </>
+            )}
           </g>
         );
       })}

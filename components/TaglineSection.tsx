@@ -97,8 +97,8 @@ export default function TaglineSection() {
         >
           <span className="text-white font-semibold">TAVAS (तवस्)</span> from the Rigveda signifies collective strength.
           <br />
-          We turn complex challenges into{" "}
-          <span className="text-gradient-orange font-medium">engineered, intelligent, and sustainable outcomes</span>
+          built for {" "}
+          <span className="text-gradient-orange font-medium">Electronics, Semiconductors, and Deep Tech.</span>
         </motion.p>
       </div>
 

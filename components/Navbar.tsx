@@ -48,12 +48,11 @@ export default function Navbar() {
                 <span className="font-display font-light text-lg tracking-widest text-gray-300">LABS</span>
               </div>
             ) : (
-              /* Clip bottom "ELECTRONICS…" row; mix-blend-mode on container removes white bg */
-              <div className="overflow-hidden h-[62px] sm:h-[69px] lg:h-[77px]" style={{ mixBlendMode: 'multiply' }}>
+              <div style={{ mixBlendMode: 'multiply' }}>
                 <img
                   src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/logo.png`}
                   alt="TAVAS Labs"
-                  className="h-[79px] sm:h-[89px] lg:h-[98px] w-auto block"
+                  className="h-[70px] sm:h-[77px] lg:h-[85px] w-auto block"
                   onError={() => setLogoError(true)}
                 />
               </div>
