@@ -3,9 +3,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const HEADER_BG_COLOR = "#C8D8E8";  // fallback / blend-strip start colour (matches tap.jpg tones)
-const PAGE_BG         = "#2C4A6A";  // main page dark navy
-
 const NAV_LINKS = [
   { label: "About Us",    href: "#about"   },
   { label: "Why Us",      href: "#why-us"  },
@@ -36,24 +33,10 @@ export default function Navbar() {
       <header
         className="fixed top-0 left-0 right-0 z-50 transition-shadow duration-500 overflow-hidden"
         style={{
-          backgroundColor: "#D4E2EE",   // light silver-blue fallback
-          boxShadow: scrolled ? "0 2px 20px rgba(0,0,0,0.25)" : "none",
+          backgroundColor: "#ffffff",
+          boxShadow: scrolled ? "0 2px 20px rgba(0,0,0,0.12)" : "none",
         }}
       >
-        {/* Overlay image behind the header */}
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            backgroundImage: `url(${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/overlay.jpg)`,
-            backgroundSize: "320px auto",
-            backgroundRepeat: "repeat",
-            backgroundPosition: "center top",
-            opacity: 0.45,
-          }}
-          aria-hidden="true"
-        />
-        {/* Very light softening layer so the menu text remains readable */}
-        <div className="absolute inset-0 bg-white/5 pointer-events-none" aria-hidden="true" />
         <nav className="relative max-w-7xl mx-auto pl-3 pr-4 sm:pr-6 lg:pl-0 lg:pr-8 h-[86px] sm:h-[96px] lg:h-[106px] flex items-center justify-between">
 
           {/* ── LOGO ── */}
@@ -68,7 +51,7 @@ export default function Navbar() {
               /* Clip bottom "ELECTRONICS…" row; mix-blend-mode on container removes white bg */
               <div className="overflow-hidden h-[62px] sm:h-[69px] lg:h-[77px]" style={{ mixBlendMode: 'multiply' }}>
                 <img
-                  src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/logo_final.png`}
+                  src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/logo.png`}
                   alt="TAVAS Labs"
                   className="h-[79px] sm:h-[89px] lg:h-[98px] w-auto block"
                   onError={() => setLogoError(true)}

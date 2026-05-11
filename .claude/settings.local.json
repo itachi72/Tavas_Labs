@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "WebFetch(domain:barakandbrazos.wixstudio.com)"
+      "WebFetch(domain:barakandbrazos.wixstudio.com)",
+      "Bash(npx tsc *)"
     ]
   }
 }
