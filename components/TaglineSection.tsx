@@ -93,7 +93,7 @@ export default function TaglineSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.5 }}
           className="text-gray-300 leading-relaxed"
-          style={{ textShadow: "0 0 40px rgba(100,120,200,0.3)", fontSize: 'clamp(1rem, 1.6vw, 1.25rem)' }}
+          style={{ textShadow: "0 0 40px rgba(100,120,200,0.3)", fontSize: 'clamp(1rem, 2.4vw, 1.875rem)' }}
         >
           <span className="text-white font-semibold">TAVAS (तवस्)</span> from the Rigveda signifies collective strength.
           <br />

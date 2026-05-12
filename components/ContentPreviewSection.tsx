@@ -73,6 +73,33 @@ function donutArc(r1: number, r2: number, a1Deg: number, a2Deg: number): string 
   return `M${ox1} ${oy1} A${r2} ${r2} 0 ${large} 1 ${ox2} ${oy2} L${ix1} ${iy1} A${r1} ${r1} 0 ${large} 0 ${ix2} ${iy2}Z`;
 }
 
+/**
+ * Arc path for SVG textPath.
+ * Upper-half segments (sin(midDeg) ≤ 0): clockwise — text reads left→right on the outside.
+ * Lower-half segments (sin(midDeg) > 0): counter-clockwise from endDeg→startDeg — text
+ * reads left→right on the outside of the lower arc.
+ */
+function arcPathD(
+  r: number,
+  startDeg: number,
+  endDeg: number,
+  reversed: boolean,
+): string {
+  const rad = (d: number) => (d * Math.PI) / 180;
+  if (reversed) {
+    const x1 = CX + r * Math.cos(rad(endDeg));
+    const y1 = CX + r * Math.sin(rad(endDeg));
+    const x2 = CX + r * Math.cos(rad(startDeg));
+    const y2 = CX + r * Math.sin(rad(startDeg));
+    return `M ${x1} ${y1} A ${r} ${r} 0 0 0 ${x2} ${y2}`;
+  }
+  const x1 = CX + r * Math.cos(rad(startDeg));
+  const y1 = CX + r * Math.sin(rad(startDeg));
+  const x2 = CX + r * Math.cos(rad(endDeg));
+  const y2 = CX + r * Math.sin(rad(endDeg));
+  return `M ${x1} ${y1} A ${r} ${r} 0 0 1 ${x2} ${y2}`;
+}
+
 function WheelSVG({
   active,
   setActive,
@@ -105,26 +132,33 @@ function WheelSVG({
 
       {/* Segments */}
       {Cs.map((c, i) => {
-        const startDeg = -90 + i * 72 + GAP;
-        const endDeg   = -90 + (i + 1) * 72 - GAP;
-        const midDeg   = (startDeg + endDeg) / 2;
-        const midRad   = (midDeg * Math.PI) / 180;
-        const isActive = active === i;
-        const pushX    = isActive ? 11 * Math.cos(midRad) : 0;
-        const pushY    = isActive ? 11 * Math.sin(midRad) : 0;
-        const tx = CX + TEXT_R * Math.cos(midRad);
-        const ty = CX + TEXT_R * Math.sin(midRad);
+        const startDeg  = -90 + i * 72 + GAP;
+        const endDeg    = -90 + (i + 1) * 72 - GAP;
+        const midDeg    = (startDeg + endDeg) / 2;
+        const midRad    = (midDeg * Math.PI) / 180;
+        const isActive  = active === i;
+        const pushX     = isActive ? 11 * Math.cos(midRad) : 0;
+        const pushY     = isActive ? 11 * Math.sin(midRad) : 0;
+        // Lower half of circle → reverse arc so text reads left-to-right from outside
+        const reversed  = Math.sin(midRad) > 0;
+        const textFill  = isActive ? "rgba(255,255,255,0.95)" : "rgba(255,255,255,0.45)";
+        const pmid = `${filterId}-${i}-m`;
+        const pout = `${filterId}-${i}-o`;
+        const pin  = `${filterId}-${i}-i`;
 
         return (
-          <g
-            key={c.word}
-            onClick={() => setActive(i)}
-            style={{
-              cursor: "pointer",
-              transform: `translate(${pushX}px, ${pushY}px)`,
-              transition: "transform 0.35s cubic-bezier(0.16,1,0.3,1)",
-            }}
-          >
+          <g key={c.word} onClick={() => setActive(i)} style={{ cursor: "pointer" }}>
+
+            {/* Hidden arc paths used by textPath — NOT translated, stay on true arc */}
+            <path id={pmid} d={arcPathD(TEXT_R,      startDeg, endDeg, reversed)} fill="none" stroke="none" />
+            {c.lines.length > 1 && (
+              <>
+                <path id={pout} d={arcPathD(TEXT_R + 12, startDeg, endDeg, reversed)} fill="none" stroke="none" />
+                <path id={pin}  d={arcPathD(TEXT_R - 12, startDeg, endDeg, reversed)} fill="none" stroke="none" />
+              </>
+            )}
+
+            {/* Segment fill — pushes outward when active */}
             <path
               d={donutArc(INNER_R, OUTER_R, startDeg, endDeg)}
               fill={isActive ? c.color : "rgba(255,255,255,0.04)"}
@@ -132,38 +166,47 @@ function WheelSVG({
               strokeWidth={isActive ? 0 : 0.6}
               strokeOpacity={0.3}
               filter={isActive ? `url(#${filterId})` : undefined}
-              style={{ transition: "fill 0.3s" }}
+              style={{
+                transform: `translate(${pushX}px, ${pushY}px)`,
+                transition: "fill 0.3s, transform 0.35s cubic-bezier(0.16,1,0.3,1)",
+              }}
             />
-            {/* Word label — single or two-line, doubled font size */}
+
+            {/* Curved word labels */}
             {c.lines.length === 1 ? (
               <text
-                x={tx} y={ty}
-                textAnchor="middle" dominantBaseline="middle"
-                fill={isActive ? "rgba(255,255,255,0.95)" : "rgba(255,255,255,0.45)"}
-                fontSize="26" fontFamily="monospace" letterSpacing="0"
+                fill={textFill}
+                fontSize="26"
+                fontFamily="monospace"
                 style={{ transition: "fill 0.3s", userSelect: "none" } as React.CSSProperties}
               >
-                {c.lines[0]}
+                <textPath href={`#${pmid}`} startOffset="50%" textAnchor="middle">
+                  {c.lines[0]}
+                </textPath>
               </text>
             ) : (
               <>
+                {/* lines[0] on outer arc — seen first from outside */}
                 <text
-                  x={tx} y={ty - 14}
-                  textAnchor="middle" dominantBaseline="middle"
-                  fill={isActive ? "rgba(255,255,255,0.95)" : "rgba(255,255,255,0.45)"}
-                  fontSize="24" fontFamily="monospace" letterSpacing="0"
+                  fill={textFill}
+                  fontSize="24"
+                  fontFamily="monospace"
                   style={{ transition: "fill 0.3s", userSelect: "none" } as React.CSSProperties}
                 >
-                  {c.lines[0]}
+                  <textPath href={`#${pout}`} startOffset="50%" textAnchor="middle">
+                    {c.lines[0]}
+                  </textPath>
                 </text>
+                {/* lines[1] on inner arc */}
                 <text
-                  x={tx} y={ty + 14}
-                  textAnchor="middle" dominantBaseline="middle"
-                  fill={isActive ? "rgba(255,255,255,0.95)" : "rgba(255,255,255,0.45)"}
-                  fontSize="24" fontFamily="monospace" letterSpacing="0"
+                  fill={textFill}
+                  fontSize="24"
+                  fontFamily="monospace"
                   style={{ transition: "fill 0.3s", userSelect: "none" } as React.CSSProperties}
                 >
-                  {c.lines[1]}
+                  <textPath href={`#${pin}`} startOffset="50%" textAnchor="middle">
+                    {c.lines[1]}
+                  </textPath>
                 </text>
               </>
             )}
@@ -175,7 +218,7 @@ function WheelSVG({
       <circle cx={CX} cy={CX} r={INNER_R - 3} fill="rgba(8,18,38,0.96)" />
       <circle cx={CX} cy={CX} r={INNER_R - 3} fill="none" stroke="rgba(242,101,34,0.35)" strokeWidth="1" />
 
-      {/* Neural-network icon: 5 spokes + peripheral nodes + centre node */}
+      {/* Neural-network icon: 5 spokes + peripheral nodes + centre dot */}
       {[0, 1, 2, 3, 4].map((i) => {
         const a  = (i * 72 - 90) * (Math.PI / 180);
         const nx = CX + NODE_R * Math.cos(a);
@@ -197,7 +240,6 @@ function WheelSVG({
           </g>
         );
       })}
-      {/* Hub centre dot */}
       <circle cx={CX} cy={CX} r={10}  fill="#F26522" opacity="0.85" />
       <circle cx={CX} cy={CX} r={5.5} fill="rgba(8,18,38,0.95)" />
     </svg>
@@ -288,7 +330,7 @@ export default function ContentPreviewSection() {
           transition={{ duration: 0.7 }}
           className="text-center mb-10 sm:mb-14"
         >
-          <p className="text-2xl font-mono tracking-[0.28em] uppercase text-brand-orange mb-4">
+          <p className="text-4xl sm:text-5xl font-mono tracking-[0.28em] uppercase text-brand-orange mb-4">
             Our 5C Strategy
           </p>
           <h2
