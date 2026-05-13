@@ -2,7 +2,6 @@ import Navbar               from "@/components/Navbar";
 import HeroSection          from "@/components/HeroSection";
 import TaglineSection       from "@/components/TaglineSection";
 import ContentPreviewSection from "@/components/ContentPreviewSection";
-import StatsSection         from "@/components/StatsSection";
 import PillarsSection       from "@/components/PillarsSection";
 import ServiceLinesSection  from "@/components/ServiceLinesSection";
 import ThreeSectorsSection  from "@/components/ThreeSectorsSection";
@@ -19,7 +18,6 @@ export default function HomePage() {
       <HeroSection />              {/* Full-screen video hero */}
       <TaglineSection />           {/* Civilizational intelligence */}
       <ContentPreviewSection />    {/* 5C Strategy wheel */}
-      <StatsSection />             {/* 4 Core Pillars · 3 Sectors · ∞ Possibilities */}
       <PillarsSection />           {/* Design · Simulate · Optimise · Sustain */}
       <ServiceLinesSection />      {/* Consulting · Training · Tools & Products */}
       <ThreeSectorsSection />      {/* Government · Industry · Academia */}

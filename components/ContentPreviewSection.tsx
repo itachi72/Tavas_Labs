@@ -54,15 +54,13 @@ const Cs = [
   },
 ];
 
-// Scaled up 33 % from original so arc length (~202 units/segment) comfortably
-// fits the largest label piece (7 chars × 24 px ≈ 101 units) without clipping.
-const W       = 640;
+const W       = 960;
 const CX      = W / 2;
-const INNER_R = 96;
-const OUTER_R = 254;
-const GAP     = 3;
-const TEXT_R  = (INNER_R + OUTER_R) / 2;   // 175
-const NODE_R  = 51;
+const INNER_R = 144;
+const OUTER_R = 381;
+const GAP     = 4;
+const TEXT_R  = (INNER_R + OUTER_R) / 2;   // 262.5
+const NODE_R  = 77;
 
 function donutArc(r1: number, r2: number, a1Deg: number, a2Deg: number): string {
   const toR = (d: number) => (d * Math.PI) / 180;
@@ -120,7 +118,7 @@ function WheelSVG({
     >
       <defs>
         <filter id={filterId} x="-40%" y="-40%" width="180%" height="180%">
-          <feGaussianBlur stdDeviation="7" result="blur" />
+          <feGaussianBlur stdDeviation="11" result="blur" />
           <feMerge>
             <feMergeNode in="blur" />
             <feMergeNode in="SourceGraphic" />
@@ -129,8 +127,8 @@ function WheelSVG({
       </defs>
 
       {/* Decorative rings */}
-      <circle cx={CX} cy={CX} r={OUTER_R + 18} fill="none" stroke="rgba(255,255,255,0.04)" strokeWidth="1" />
-      <circle cx={CX} cy={CX} r={INNER_R + 5}  fill="none" stroke="rgba(255,255,255,0.05)" strokeWidth="1" />
+      <circle cx={CX} cy={CX} r={OUTER_R + 27} fill="none" stroke="rgba(255,255,255,0.04)" strokeWidth="1" />
+      <circle cx={CX} cy={CX} r={INNER_R + 8}  fill="none" stroke="rgba(255,255,255,0.05)" strokeWidth="1" />
 
       {/* Segments */}
       {Cs.map((c, i) => {
@@ -139,8 +137,8 @@ function WheelSVG({
         const midDeg    = (startDeg + endDeg) / 2;
         const midRad    = (midDeg * Math.PI) / 180;
         const isActive  = active === i;
-        const pushX     = isActive ? 15 * Math.cos(midRad) : 0;
-        const pushY     = isActive ? 15 * Math.sin(midRad) : 0;
+        const pushX     = isActive ? 22 * Math.cos(midRad) : 0;
+        const pushY     = isActive ? 22 * Math.sin(midRad) : 0;
         // Lower half of circle → reverse arc so text reads left-to-right from outside
         const reversed  = Math.sin(midRad) > 0;
         const textFill  = isActive ? "rgba(255,255,255,0.95)" : "rgba(255,255,255,0.45)";
@@ -155,8 +153,8 @@ function WheelSVG({
             <path id={pmid} d={arcPathD(TEXT_R,      startDeg, endDeg, reversed)} fill="none" stroke="none" />
             {c.lines.length > 1 && (
               <>
-                <path id={pout} d={arcPathD(TEXT_R + 16, startDeg, endDeg, reversed)} fill="none" stroke="none" />
-                <path id={pin}  d={arcPathD(TEXT_R - 16, startDeg, endDeg, reversed)} fill="none" stroke="none" />
+                <path id={pout} d={arcPathD(TEXT_R + 24, startDeg, endDeg, reversed)} fill="none" stroke="none" />
+                <path id={pin}  d={arcPathD(TEXT_R - 24, startDeg, endDeg, reversed)} fill="none" stroke="none" />
               </>
             )}
 
@@ -178,7 +176,7 @@ function WheelSVG({
             {c.lines.length === 1 ? (
               <text
                 fill={textFill}
-                fontSize="26"
+                fontSize="39"
                 fontFamily="monospace"
                 style={{ transition: "fill 0.3s", userSelect: "none" } as React.CSSProperties}
               >
@@ -191,7 +189,7 @@ function WheelSVG({
                 {/* lines[0] on outer arc — seen first from outside */}
                 <text
                   fill={textFill}
-                  fontSize="24"
+                  fontSize="36"
                   fontFamily="monospace"
                   style={{ transition: "fill 0.3s", userSelect: "none" } as React.CSSProperties}
                 >
@@ -202,7 +200,7 @@ function WheelSVG({
                 {/* lines[1] on inner arc */}
                 <text
                   fill={textFill}
-                  fontSize="24"
+                  fontSize="36"
                   fontFamily="monospace"
                   style={{ transition: "fill 0.3s", userSelect: "none" } as React.CSSProperties}
                 >
@@ -231,19 +229,19 @@ function WheelSVG({
             <line
               x1={CX} y1={CX} x2={nx} y2={ny}
               stroke={lit ? "rgba(242,101,34,0.82)" : "rgba(242,101,34,0.22)"}
-              strokeWidth={lit ? 1.6 : 1}
+              strokeWidth={lit ? 2.4 : 1.5}
               style={{ transition: "stroke 0.3s, stroke-width 0.3s" }}
             />
             <circle
-              cx={nx} cy={ny} r={4.5}
+              cx={nx} cy={ny} r={7}
               fill={lit ? "#F26522" : "rgba(242,101,34,0.35)"}
               style={{ transition: "fill 0.3s" }}
             />
           </g>
         );
       })}
-      <circle cx={CX} cy={CX} r={13}  fill="#F26522" opacity="0.85" />
-      <circle cx={CX} cy={CX} r={7}   fill="rgba(8,18,38,0.95)" />
+      <circle cx={CX} cy={CX} r={19}  fill="#F26522" opacity="0.85" />
+      <circle cx={CX} cy={CX} r={10}  fill="rgba(8,18,38,0.95)" />
     </svg>
   );
 }
@@ -345,7 +343,7 @@ export default function ContentPreviewSection() {
         </motion.div>
 
         {/* ── DESKTOP: left panel | wheel | right panel ── */}
-        <div className="hidden lg:grid lg:grid-cols-[1fr_auto_1fr] items-center gap-8 xl:gap-14">
+        <div className="hidden xl:grid xl:grid-cols-[1fr_auto_1fr] items-center gap-4 2xl:gap-10">
 
           {/* Left panel — Communication & Compassion */}
           <div className="min-h-[260px] flex items-center justify-end">
@@ -363,7 +361,7 @@ export default function ContentPreviewSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
             className="flex-shrink-0"
-            style={{ width: "560px" }}
+            style={{ width: "840px" }}
           >
             <WheelSVG active={active} setActive={setActive} filterId="sg-dt" />
           </motion.div>
@@ -379,14 +377,14 @@ export default function ContentPreviewSection() {
         </div>
 
         {/* ── MOBILE: wheel then description ── */}
-        <div className="lg:hidden flex flex-col items-center gap-6">
+        <div className="xl:hidden flex flex-col items-center gap-6">
           <motion.div
             initial={{ opacity: 0, scale: 0.88, rotate: -12 }}
             whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
             className="w-full mx-auto"
-            style={{ maxWidth: "min(90vw, 520px)" }}
+            style={{ maxWidth: "min(95vw, 780px)" }}
           >
             <WheelSVG active={active} setActive={setActive} filterId="sg-mb" />
           </motion.div>

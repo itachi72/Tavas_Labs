@@ -153,7 +153,6 @@ export default function HeroSection() {
         transition={{ delay: 1.4 }}
         aria-hidden="true"
       >
-        <span className="text-[10px] tracking-widest uppercase text-gray-400 font-mono">Scroll</span>
         <motion.svg
           width="20" height="20" viewBox="0 0 20 20" fill="none"
           animate={{ y: [0, 6, 0] }}

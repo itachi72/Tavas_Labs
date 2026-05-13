@@ -87,6 +87,12 @@ export default function EngagementSection() {
           <p className="text-xs font-mono tracking-[0.25em] uppercase text-brand-orange mb-3">
             IT Consulting · TAVAS Nexus · Engagement Model
           </p>
+          <p
+            className="font-display font-semibold text-white mb-2"
+            style={{ fontSize: "clamp(1rem, 1.8vw, 1.4rem)", letterSpacing: "0.04em" }}
+          >
+            See our engagement models
+          </p>
           <h2
             className="font-display font-bold text-white mb-4"
             style={{ fontSize: "clamp(1.5rem, 2.8vw, 2.2rem)" }}
