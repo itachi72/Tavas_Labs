@@ -84,12 +84,9 @@ export default function EngagementSection() {
           transition={{ duration: 0.7 }}
           className="text-center mb-14"
         >
-          <p className="text-xs font-mono tracking-[0.25em] uppercase text-brand-orange mb-3">
-            IT Consulting · TAVAS Nexus · Engagement Model
-          </p>
           <p
-            className="font-display font-semibold text-white mb-2"
-            style={{ fontSize: "clamp(1rem, 1.8vw, 1.4rem)", letterSpacing: "0.04em" }}
+            className="font-display font-semibold text-white mb-4"
+            style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)", letterSpacing: "0.04em" }}
           >
             See our engagement models
           </p>

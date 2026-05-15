@@ -60,7 +60,6 @@ const INNER_R = 144;
 const OUTER_R = 381;
 const GAP     = 4;
 const TEXT_R  = (INNER_R + OUTER_R) / 2;   // 262.5
-const NODE_R  = 77;
 
 function donutArc(r1: number, r2: number, a1Deg: number, a2Deg: number): string {
   const toR = (d: number) => (d * Math.PI) / 180;
@@ -124,6 +123,9 @@ function WheelSVG({
             <feMergeNode in="SourceGraphic" />
           </feMerge>
         </filter>
+        <clipPath id={`${filterId}-hub-clip`}>
+          <circle cx={CX} cy={CX} r={INNER_R - 4} />
+        </clipPath>
       </defs>
 
       {/* Decorative rings */}
@@ -143,20 +145,12 @@ function WheelSVG({
         const reversed  = Math.sin(midRad) > 0;
         const textFill  = isActive ? "rgba(255,255,255,0.95)" : "rgba(255,255,255,0.45)";
         const pmid = `${filterId}-${i}-m`;
-        const pout = `${filterId}-${i}-o`;
-        const pin  = `${filterId}-${i}-i`;
 
         return (
           <g key={c.word} onClick={() => setActive(i)} style={{ cursor: "pointer" }}>
 
-            {/* Hidden arc paths used by textPath — NOT translated, stay on true arc */}
-            <path id={pmid} d={arcPathD(TEXT_R,      startDeg, endDeg, reversed)} fill="none" stroke="none" />
-            {c.lines.length > 1 && (
-              <>
-                <path id={pout} d={arcPathD(TEXT_R + 24, startDeg, endDeg, reversed)} fill="none" stroke="none" />
-                <path id={pin}  d={arcPathD(TEXT_R - 24, startDeg, endDeg, reversed)} fill="none" stroke="none" />
-              </>
-            )}
+            {/* Hidden arc path for textPath */}
+            <path id={pmid} d={arcPathD(TEXT_R, startDeg, endDeg, reversed)} fill="none" stroke="none" />
 
             {/* Segment fill — pushes outward when active */}
             <path
@@ -172,44 +166,17 @@ function WheelSVG({
               }}
             />
 
-            {/* Curved word labels */}
-            {c.lines.length === 1 ? (
-              <text
-                fill={textFill}
-                fontSize="39"
-                fontFamily="monospace"
-                style={{ transition: "fill 0.3s", userSelect: "none" } as React.CSSProperties}
-              >
-                <textPath href={`#${pmid}`} startOffset="50%" textAnchor="middle">
-                  {c.lines[0]}
-                </textPath>
-              </text>
-            ) : (
-              <>
-                {/* lines[0] on outer arc — seen first from outside */}
-                <text
-                  fill={textFill}
-                  fontSize="36"
-                  fontFamily="monospace"
-                  style={{ transition: "fill 0.3s", userSelect: "none" } as React.CSSProperties}
-                >
-                  <textPath href={`#${pout}`} startOffset="50%" textAnchor="middle">
-                    {c.lines[0]}
-                  </textPath>
-                </text>
-                {/* lines[1] on inner arc */}
-                <text
-                  fill={textFill}
-                  fontSize="36"
-                  fontFamily="monospace"
-                  style={{ transition: "fill 0.3s", userSelect: "none" } as React.CSSProperties}
-                >
-                  <textPath href={`#${pin}`} startOffset="50%" textAnchor="middle">
-                    {c.lines[1]}
-                  </textPath>
-                </text>
-              </>
-            )}
+            {/* Curved word label — single arc, font sized to fit "COMMUNICATION" */}
+            <text
+              fill={textFill}
+              fontSize="30"
+              fontFamily="monospace"
+              style={{ transition: "fill 0.3s", userSelect: "none" } as React.CSSProperties}
+            >
+              <textPath href={`#${pmid}`} startOffset="50%" textAnchor="middle">
+                {c.word.toUpperCase()}
+              </textPath>
+            </text>
           </g>
         );
       })}
@@ -218,30 +185,16 @@ function WheelSVG({
       <circle cx={CX} cy={CX} r={INNER_R - 3} fill="rgba(8,18,38,0.96)" />
       <circle cx={CX} cy={CX} r={INNER_R - 3} fill="none" stroke="rgba(242,101,34,0.35)" strokeWidth="1" />
 
-      {/* Neural-network icon: 5 spokes + peripheral nodes + centre dot */}
-      {[0, 1, 2, 3, 4].map((i) => {
-        const a  = (i * 72 - 90) * (Math.PI / 180);
-        const nx = CX + NODE_R * Math.cos(a);
-        const ny = CX + NODE_R * Math.sin(a);
-        const lit = active === i;
-        return (
-          <g key={`node-${i}`}>
-            <line
-              x1={CX} y1={CX} x2={nx} y2={ny}
-              stroke={lit ? "rgba(242,101,34,0.82)" : "rgba(242,101,34,0.22)"}
-              strokeWidth={lit ? 2.4 : 1.5}
-              style={{ transition: "stroke 0.3s, stroke-width 0.3s" }}
-            />
-            <circle
-              cx={nx} cy={ny} r={7}
-              fill={lit ? "#F26522" : "rgba(242,101,34,0.35)"}
-              style={{ transition: "fill 0.3s" }}
-            />
-          </g>
-        );
-      })}
-      <circle cx={CX} cy={CX} r={19}  fill="#F26522" opacity="0.85" />
-      <circle cx={CX} cy={CX} r={10}  fill="rgba(8,18,38,0.95)" />
+      {/* Brain icon */}
+      <image
+        href={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/brain.png`}
+        x={CX - 110}
+        y={CX - 110}
+        width={220}
+        height={220}
+        clipPath={`url(#${filterId}-hub-clip)`}
+        preserveAspectRatio="xMidYMid meet"
+      />
     </svg>
   );
 }

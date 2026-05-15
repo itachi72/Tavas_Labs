@@ -135,8 +135,8 @@ export default function HeroSection() {
         >
           <motion.p
             animate={{ x: ["0%", "-100%"] }}
-            transition={{ duration: 22, repeat: Infinity, ease: "linear" }}
-            className="text-[19px] sm:text-[22px] font-mono tracking-[0.3em] uppercase whitespace-nowrap"
+            transition={{ duration: 26.4, repeat: Infinity, ease: "linear" }}
+            className="text-[19px] sm:text-[22px] font-mono tracking-[0.12em] uppercase whitespace-nowrap"
             style={{ color: "#FFD700" }}
           >
             Ideation to Monetisation&nbsp;•&nbsp;Industrial AI Adoption&nbsp;•&nbsp;Government Transformation&nbsp;•&nbsp;Digital Twin &amp; Simulation&nbsp;•&nbsp;Intelligent Optimisation&nbsp;•&nbsp;Sustainability Intelligence&nbsp;•&nbsp;Capability Mentors&nbsp;&nbsp;&nbsp;&nbsp;Ideation to Monetisation&nbsp;•&nbsp;Industrial AI Adoption&nbsp;•&nbsp;Government Transformation&nbsp;•&nbsp;Digital Twin &amp; Simulation&nbsp;•&nbsp;Intelligent Optimisation&nbsp;•&nbsp;Sustainability Intelligence&nbsp;•&nbsp;Capability Mentors

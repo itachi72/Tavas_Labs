@@ -63,10 +63,10 @@ export default function TaglineSection() {
           className="font-display font-bold text-white leading-tight mb-8"
         >
           <span style={{ display: "block", fontSize: "clamp(1.7rem, 5.04vw, 4rem)" }}>
-            Civilizational intelligence.
+            Civilizational intelligence
           </span>
           <span style={{ display: "block", fontSize: "clamp(1.35rem, 4.1vw, 3.25rem)" }}>
-            <span className="text-gradient-orange">Ancient wisdom,</span> frontier technology.
+            <span className="text-gradient-orange">Ancient wisdom,</span> frontier technology
           </span>
         </motion.h2>
 
@@ -87,19 +87,37 @@ export default function TaglineSection() {
         </motion.div>
 
         {/* Body */}
-        <motion.p
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="text-gray-300 leading-relaxed"
-          style={{ textShadow: "0 0 40px rgba(100,120,200,0.3)", fontSize: 'clamp(1rem, 2.4vw, 1.875rem)' }}
+          className="space-y-4"
+          style={{ textShadow: "0 0 40px rgba(100,120,200,0.3)" }}
         >
-          <span className="text-white font-semibold">TAVAS (तवस्)</span> from the Rigveda signifies collective strength.
-          <br />
-          built for {" "}
-          <span className="text-gradient-orange font-medium">Electronics, Semiconductors, and Deep Tech.</span>
-        </motion.p>
+          {/* Sanskrit verse */}
+          <p style={{ color: "#F26522", fontSize: "clamp(1.3rem, 3.2vw, 2.4rem)", lineHeight: 1.5 }}>
+            एवा हि मां{" "}
+            <span style={{ color: "#60A5FA", fontSize: "clamp(1.55rem, 3.8vw, 2.85rem)", fontWeight: 700 }}>
+              तवसं
+            </span>
+            {" "}वर्धयन्ति दिवश्चिन्मे बृहत उत्तरा धूः।
+          </p>
+
+          {/* Reference */}
+          <p style={{ color: "rgba(210,225,245,0.85)", fontSize: "clamp(0.85rem, 1.6vw, 1.15rem)", fontStyle: "italic", fontWeight: 600 }}>
+            Rigveda 10 (mandala).28(sūktas).06(mantra)
+          </p>
+
+          {/* Transliteration + translation */}
+          <p style={{ color: "rgba(200,215,235,0.78)", fontSize: "clamp(0.82rem, 1.5vw, 1.1rem)", fontStyle: "italic", lineHeight: 1.75 }}>
+            (Ebaa hi mam{" "}
+            <strong style={{ color: "#60A5FA", fontStyle: "normal" }}>TAVAS</strong>
+            m bardhyeanti dibarshichanme brihat Uttara dhuhu)
+            <br />
+            Thus do they magnify the strength, which is higher than the heavens and make us self reliant!
+          </p>
+        </motion.div>
       </div>
 
       {/* Fade edges into surrounding page */}
