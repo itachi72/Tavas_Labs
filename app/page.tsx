@@ -7,7 +7,6 @@ import ServiceLinesSection  from "@/components/ServiceLinesSection";
 import ThreeSectorsSection  from "@/components/ThreeSectorsSection";
 import IndustriesSection    from "@/components/IndustriesSection";
 import EngagementSection    from "@/components/EngagementSection";
-import WhyTavas             from "@/components/WhyTavas";
 import EngageSection        from "@/components/EngageSection";
 import Footer               from "@/components/Footer";
 
@@ -23,7 +22,6 @@ export default function HomePage() {
       <ThreeSectorsSection />      {/* Government · Industry · Academia */}
       <IndustriesSection />        {/* 7 Industries */}
       <EngagementSection />        {/* Flexible. Outcome-Focused. */}
-      <WhyTavas />                 {/* Why Us / DSOS */}
       <EngageSection />            {/* Contact Us */}
       <Footer />
     </main>

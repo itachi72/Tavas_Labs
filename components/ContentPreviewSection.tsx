@@ -166,15 +166,15 @@ function WheelSVG({
               }}
             />
 
-            {/* Curved word label — single arc, font sized to fit "COMMUNICATION" */}
+            {/* Curved word label — single arc, font sized to fit "4. COMMUNICATION" */}
             <text
               fill={textFill}
-              fontSize="30"
+              fontSize="26"
               fontFamily="monospace"
               style={{ transition: "fill 0.3s", userSelect: "none" } as React.CSSProperties}
             >
               <textPath href={`#${pmid}`} startOffset="50%" textAnchor="middle">
-                {c.word.toUpperCase()}
+                {`${i + 1}. ${c.word.toUpperCase()}`}
               </textPath>
             </text>
           </g>
@@ -185,15 +185,15 @@ function WheelSVG({
       <circle cx={CX} cy={CX} r={INNER_R - 3} fill="rgba(8,18,38,0.96)" />
       <circle cx={CX} cy={CX} r={INNER_R - 3} fill="none" stroke="rgba(242,101,34,0.35)" strokeWidth="1" />
 
-      {/* Brain icon */}
+      {/* Brain icon — fills the hub circle exactly */}
       <image
         href={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/brain.png`}
-        x={CX - 110}
-        y={CX - 110}
-        width={220}
-        height={220}
+        x={CX - 140}
+        y={CX - 140}
+        width={280}
+        height={280}
         clipPath={`url(#${filterId}-hub-clip)`}
-        preserveAspectRatio="xMidYMid meet"
+        preserveAspectRatio="xMidYMid slice"
       />
     </svg>
   );
@@ -225,6 +225,12 @@ function DescPanel({
         <span
           className="w-3 h-3 rounded-full flex-shrink-0"
           style={{ background: c.color, boxShadow: `0 0 10px ${c.color}` }}
+          aria-hidden="true"
+        />
+        <img
+          src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/${c.word}.png`}
+          alt=""
+          className="w-10 h-10 object-contain flex-shrink-0"
           aria-hidden="true"
         />
         <h3
