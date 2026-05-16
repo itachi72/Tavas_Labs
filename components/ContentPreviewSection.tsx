@@ -222,20 +222,15 @@ function DescPanel({
       }}
     >
       <div className="flex items-center gap-3 mb-5">
-        <span
-          className="w-3 h-3 rounded-full flex-shrink-0"
-          style={{ background: c.color, boxShadow: `0 0 10px ${c.color}` }}
-          aria-hidden="true"
-        />
         <img
           src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/${c.word}.png`}
           alt=""
-          className="w-10 h-10 object-contain flex-shrink-0"
+          className="w-[60px] h-[60px] object-contain flex-shrink-0"
           aria-hidden="true"
         />
         <h3
           className="font-display font-bold text-white"
-          style={{ fontSize: "clamp(1.2rem, 2vw, 1.6rem)" }}
+          style={{ fontSize: "clamp(1.8rem, 3vw, 2.4rem)" }}
         >
           {c.word}
         </h3>
@@ -244,7 +239,7 @@ function DescPanel({
         {c.points.map((pt) => (
           <li key={pt} className="flex items-start gap-3">
             <svg
-              width="14" height="14" viewBox="0 0 14 14" fill="none"
+              width="21" height="21" viewBox="0 0 14 14" fill="none"
               className="mt-0.5 flex-shrink-0"
               aria-hidden="true"
             >
@@ -256,7 +251,7 @@ function DescPanel({
                 strokeLinejoin="round"
               />
             </svg>
-            <span className="text-sm text-gray-300 leading-relaxed">{pt}</span>
+            <span className="text-[1.3rem] text-gray-300 leading-relaxed">{pt}</span>
           </li>
         ))}
       </ul>
