@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion";
 
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 const SERVICES = [
   {
     tag: "TAVAS NEXUS",
@@ -10,24 +12,7 @@ const SERVICES = [
     desc: "Strategic and technical consulting for governments and industries – from AI strategy to hands-on implementation. Everything from Strategy to Scale.",
     accentColor: "#F26522",
     borderColor: "rgba(242,101,34,0.30)",
-    icon: (
-      <svg
-        width="28"
-        height="28"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.6"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        aria-hidden="true"
-      >
-        <rect x="2" y="7" width="20" height="14" rx="2" />
-        <path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2" />
-        <line x1="12" y1="12" x2="12" y2="16" />
-        <line x1="10" y1="14" x2="14" y2="14" />
-      </svg>
-    ),
+    iconFile: "consulting",
   },
   {
     tag: "AI & DIGITAL SKILLS",
@@ -36,22 +21,7 @@ const SERVICES = [
     desc: "Bespoke training programmes for teams and leaders – building the internal capability to sustain transformation.",
     accentColor: "#60A5FA",
     borderColor: "rgba(96,165,250,0.28)",
-    icon: (
-      <svg
-        width="28"
-        height="28"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.6"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        aria-hidden="true"
-      >
-        <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
-        <path d="M6 12v5c3 3 9 3 12 0v-5" />
-      </svg>
-    ),
+    iconFile: "training",
   },
   {
     tag: "INTELLIGENT PLATFORMS",
@@ -60,22 +30,7 @@ const SERVICES = [
     desc: "Proprietary SaaS tools and AI-powered products built on our four-pillar framework – ready to deploy.",
     accentColor: "#F26522",
     borderColor: "rgba(242,101,34,0.30)",
-    icon: (
-      <svg
-        width="28"
-        height="28"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.6"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        aria-hidden="true"
-      >
-        <rect x="9" y="9" width="6" height="6" />
-        <path d="M9 9H5M9 15H5M15 9h4M15 15h4M9 5V3M15 5V3M9 21v-2M15 21v-2M5 9H3M5 15H3M21 9h-2M21 15h-2" />
-      </svg>
-    ),
+    iconFile: "tools",
   },
 ];
 
@@ -101,25 +56,21 @@ function ServiceCard({
         backdropFilter: "blur(12px)",
       }}
     >
-      {/* Icon box */}
-      <div
-        className="w-14 h-14 rounded-xl flex items-center justify-center mb-5 flex-shrink-0"
-        style={{
-          background: `${service.accentColor}18`,
-          border: `1px solid ${service.borderColor}`,
-          color: service.accentColor,
-        }}
-      >
-        {service.icon}
+      {/* Icon + Tag row */}
+      <div className="flex items-center gap-4 mb-5">
+        <img
+          src={`${BASE}/${service.iconFile}.png`}
+          alt=""
+          className="w-14 h-14 object-contain flex-shrink-0"
+          aria-hidden="true"
+        />
+        <p
+          className="font-mono tracking-[0.25em] uppercase leading-tight"
+          style={{ color: service.accentColor, fontSize: "25px" }}
+        >
+          {service.tag}
+        </p>
       </div>
-
-      {/* Tag */}
-      <p
-        className="text-[10px] font-mono tracking-[0.25em] uppercase mb-3"
-        style={{ color: service.accentColor }}
-      >
-        {service.tag}
-      </p>
 
       {/* Title */}
       <h3 className="font-display font-bold text-2xl sm:text-3xl text-white leading-tight mb-1">

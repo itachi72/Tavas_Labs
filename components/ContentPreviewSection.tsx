@@ -188,10 +188,10 @@ function WheelSVG({
       {/* Brain icon — fills the hub circle exactly */}
       <image
         href={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/brain.png`}
-        x={CX - 140}
-        y={CX - 140}
-        width={280}
-        height={280}
+        x={CX - 154}
+        y={CX - 154}
+        width={308}
+        height={308}
         clipPath={`url(#${filterId}-hub-clip)`}
         preserveAspectRatio="xMidYMid slice"
       />
