@@ -13,6 +13,7 @@ const SERVICES = [
     accentColor: "#F26522",
     borderColor: "rgba(242,101,34,0.30)",
     iconFile: "consulting",
+    href: "/nexus",
   },
   {
     tag: "AI & DIGITAL SKILLS",
@@ -22,6 +23,7 @@ const SERVICES = [
     accentColor: "#60A5FA",
     borderColor: "rgba(96,165,250,0.28)",
     iconFile: "training",
+    href: "#contact",
   },
   {
     tag: "INTELLIGENT PLATFORMS",
@@ -31,6 +33,7 @@ const SERVICES = [
     accentColor: "#F26522",
     borderColor: "rgba(242,101,34,0.30)",
     iconFile: "tools",
+    href: "#contact",
   },
 ];
 
@@ -85,7 +88,7 @@ function ServiceCard({
 
       {/* Know more */}
       <a
-        href="#contact"
+        href={service.href}
         className="mt-auto inline-flex items-center gap-2 text-sm font-semibold transition-all duration-200 group/btn"
         style={{ color: service.accentColor }}
       >
