@@ -88,7 +88,7 @@ export default function EngagementSection() {
             className="font-display font-semibold text-white mb-4"
             style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)", letterSpacing: "0.04em" }}
           >
-            See our engagement models
+            Our engagement models
           </p>
           <h2
             className="font-display font-bold text-white mb-4"

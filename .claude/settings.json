@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git -C \"c:/Users/neelk/Documents/tavas-labs\" log --pretty=format:\"%h %ad %s\" --date=format:\"%Y-%m-%d %H:%M\")",
+      "Bash(git -C \"c:/Users/neelk/Documents/tavas-labs\" log --pretty=format:\"%ad\" --date=format:\"%Y-%m-%d %H:%M\")"
+    ]
+  }
+}
