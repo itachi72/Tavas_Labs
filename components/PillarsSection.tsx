@@ -153,7 +153,7 @@ export default function PillarsSection() {
           transition={{ duration: 0.7 }}
           className="text-center mb-10 sm:mb-16"
         >
-          <p className="text-xs font-mono tracking-[0.3em] uppercase mb-3" style={{ color: GOLD }}>
+          <p className="text-2xl font-mono tracking-[0.3em] uppercase mb-3" style={{ color: GOLD }}>
             Core Capabilities
           </p>
           <h2 className="font-display font-bold text-white mb-5 leading-tight" style={{ fontSize: "clamp(2rem, 4vw, 3.2rem)" }}>

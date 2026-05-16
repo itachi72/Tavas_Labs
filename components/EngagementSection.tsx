@@ -135,7 +135,7 @@ export default function EngagementSection() {
               )}
 
               {/* Tag */}
-              <p className="text-[10px] font-mono tracking-[0.22em] uppercase text-brand-orange mb-2">
+              <p className="text-[20px] font-mono tracking-[0.22em] uppercase text-brand-orange mb-2">
                 {model.tag}
               </p>
 

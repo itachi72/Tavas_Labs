@@ -105,12 +105,12 @@ export default function TaglineSection() {
           </p>
 
           {/* Reference */}
-          <p style={{ color: "rgba(210,225,245,0.85)", fontSize: "clamp(0.85rem, 1.6vw, 1.15rem)", fontStyle: "italic", fontWeight: 600 }}>
+          <p style={{ color: "rgba(210,225,245,0.85)", fontSize: "clamp(1.1rem, 2.08vw, 1.5rem)", fontStyle: "italic", fontWeight: 600 }}>
             Rigveda 10 (mandala).28(sūktas).06(mantra)
           </p>
 
           {/* Transliteration + translation */}
-          <p style={{ color: "rgba(200,215,235,0.78)", fontSize: "clamp(0.82rem, 1.5vw, 1.1rem)", fontStyle: "italic", lineHeight: 1.75 }}>
+          <p style={{ color: "rgba(200,215,235,0.78)", fontSize: "clamp(1.05rem, 1.95vw, 1.43rem)", fontStyle: "italic", lineHeight: 1.75 }}>
             (Ebaa hi mam{" "}
             <strong style={{ color: "#60A5FA", fontStyle: "normal" }}>TAVAS</strong>
             m bardhyeanti dibarshichanme brihat Uttara dhuhu)

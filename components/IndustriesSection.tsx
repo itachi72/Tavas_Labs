@@ -91,7 +91,7 @@ export default function IndustriesSection() {
           transition={{ duration: 0.7 }}
           className="text-center mb-10 sm:mb-16"
         >
-          <p className="text-xs font-mono tracking-[0.3em] uppercase mb-3 text-brand-orange">
+          <p className="text-2xl font-mono tracking-[0.3em] uppercase mb-3 text-brand-orange">
             Industries We Transform
           </p>
           <h2
