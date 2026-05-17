@@ -92,7 +92,7 @@ export default function HeroSection() {
           transition={{ duration: 0.6, delay: 0.48 }}
           className="text-base sm:text-xl text-gray-300 leading-relaxed mb-10"
         >
-          Navigating the frontier of digital transformation with AI-powered digital twins -
+          Navigating the frontier of digital transformation with AI-powered digital twins
           <br />
           turning complex challenges into engineered, intelligent, and sustainable outcomes.
         </motion.p>
@@ -126,13 +126,16 @@ export default function HeroSection() {
           </a>
         </motion.div>
 
-        {/* Scrolling ticker */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={inView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.6, delay: 0.9 }}
-          className="overflow-hidden mt-8"
-        >
+      </div>
+
+      {/* Scrolling ticker — full viewport width, no padding */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={inView ? { opacity: 1 } : {}}
+        transition={{ duration: 0.6, delay: 0.9 }}
+        className="overflow-hidden mt-8 w-full"
+        style={{ zIndex: 10 }}
+      >
           <motion.p
             animate={{ x: ["0%", "-100%"] }}
             transition={{ duration: 26.4, repeat: Infinity, ease: "linear" }}
@@ -141,8 +144,7 @@ export default function HeroSection() {
           >
             Ideation to Monetisation&nbsp;•&nbsp;Industrial AI Adoption&nbsp;•&nbsp;Government Transformation&nbsp;•&nbsp;Digital Twin &amp; Simulation&nbsp;•&nbsp;Intelligent Optimisation&nbsp;•&nbsp;Sustainability Intelligence&nbsp;•&nbsp;Capability Mentors&nbsp;&nbsp;&nbsp;&nbsp;Ideation to Monetisation&nbsp;•&nbsp;Industrial AI Adoption&nbsp;•&nbsp;Government Transformation&nbsp;•&nbsp;Digital Twin &amp; Simulation&nbsp;•&nbsp;Intelligent Optimisation&nbsp;•&nbsp;Sustainability Intelligence&nbsp;•&nbsp;Capability Mentors
           </motion.p>
-        </motion.div>
-      </div>
+      </motion.div>
 
       {/* ── SCROLL INDICATOR ── */}
       <motion.div

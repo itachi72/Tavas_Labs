@@ -68,8 +68,8 @@ function ServiceCard({
           aria-hidden="true"
         />
         <p
-          className="font-mono tracking-[0.25em] uppercase leading-tight"
-          style={{ color: service.accentColor, fontSize: "25px" }}
+          className="text-gradient-orange font-mono tracking-[0.25em] uppercase leading-tight"
+          style={{ fontSize: "25px" }}
         >
           {service.tag}
         </p>

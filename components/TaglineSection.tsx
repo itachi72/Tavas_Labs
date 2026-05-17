@@ -66,7 +66,7 @@ export default function TaglineSection() {
             Civilizational intelligence
           </span>
           <span style={{ display: "block", fontSize: "clamp(1.35rem, 4.1vw, 3.25rem)" }}>
-            <span className="text-gradient-orange">Ancient wisdom,</span> frontier technology
+            <span className="text-white">Ancient wisdom,</span> frontier technology
           </span>
         </motion.h2>
 
@@ -98,7 +98,7 @@ export default function TaglineSection() {
           {/* Sanskrit verse */}
           <p style={{ color: "#F26522", fontSize: "clamp(1.3rem, 3.2vw, 2.4rem)", lineHeight: 1.5 }}>
             एवा हि मां{" "}
-            <span style={{ color: "#60A5FA", fontSize: "clamp(1.55rem, 3.8vw, 2.85rem)", fontWeight: 700 }}>
+            <span style={{ color: "#ffffff", fontSize: "clamp(1.55rem, 3.8vw, 2.85rem)", fontWeight: 700 }}>
               तवसं
             </span>
             {" "}वर्धयन्ति दिवश्चिन्मे बृहत उत्तरा धूः।
@@ -112,7 +112,7 @@ export default function TaglineSection() {
           {/* Transliteration + translation */}
           <p style={{ color: "rgba(200,215,235,0.78)", fontSize: "clamp(1.05rem, 1.95vw, 1.43rem)", fontStyle: "italic", lineHeight: 1.75 }}>
             (Ebaa hi mam{" "}
-            <strong style={{ color: "#60A5FA", fontStyle: "normal" }}>TAVAS</strong>
+            <strong style={{ color: "#F26522", fontStyle: "normal" }}>TAVAS</strong>
             m bardhyeanti dibarshichanme brihat Uttara dhuhu)
             <br />
             Thus do they magnify the strength, which is higher than the heavens and make us self reliant!

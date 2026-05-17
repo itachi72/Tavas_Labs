@@ -99,7 +99,7 @@ export default function IndustriesSection() {
             style={{ fontSize: "clamp(1.9rem, 4vw, 3.2rem)" }}
           >
             8 Industries.
-            <span className="text-gradient-orange"> Deep Expertise.</span>
+            <span className="text-white"> Deep Expertise.</span>
           </h2>
         </motion.div>
 

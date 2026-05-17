@@ -193,7 +193,7 @@ export default function ThreeSectorsSection() {
             style={{ fontSize: "clamp(1.9rem, 4vw, 3.2rem)" }}
           >
             Three Sectors.{" "}
-            <span className="text-gradient-orange">One Mission.</span>
+            <span className="text-white">One Mission.</span>
           </h2>
         </motion.div>
 

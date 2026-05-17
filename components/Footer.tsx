@@ -110,8 +110,8 @@ export default function Footer() {
             {/* Logo */}
             <a href="#" className="inline-flex flex-col mb-5" aria-label="TAVAS Labs">
               <div className="flex items-baseline gap-1.5 mb-1">
-                <span className="font-display font-bold text-lg tracking-widest text-white">TAVAS</span>
-                <span className="text-brand-orange font-bold">·</span>
+                <span className="font-display font-bold text-lg tracking-widest text-white">TAVAS </span>
+                <span className="text-brand-orange font-bold"></span>
                 <span className="font-display font-light text-lg tracking-widest text-gray-400">LABS</span>
               </div>
               <span className="text-[9px] tracking-[0.2em] text-gray-600 uppercase">
