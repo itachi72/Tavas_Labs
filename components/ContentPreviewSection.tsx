@@ -8,6 +8,11 @@ import {
   CreativityIllustration,
   CommunicationIllustration,
   CompassionIllustration,
+  CuriosityGroup,
+  CourageGroup,
+  CreativityGroup,
+  CommunicationGroup,
+  CompassionGroup,
 } from "./FiveCIllustrations";
 
 const Cs = [
@@ -17,6 +22,7 @@ const Cs = [
     color: "#F26522",
     side: "right" as const,
     Illustration: CuriosityIllustration,
+    Group: CuriosityGroup,
     points: [
       "Continuous inquiry into emerging regulations, technologies, market",
       "Data-driven AI Analytics to uncover hidden risks and opportunities",
@@ -28,6 +34,7 @@ const Cs = [
     color: "#60A5FA",
     side: "right" as const,
     Illustration: CourageIllustration,
+    Group: CourageGroup,
     points: [
       "Challenge legacy business models and intensive practices",
       "Decisive Insights aligned with value creation with AI & Digital Twin",
@@ -39,6 +46,7 @@ const Cs = [
     color: "#F26522",
     side: "right" as const,
     Illustration: CreativityIllustration,
+    Group: CreativityGroup,
     points: [
       "Innovative sustainability solutions and circularity",
       "Co-creation of roadmaps tailored to client context – Modular & Scalable",
@@ -50,6 +58,7 @@ const Cs = [
     color: "#60A5FA",
     side: "left" as const,
     Illustration: CommunicationIllustration,
+    Group: CommunicationGroup,
     points: [
       "Clear translation of strategy into board-level, investor, and stakeholder language",
     ],
@@ -60,18 +69,20 @@ const Cs = [
     color: "#F26522",
     side: "left" as const,
     Illustration: CompassionIllustration,
+    Group: CompassionGroup,
     points: [
       "Policy & Purpose: Human-centric approach balancing profit, planet, and people",
     ],
   },
 ];
 
-const W       = 960;
-const CX      = W / 2;
-const INNER_R = 144;
-const OUTER_R = 381;
-const GAP     = 4;
-const TEXT_R  = (INNER_R + OUTER_R) / 2;   // 262.5
+const W        = 960;
+const CX       = W / 2;
+const INNER_R  = 144;
+const OUTER_R  = 381;
+const GAP      = 4;
+const TEXT_R   = (INNER_R + OUTER_R) / 2;   // 262.5
+const ILLUST_R = 205;                        // illustration centre radius
 
 function donutArc(r1: number, r2: number, a1Deg: number, a2Deg: number): string {
   const toR = (d: number) => (d * Math.PI) / 180;
@@ -177,6 +188,16 @@ function WheelSVG({
                 transition: "fill 0.3s, transform 0.35s cubic-bezier(0.16,1,0.3,1)",
               }}
             />
+
+            {/* Illustration group — centred at sector midpoint, pushes with segment */}
+            <g transform={`translate(${CX + ILLUST_R * Math.cos(midRad)}, ${CX + ILLUST_R * Math.sin(midRad)})`}>
+              <g style={{
+                transform: `translate(${pushX}px, ${pushY}px)`,
+                transition: "transform 0.35s cubic-bezier(0.16,1,0.3,1)",
+              }}>
+                <c.Group active={isActive} />
+              </g>
+            </g>
 
             {/* Curved word label — single arc, font sized to fit "4. COMMUNICATION" */}
             <text
