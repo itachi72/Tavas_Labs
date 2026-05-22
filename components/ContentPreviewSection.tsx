@@ -81,8 +81,7 @@ const CX       = W / 2;
 const INNER_R  = 144;
 const OUTER_R  = 381;
 const GAP      = 4;
-const TEXT_R   = (INNER_R + OUTER_R) / 2;   // 262.5
-const ILLUST_R = 205;                        // illustration centre radius
+const TEXT_R   = (INNER_R + OUTER_R) / 2;   // 262.5 — also used as illustration centre
 
 function donutArc(r1: number, r2: number, a1Deg: number, a2Deg: number): string {
   const toR = (d: number) => (d * Math.PI) / 180;
@@ -149,6 +148,17 @@ function WheelSVG({
         <clipPath id={`${filterId}-hub-clip`}>
           <circle cx={CX} cy={CX} r={INNER_R - 4} />
         </clipPath>
+
+        {/* Per-sector clip shapes — used to contain the fill-sized illustrations */}
+        {Cs.map((_c, i) => {
+          const sd = -90 + i * 72 + GAP;
+          const ed = -90 + (i + 1) * 72 - GAP;
+          return (
+            <clipPath key={i} id={`${filterId}-seg-${i}`}>
+              <path d={donutArc(INNER_R, OUTER_R, sd, ed)} />
+            </clipPath>
+          );
+        })}
       </defs>
 
       {/* Decorative rings */}
@@ -175,26 +185,24 @@ function WheelSVG({
             {/* Hidden arc path for textPath */}
             <path id={pmid} d={arcPathD(TEXT_R, startDeg, endDeg, reversed)} fill="none" stroke="none" />
 
-            {/* Segment fill — pushes outward when active */}
+            {/* Segment fill — semi-transparent when active so illustration shows through */}
             <path
               d={donutArc(INNER_R, OUTER_R, startDeg, endDeg)}
               fill={isActive ? c.color : "rgba(255,255,255,0.04)"}
+              fillOpacity={isActive ? 0.42 : 1}
               stroke={c.color}
               strokeWidth={isActive ? 0 : 0.6}
               strokeOpacity={0.3}
               filter={isActive ? `url(#${filterId})` : undefined}
               style={{
                 transform: `translate(${pushX}px, ${pushY}px)`,
-                transition: "fill 0.3s, transform 0.35s cubic-bezier(0.16,1,0.3,1)",
+                transition: "fill 0.3s, fill-opacity 0.3s, transform 0.35s cubic-bezier(0.16,1,0.3,1)",
               }}
             />
 
-            {/* Illustration group — centred at sector midpoint, pushes with segment */}
-            <g transform={`translate(${CX + ILLUST_R * Math.cos(midRad)}, ${CX + ILLUST_R * Math.sin(midRad)})`}>
-              <g style={{
-                transform: `translate(${pushX}px, ${pushY}px)`,
-                transition: "transform 0.35s cubic-bezier(0.16,1,0.3,1)",
-              }}>
+            {/* Illustration — clipped to sector shape, scaled to fill the full donut depth */}
+            <g clipPath={`url(#${filterId}-seg-${i})`}>
+              <g transform={`translate(${CX + TEXT_R * Math.cos(midRad)}, ${CX + TEXT_R * Math.sin(midRad)}) scale(2.5)`}>
                 <c.Group active={isActive} />
               </g>
             </g>
