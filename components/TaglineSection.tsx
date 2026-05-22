@@ -2,135 +2,158 @@
 
 import { motion } from "framer-motion";
 import StarField from "./StarField";
+import RiverOfLight from "./RiverOfLight";
+
+/* ─── font stacks ─────────────────────────────────────────────────────────── */
+const SANS  = "'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif";
+const DEVAN = "'Noto Serif Devanagari', 'Noto Serif', serif";
 
 export default function TaglineSection() {
   return (
     <section
       id="tagline"
-      className="relative py-16 sm:py-28 lg:py-40 overflow-hidden"
-      style={{ background: "#0E1A2E" }}   // deep space black
+      className="relative py-20 sm:py-32 lg:py-44 overflow-hidden"
+      style={{ background: "#0B1524" }}
     >
-      {/* ── STARFIELD ── */}
+      {/* ── layer 1: starfield ── */}
       <StarField />
 
-      {/* ── NEBULA COLOUR BLOOMS ── */}
-      {/* Blue-purple bloom — top left */}
-      <div
-        className="absolute pointer-events-none"
-        style={{
-          inset: 0,
-          background: "radial-gradient(ellipse 70% 55% at 20% 30%, rgba(59,90,210,0.18) 0%, transparent 70%)",
-        }}
-        aria-hidden="true"
-      />
-      {/* Amber/orange bloom — bottom right (TAVAS orange warmth) */}
-      <div
-        className="absolute pointer-events-none"
-        style={{
-          inset: 0,
-          background: "radial-gradient(ellipse 60% 45% at 80% 70%, rgba(242,101,34,0.10) 0%, transparent 65%)",
-        }}
-        aria-hidden="true"
-      />
-      {/* Purple deep-field centre */}
-      <div
-        className="absolute pointer-events-none"
-        style={{
-          inset: 0,
-          background: "radial-gradient(ellipse 50% 40% at 50% 50%, rgba(100,50,180,0.10) 0%, transparent 60%)",
-        }}
-        aria-hidden="true"
-      />
-      {/* Teal accent — right edge */}
-      <div
-        className="absolute pointer-events-none"
-        style={{
-          inset: 0,
-          background: "radial-gradient(ellipse 35% 60% at 95% 40%, rgba(20,160,180,0.08) 0%, transparent 60%)",
-        }}
-        aria-hidden="true"
-      />
+      {/* ── layer 2: nebula blooms ── */}
+      <div className="absolute inset-0 pointer-events-none" aria-hidden="true"
+        style={{ background: "radial-gradient(ellipse 70% 55% at 18% 30%, rgba(59,90,210,0.16) 0%, transparent 70%)" }} />
+      <div className="absolute inset-0 pointer-events-none" aria-hidden="true"
+        style={{ background: "radial-gradient(ellipse 60% 45% at 82% 68%, rgba(242,101,34,0.09) 0%, transparent 65%)" }} />
+      <div className="absolute inset-0 pointer-events-none" aria-hidden="true"
+        style={{ background: "radial-gradient(ellipse 50% 40% at 50% 50%, rgba(100,50,180,0.09) 0%, transparent 60%)" }} />
 
-      {/* ── CONTENT ── */}
-      <div className="relative z-10 max-w-5xl mx-auto px-6 lg:px-8 text-center">
+      {/* ── layer 3: river of light animation ── */}
+      <RiverOfLight />
+
+      {/* ── layer 4: content ── */}
+      <div className="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 text-center">
 
         {/* Main headline */}
-        <motion.h2
-          initial={{ opacity: 0, y: 30 }}
+        <motion.div
+          initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.9, delay: 0.2 }}
-          className="font-display font-bold text-white leading-tight mb-8"
+          transition={{ duration: 1, delay: 0.2 }}
+          className="mb-10"
         >
-          <span style={{ display: "block", fontSize: "clamp(1.7rem, 5.04vw, 4rem)" }}>
+          <h2
+            style={{
+              fontFamily: SANS,
+              fontWeight: 300,
+              letterSpacing: "-0.035em",
+              lineHeight: 1.12,
+              color: "#ffffff",
+              fontSize: "clamp(2rem, 5.2vw, 4.2rem)",
+              marginBottom: "0.2em",
+            }}
+          >
             Civilizational intelligence
-          </span>
-          <span style={{ display: "block", fontSize: "clamp(1.35rem, 4.1vw, 3.25rem)" }}>
-            <span className="text-white">Ancient wisdom,</span> frontier technology
-          </span>
-        </motion.h2>
+          </h2>
+          <p
+            style={{
+              fontFamily: SANS,
+              fontWeight: 300,
+              letterSpacing: "-0.02em",
+              fontSize: "clamp(1.2rem, 3.2vw, 2.6rem)",
+              color: "rgba(255,255,255,0.72)",
+              lineHeight: 1.2,
+            }}
+          >
+            <span style={{ color: "#ffffff" }}>Ancient wisdom,</span>{" "}
+            <span style={{ color: "rgba(255,255,255,0.65)" }}>frontier technology</span>
+          </p>
+        </motion.div>
 
-        {/* Divider star */}
+        {/* Divider */}
         <motion.div
           initial={{ opacity: 0, scaleX: 0 }}
           whileInView={{ opacity: 1, scaleX: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="flex items-center justify-center gap-4 mb-8"
+          transition={{ duration: 0.9, delay: 0.4 }}
+          className="flex items-center justify-center gap-5 mb-10"
           aria-hidden="true"
         >
-          <div className="h-px w-24 bg-gradient-to-r from-transparent to-orange-400/50" />
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-            <path d="M6 0L7.2 4.8L12 6L7.2 7.2L6 12L4.8 7.2L0 6L4.8 4.8Z" fill="#F26522" fillOpacity="0.8"/>
+          <div className="h-px flex-1 max-w-[96px]"
+            style={{ background: "linear-gradient(to right, transparent, rgba(242,101,34,0.45))" }} />
+          <svg width="10" height="10" viewBox="0 0 12 12" fill="none">
+            <path d="M6 0L7.2 4.8L12 6L7.2 7.2L6 12L4.8 7.2L0 6L4.8 4.8Z"
+              fill="#F26522" fillOpacity="0.75"/>
           </svg>
-          <div className="h-px w-24 bg-gradient-to-l from-transparent to-orange-400/50" />
+          <div className="h-px flex-1 max-w-[96px]"
+            style={{ background: "linear-gradient(to left, transparent, rgba(242,101,34,0.45))" }} />
         </motion.div>
 
-        {/* Body */}
+        {/* Sanskrit verse block */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="space-y-4"
-          style={{ textShadow: "0 0 40px rgba(100,120,200,0.3)" }}
+          transition={{ duration: 0.9, delay: 0.55 }}
+          className="space-y-6"
         >
-          {/* Sanskrit verse */}
-          <p style={{ color: "#F26522", fontSize: "clamp(1.3rem, 3.2vw, 2.4rem)", lineHeight: 1.5 }}>
+          {/* Rigveda mantra — Devanagari */}
+          <p
+            style={{
+              fontFamily: DEVAN,
+              fontWeight: 500,
+              fontSize: "clamp(1.35rem, 3.3vw, 2.55rem)",
+              lineHeight: 1.65,
+              color: "#F26522",
+              letterSpacing: "0.01em",
+            }}
+          >
             एवा हि मां{" "}
-            <span style={{ color: "#ffffff", fontSize: "clamp(1.55rem, 3.8vw, 2.85rem)", fontWeight: 700 }}>
-              तवसं
-            </span>
+            <span style={{ color: "#ffffff", fontWeight: 600 }}>तवसं</span>
             {" "}वर्धयन्ति दिवश्चिन्मे बृहत उत्तरा धूः।
           </p>
 
-          {/* Reference */}
-          <p style={{ color: "rgba(210,225,245,0.85)", fontSize: "clamp(1.1rem, 2.08vw, 1.5rem)", fontStyle: "italic", fontWeight: 600 }}>
+          {/* Reference — clean serif-italic */}
+          <p
+            style={{
+              fontFamily: SANS,
+              fontWeight: 300,
+              fontStyle: "italic",
+              fontSize: "clamp(0.9rem, 1.7vw, 1.22rem)",
+              color: "rgba(210,225,245,0.70)",
+              letterSpacing: "0.04em",
+            }}
+          >
             Rigveda 10 (mandala).28(sūktas).06(mantra)
           </p>
 
           {/* Transliteration + translation */}
-          <p style={{ color: "rgba(200,215,235,0.78)", fontSize: "clamp(1.05rem, 1.95vw, 1.43rem)", fontStyle: "italic", lineHeight: 1.75 }}>
-            (Ebaa hi mam{" "}
-            <strong style={{ color: "#F26522", fontStyle: "normal" }}>TAVAS</strong>
-            m bardhyeanti dibarshichanme brihat Uttara dhuhu)
-            <br />
-            Thus do they magnify the strength, which is higher than the heavens and make us self reliant!
-          </p>
+          <div
+            style={{
+              fontFamily: SANS,
+              fontWeight: 300,
+              fontStyle: "italic",
+              fontSize: "clamp(0.88rem, 1.65vw, 1.15rem)",
+              color: "rgba(200,215,235,0.62)",
+              lineHeight: 1.85,
+              letterSpacing: "0.01em",
+            }}
+          >
+            <p>
+              (Ebaa hi mam{" "}
+              <strong style={{ color: "#F26522", fontStyle: "normal", fontWeight: 500 }}>TAVAS</strong>
+              m bardhyeanti dibarshichanme brihat Uttara dhuhu)
+            </p>
+            <p style={{ marginTop: "0.35em" }}>
+              Thus do they magnify the strength, which is higher than the heavens and make us self reliant!
+            </p>
+          </div>
         </motion.div>
       </div>
 
-      {/* Fade edges into surrounding page */}
-      <div
-        className="absolute top-0 left-0 right-0 h-24 pointer-events-none"
-        style={{ background: "linear-gradient(180deg, var(--color-navy-700) 0%, transparent 100%)" }}
-        aria-hidden="true"
-      />
-      <div
-        className="absolute bottom-0 left-0 right-0 h-24 pointer-events-none"
-        style={{ background: "linear-gradient(0deg, var(--color-navy-800) 0%, transparent 100%)" }}
-        aria-hidden="true"
-      />
+      {/* ── edge fades ── */}
+      <div className="absolute top-0 left-0 right-0 h-24 pointer-events-none" aria-hidden="true"
+        style={{ background: "linear-gradient(180deg, #090F1E 0%, transparent 100%)" }} />
+      <div className="absolute bottom-0 left-0 right-0 h-24 pointer-events-none" aria-hidden="true"
+        style={{ background: "linear-gradient(0deg, #0E1A2E 0%, transparent 100%)" }} />
     </section>
   );
 }
