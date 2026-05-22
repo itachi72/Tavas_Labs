@@ -2,6 +2,13 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import {
+  CuriosityIllustration,
+  CourageIllustration,
+  CreativityIllustration,
+  CommunicationIllustration,
+  CompassionIllustration,
+} from "./FiveCIllustrations";
 
 const Cs = [
   {
@@ -9,6 +16,7 @@ const Cs = [
     lines: ["CURIO", "SITY"],
     color: "#F26522",
     side: "right" as const,
+    Illustration: CuriosityIllustration,
     points: [
       "Continuous inquiry into emerging regulations, technologies, market",
       "Data-driven AI Analytics to uncover hidden risks and opportunities",
@@ -19,6 +27,7 @@ const Cs = [
     lines: ["COURAGE"],
     color: "#60A5FA",
     side: "right" as const,
+    Illustration: CourageIllustration,
     points: [
       "Challenge legacy business models and intensive practices",
       "Decisive Insights aligned with value creation with AI & Digital Twin",
@@ -29,6 +38,7 @@ const Cs = [
     lines: ["CREATI", "VITY"],
     color: "#F26522",
     side: "right" as const,
+    Illustration: CreativityIllustration,
     points: [
       "Innovative sustainability solutions and circularity",
       "Co-creation of roadmaps tailored to client context – Modular & Scalable",
@@ -39,6 +49,7 @@ const Cs = [
     lines: ["COMMUNI", "CATION"],
     color: "#60A5FA",
     side: "left" as const,
+    Illustration: CommunicationIllustration,
     points: [
       "Clear translation of strategy into board-level, investor, and stakeholder language",
     ],
@@ -48,6 +59,7 @@ const Cs = [
     lines: ["COMPAS", "SION"],
     color: "#F26522",
     side: "left" as const,
+    Illustration: CompassionIllustration,
     points: [
       "Policy & Purpose: Human-centric approach balancing profit, planet, and people",
     ],
@@ -221,13 +233,10 @@ function DescPanel({
         boxShadow:     `0 0 40px ${c.color}14`,
       }}
     >
-      <div className="flex items-center gap-3 mb-5">
-        <img
-          src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/${c.word}.png`}
-          alt=""
-          className="w-[60px] h-[60px] object-contain flex-shrink-0"
-          aria-hidden="true"
-        />
+      <div className="flex items-center gap-4 mb-5">
+        <div className="flex-shrink-0 w-[80px] h-[80px]" aria-hidden="true">
+          <c.Illustration size={80} />
+        </div>
         <h3
           className="font-display font-bold text-white"
           style={{ fontSize: "clamp(1.8rem, 3vw, 2.4rem)" }}

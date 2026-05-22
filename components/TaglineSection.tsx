@@ -143,7 +143,7 @@ export default function TaglineSection() {
               m bardhyeanti dibarshichanme brihat Uttara dhuhu)
             </p>
             <p style={{ marginTop: "0.35em" }}>
-              Thus do they magnify the strength, which is higher than the heavens and make us self reliant!
+              thus do they magnify the strength, which is higher than the heavens and make us self reliant!
             </p>
           </div>
         </motion.div>
