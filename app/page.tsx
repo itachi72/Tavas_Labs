@@ -15,7 +15,7 @@ export default function HomePage() {
     <main className="relative overflow-hidden">
       <Navbar />
       <HeroSection />              {/* Full-screen video hero */}
-      <TaglineSection />           {/* Civilizational intelligence */}
+      <TaglineSection />           {/* civilizational intelligence */}
       <ContentPreviewSection />    {/* 5C Strategy wheel */}
       <PillarsSection />           {/* Design · Simulate · Optimise · Sustain */}
       <ServiceLinesSection />      {/* Consulting · Training · Tools & Products */}

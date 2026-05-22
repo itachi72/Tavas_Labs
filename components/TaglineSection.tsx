@@ -51,7 +51,7 @@ export default function TaglineSection() {
               marginBottom: "0.2em",
             }}
           >
-            Civilizational intelligence
+            civilizational intelligence
           </h2>
           <p
             style={{
@@ -63,7 +63,7 @@ export default function TaglineSection() {
               lineHeight: 1.2,
             }}
           >
-            <span style={{ color: "#ffffff" }}>Ancient wisdom,</span>{" "}
+            <span style={{ color: "#ffffff" }}>ancient wisdom,</span>{" "}
             <span style={{ color: "rgba(255,255,255,0.65)" }}>frontier technology</span>
           </p>
         </motion.div>
